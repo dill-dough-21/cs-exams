@@ -310,16 +310,6 @@
     "correct": [3]
   },
   {
-    "question": "Nagłówki AH i ESP protokołu IPSec chronią różne części przesyłanych informacji w zależności od tego, czy jest używany tryb transportowy czy tunelowy. Która z poniższych odpowiedzi poprawnie identyfikuje części chronione przez ESP dla określonego trybu (transportowego lub tunelowania)?",
-    "options": [
-      "ESP w trybie tunelowania: wszystkie pola wewnętrznego nagłówka IP i ładunku danych",
-      "ESP w trybie transportowym: wszystkie pola w nagłówku IP i ładunku danych",
-      "ESP w trybie transportowym: wszystkie pola w pakiecie IP",
-      "ESP w trybie tunelowania: wszystkie pola zewnętrznego nagłówka IP, wewnętrzny nagłówek IP i ładunek danych"
-    ],
-    "correct": [0]
-  },
-  {
     "question": "Który z poniższych typów śluz bezpieczeństwa (inaczej zapór sieciowych) jest obsługiwany przez większość routerów i jest najłatwiejszy do wdrożenia?",
     "options": [
       "śluza bezpieczeństwa nowej generacji",
@@ -728,7 +718,7 @@
       "SSH",
       "IPSec w trybie tunelowym"
     ],
-    "correct": [3]
+    "correct": [1]
   },
   {
     "question": "Który z poniższych systemów operacyjnych obsługuje model kontroli dostępu Bella-LaPaduli (BLP)?",
