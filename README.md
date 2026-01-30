@@ -65,6 +65,7 @@ Twój Pull Request zostanie zaakceptowany, jeśli:
 
 - Format JSON jest poprawny (zwaliduj go przed wysłaniem, np. na [jsonlint.com](https://jsonlint.com)).
 - Dotyczy materiału z egzaminów uniwersyteckich.
+- **Uzasadnisz zmianę**: Jeśli poprawiasz odpowiedź, napisz w opisie PR dlaczego Twoja wersja jest poprawna (link, cytat, wyjaśnienie). Zmiany bez uzasadnienia mogą być odrzucane.
 - Nie zawiera treści obraźliwych ani spamu.
 
 > "Griefing" lub celowe wprowadzanie błędnych danych skutkować będzie blokadą możliwości kontrybucji.
