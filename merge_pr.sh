@@ -6,7 +6,7 @@ if [ -z "$1" ]; then
   exit 1
 fi
 
-PR_ID=$1s
+PR_ID=$1
 BRANCH_NAME="pr-$PR_ID"
 
 echo "Fetching PR #$PR_ID..."
