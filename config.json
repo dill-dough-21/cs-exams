@@ -1,0 +1,64 @@
+{
+  "semesters": [
+    {
+      "title": "Semestr 4",
+      "files": [
+        {
+          "name": "Inżynieria Oprogramowania",
+          "file": "data/pytania_IO.json",
+          "description": "Pytania z inżynierii oprogramowania"
+        },
+        {
+          "name": "Zarządzanie informacją",
+          "file": "data/pytania_ZI.json",
+          "description": "Pytania z Zarządzania informacją"
+        },
+        {
+          "name": "Grafika Komputerowa",
+          "file": "data/pytania_GK.json",
+          "description": "Pytania z grafiki komputerowej"
+        },
+        {
+          "name": "Grafika Komputerowa 2",
+          "file": "data/pytania_GK2.json",
+          "description": "Pytania z grafiki komputerowej 23.06.2025 Egzamin"
+        },
+        {
+          "name": "Transmisja Danych",
+          "file": "data/pytania_TD.json",
+          "description": "Wszystkie dotychczas pytania z Transmisji danych"
+        },
+        {
+          "name": "Transmisja Danych 2",
+          "file": "data/pytania_TD2.json",
+          "description": "Pytania z Transmisji danych z egzaminu z dnia 26.06.2025"
+        }
+      ]
+    },
+    {
+      "title": "Semestr 5",
+      "files": [
+        {
+          "name": "Podstawy ochrony informacji",
+          "file": "data/pytania_POI.json",
+          "description": "Pytania z Podstaw ochrony informacji"
+        },
+        {
+          "name": "Zarządzanie informacją 2",
+          "file": "data/pytania_ZI2.json",
+          "description": "Pytania z Zarządzania informacją 2"
+        },
+        {
+          "name": "Komunikacja człowiek maszyna",
+          "file": "data/pytania_KCM.json",
+          "description": "Pytania z komunikacja człowiek maszyna"
+        },
+        {
+          "name": "Sztuczna inteligencja",
+          "file": "data/pytania_SI.json",
+          "description": "Pytania ze Sztuczna inteligencja"
+        }
+      ]
+    }
+  ]
+}
