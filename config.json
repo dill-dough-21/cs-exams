@@ -62,6 +62,11 @@
           "name": "Gry Komputerowe",
           "file": "data/pytaniaGry.json",
           "description": "Są to pytania wygenerowane przez Gemini na bazie wykładów"
+        },
+        {
+          "name": "IPZ",
+          "file": "data/pytaniaIPZ.json",
+          "description": "Pytania z IPZ"
         }
       ]
     }
