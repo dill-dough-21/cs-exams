@@ -419,7 +419,7 @@
     "correct": [3]
   },
   {
-    "question": "Prawdziwe filmów science fiction zainspirował środowiska badawcze do tworzenia prototypów interfejsów bezdotykowych opartych na ruchu i gestach (np. GoMonkey, Maestro, Sensitive Wall)?",
+    "question": "Który z filmów science fiction zainspirował środowiska badawcze do tworzenia prototypów interfejsów bezdotykowych opartych na ruchu i gestach (np. GoMonkey, Maestro, Sensitive Wall)?",
     "options": [
       "Matrix",
       "Raport mniejszości",
@@ -466,7 +466,7 @@
       "liczbę wyrazów, sylab, głosek i fonemów w wypowiedzi",
       "brzmieniowe właściwości mowy nakładające się na głoskowy, sylabiczny i wyrazowy ciąg wypowiedzi"
     ],
-    "correct": [0, 2, 3]
+    "correct": [0, 3]
   },
   {
     "question": "Zaznacz prawdziwe wypowiedzi dotyczące Sensor Bar (Nintendo Wii):",
@@ -596,7 +596,7 @@
       "Tak",
       "Nie"
     ],
-    "correct": [0]
+    "correct": [2]
   },
   {
     "question": "Interakcja z wykorzystaniem statycznych gestów dłonią:",
@@ -606,7 +606,7 @@
       "wymaga działania systemu w czasie rzeczywistym (bez opóźnień)",
       "analizuje konfigurację ułożenia dłoni (np. liczba widocznych palców)"
     ],
-    "correct": [3]
+    "correct": [2, 3]
   },
   {
     "question": "Częstotliwość tonu podstawowego zależy od:",
