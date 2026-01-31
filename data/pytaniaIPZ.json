@@ -1,226 +1,226 @@
 [
-  {
-    "question": "Wskaż zdanie prawdziwe: Projekt musi mieć określony początek oraz koniec.",
-    "options": [
-      "Projekt musi mieć określony początek oraz koniec.",
-      "Projekt musi mieć określony początek, ale nie musi mieć określonego końca.",
-      "Projekt nie musi mieć określonych ram czasowych."
-    ],
-    "correct": [0]
-  },
-  {
-    "question": "Na jakim poziomie zebrane powinny zostać wymagania?",
-    "options": [
-      "Tylko nazwa.",
-      "Pełna specyfikacja włącznie z diagramami, interfejsami użytkownika, szczegółami implementacyjnymi.",
-      "Na poziomie „wystarczająco dobrym”, żeby uzyskać wspólne zrozumienie i rozpocząć implementację na akceptowalnym poziomie ryzyka."
-    ],
-    "correct": [2]
-  },
-  {
-    "question": "Wskaż zdanie fałszywe dotyczące WBS",
-    "options": [
-      "Zawartość WBS może zmieniać się wielokrotnie aż do momentu jego zatwierdzenia.",
-      "W WBS powinny być wskazane prace z zakresu i spoza zakresu projektu",
-      "Każdy produkt z WBSa powinien znaleźć odniesienie w liście aktywności i harmonogramie."
-    ],
-    "correct": [1]
-  },
-  {
-    "question": "Tymczasowa natura projektów wskazuje:",
-    "options": [
-      "Projekty nie mogą być dłuższe niż 6 miesięcy.",
-      "Projekty nie mogą być dłuższe niż 5 lat.",
-      "Tymczasowa natura projektów nie określa ich długo- lub krótkotrwałości."
-    ],
-    "correct": [2]
-  },
-  {
-    "question": "Wskaż przykład „rozpełzywania” zakresu",
-    "options": [
-      "Główny programista zachorował, co wpływa na opóźnienie w projekcie.",
-      "Zespół programistów zdecydował przepisać zatwierdzony wcześniej etap kodu na nową bibliotekę JS.",
-      "Zespół projektowy został wyposażony w tablety z Androidem zamiast iPady, mimo że w zakresie zaplanowany był zakup iPadów."
-    ],
-    "correct": [1]
-  },
-  {
-    "question": "Rozwiń skrót SRS",
-    "options": [
-      "System Risk Scope",
-      "Software Results Specification",
-      "Software Requirements Specification"
-    ],
-    "correct": [2]
-  },
-  {
-    "question": "NGINX w SRS najlepiej zawrzeć w sekcji:",
-    "options": [
-      "Wymagania dotyczące interfejsu zewnętrznego",
-      "Założenia i zależności",
-      "Cechy jakości"
-    ],
-    "correct": [1]
-  },
-  {
-    "question": "Co powinien zawierać WBS",
-    "options": [
-      "Zadania do wykonania",
-      "Produkty do dostarczenia",
-      "Harmonogram dostarczania produktów"
-    ],
-    "correct": [1]
-  },
-  {
-    "question": "Uczestnictwo w wykładzie i nauka materiału są w relacji",
-    "options": [
-      "start-to-start",
-      "finish-to-start",
-      "start-to-finish"
-    ],
-    "correct": [1]
-  },
-  {
-    "question": "Kto odpowiada za zawartość product backloga w Scrum?",
-    "options": [
-      "Programiści",
-      "Product Owner",
-      "Project Owner"
-    ],
-    "correct": [1]
-  },
-  {
-    "question": "Prawidłowa kolejność według XP",
-    "options": [
-      "Dekomp. cechy na zadania, tworzenie kodu, tworzenie testów jednostkowych",
-      "Dekomp. cechy na zadania, tworzenie testów jednostkowych, tworzenie kodu",
-      "Tworzenie testów jednostkowych, dekomp. cechy na zadania, tworzenie kodu"
-    ],
-    "correct": [2]
-  },
-  {
-    "question": "Wykres wskazujący realizację funkcjonalności w trakcie sprintu",
-    "options": [
-      "Burndown chart",
-      "Burnup chart",
-      "Velocity chart"
-    ],
-    "correct": [0]
-  },
-  {
-    "question": "Kto jest odpowiedzialny za stworzenie karty projektu?",
-    "options": [
-      "Zespół projektowy",
-      "Inicjator lub sponsor projektu",
-      "Project Owner"
-    ],
-    "correct": [1]
-  },
-  {
-    "question": "Identyfikator wymagania 3.2.3.4 to przykład notacji",
-    "options": [
-      "Numeracja hierarchiczna",
-      "Sekwencja",
-      "Losowa"
-    ],
-    "correct": [0]
-  },
-  {
-    "question": "Identyfikator wymagania wi-11 to przykład notacji",
-    "options": [
-      "Numeracja hierarchiczna",
-      "Sekwencja",
-      "Losowa"
-    ],
-    "correct": [1]
-  },
-  {
-    "question": "Co powinien zawierać WBS wg PMBOK",
-    "options": [
-      "Zadania do wykonania",
-      "Produkty do dostarczenia",
-      "Harmonogram dostarczenia produktów",
-      "Wszystkie odpowiedzi"
-    ],
-    "correct": [1]
-  },
-  {
-    "question": "Wskaż zdanie fałszywe dotyczące harmonogramu i WBS",
-    "options": [
-      "WBS stanowi dane wejściowe do harmonogramu",
-      "Harmonogram stanowi dane do WBS",
-      "WBS opisuje co jest do zrobienia",
-      "Harmonogram opisuje kiedy i co"
-    ],
-    "correct": [1]
-  },
-  {
-    "question": "Wskaż zdanie fałszywe dotyczące nazewnictwa WBS",
-    "options": [
-      "Każdy element WBS posiada swoją nazwę",
-      "Nazwa elementu WBS powinna być rzeczownikiem",
-      "Nazwa musi być czasownikiem",
-      "Słownik WBS zawiera bardziej szczegółowe opisy poszczególnych komponentów WBSa"
-    ],
-    "correct": [2]
-  },
-  {
-    "question": "Zadania/aktywności i zależności czasowe między nimi przedstawione są",
-    "options": [
-      "W dokumencie SRS",
-      "W dokumencie WBS",
-      "W harmonogramie",
-      "W WBS i harmonogramie"
-    ],
-    "correct": [2]
-  },
-  {
-    "question": "Standardowa długość cyklu wg XP",
-    "options": [
-      "7 dni",
-      "14 dni",
-      "30 dni",
-      "Zależne od zespołu"
-    ],
-    "correct": [3]
-  },
-  {
-    "question": "Spotkanie w Scrum odbywające się codziennie w trakcie iteracji",
-    "options": [
-      "Daily Scrum",
-      "Sprint Review",
-      "Sprint Retrospective",
-      "Żadne z powyższych"
-    ],
-    "correct": [0]
-  },
-  {
-    "question": "Co się dzieje z niewykonanymi zadaniami pod koniec sprinta w Scrum",
-    "options": [
-      "Są wrzucane do backloga",
-      "Są automatycznie usuwane",
-      "Przenoszone do następnego sprintu",
-      "Pozostają w sprint backlogu do końca projektu"
-    ],
-    "correct": [0]
-  },
-  {
-    "question": "Co to są zasoby pieniężne?",
-    "options": [
-      "Korzyści namacalne",
-      "Kapitał finansowy dostępny dla projektu",
-      "Zasoby ludzkie przeliczane na pieniądze",
-      "Budżet projektowy zarezerwowany na sprzęt"
-    ],
-    "correct": [1]
-  },
-  {
-    "question": "Jaka jest prawidłowa kolejność tworzenia karty projektu?",
-    "options": [
-      "Określenie celów i zakresu → Tworzenie karty projektu → Akceptacja",
-      "Specyfikacja wymagań → Tworzenie karty projektu → Akceptacja",
-      "Analiza ryzyka → Tworzenie karty projektu → Akceptacja"
-    ],
-    "correct": [0]
-  }
+  {
+    "question": "Wskaż zdanie prawdziwe:",
+    "options": [
+      "Projekt musi mieć określony początek oraz koniec.",
+      "Projekt musi mieć określony początek, ale nie musi mieć określonego końca.",
+      "Projekt nie musi mieć określonych ram czasowych."
+    ],
+    "correct": [0]
+  },
+  {
+    "question": "Na jakim poziomie zebrane powinny zostać wymagania?",
+    "options": [
+      "Tylko nazwa.",
+      "Pełna specyfikacja włącznie z diagramami, interfejsami użytkownika, szczegółami implementacyjnymi.",
+      "Na poziomie 'wystarczająco dobrym', żeby uzyskać wspólne zrozumienie i rozpocząć implementację na akceptowalnym poziomie ryzyka."
+    ],
+    "correct": [2]
+  },
+  {
+    "question": "Wskaż zdanie fałszywe dotyczące WBS",
+    "options": [
+      "Zawartość WBS może zmieniać się wielokrotnie aż do momentu jego zatwierdzenia.",
+      "W WBS powinny być wskazane prace z zakresu i spoza zakresu projektu",
+      "Każdy produkt z WBSa powinien znaleźć odniesienie w liście aktywności i harmonogramie."
+    ],
+    "correct": [1]
+  },
+  {
+    "question": "Tymczasowa natura projektów wskazuje:",
+    "options": [
+      "Projekty nie mogą być dłuższe niż 6 miesięcy.",
+      "Projekty nie mogą być dłuższe niż 5 lat.",
+      "Tymczasowa natura projektów nie określa ich długo- lub krótkotrwałości."
+    ],
+    "correct": [2]
+  },
+  {
+    "question": "Wskaż przykład 'rozpełzywania' zakresu",
+    "options": [
+      "Główny programista zachorował, co wpływa na opóźnienie w projekcie.",
+      "Zespół programistów zdecydował przepisać zatwierdzony wcześniej etap kodu na nową bibliotekę JS.",
+      "Zespół projektowy został wyposażony w tablety z Androidem zamiast iPady, mimo że w zakresie zaplanowany był zakup iPadów."
+    ],
+    "correct": [1]
+  },
+  {
+    "question": "Rozwiń skrót SRS",
+    "options": [
+      "System Risk Scope",
+      "Software Results Specification",
+      "Software Requirements Specification"
+    ],
+    "correct": [2]
+  },
+  {
+    "question": "NGINX w SRS najlepiej zawrzeć w sekcji:",
+    "options": [
+      "Wymagania dotyczące interfejsu zewnętrznego",
+      "Założenia i zależności",
+      "Cechy jakości"
+    ],
+    "correct": [1]
+  },
+  {
+    "question": "Co powinien zawierać WBS",
+    "options": [
+      "Zadania do wykonania",
+      "Produkty do dostarczenia",
+      "Harmonogram dostarczania produktów"
+    ],
+    "correct": [1]
+  },
+  {
+    "question": "Uczestnictwo w wykładzie i nauka materiału są w relacji",
+    "options": [
+      "start-to-start",
+      "finish-to-start",
+      "start-to-finish"
+    ],
+    "correct": [1]
+  },
+  {
+    "question": "Kto odpowiada za zawartość product backloga w Scrum?",
+    "options": [
+      "Programiści",
+      "Product Owner",
+      "Project Owner"
+    ],
+    "correct": [1]
+  },
+  {
+    "question": "Prawidłowa kolejność według XP",
+    "options": [
+      "Dekomp. cechy na zadania, tworzenie kodu, tworzenie testów jednostkowych",
+      "Dekomp. cechy na zadania, tworzenie testów jednostkowych, tworzenie kodu",
+      "Tworzenie testów jednostkowych, dekomp. cechy na zadania, tworzenie kodu"
+    ],
+    "correct": [2]
+  },
+  {
+    "question": "Wykres wskazujący realizację funkcjonalności w trakcie sprintu",
+    "options": [
+      "Burndown chart",
+      "Burnup chart",
+      "Velocity chart"
+    ],
+    "correct": [0]
+  },
+  {
+    "question": "Kto jest odpowiedzialny za stworzenie karty projektu?",
+    "options": [
+      "Zespół projektowy",
+      "Inicjator lub sponsor projektu",
+      "Project Owner"
+    ],
+    "correct": [1]
+  },
+  {
+    "question": "Identyfikator wymagania 3.2.3.4 to przykład notacji",
+    "options": [
+      "Numeracja hierarchiczna",
+      "Sekwencja",
+      "Losowa"
+    ],
+    "correct": [0]
+  },
+  {
+    "question": "Identyfikator wymagania wi-11 to przykład notacji",
+    "options": [
+      "Numeracja hierarchiczna",
+      "Sekwencja",
+      "Losowa"
+    ],
+    "correct": [1]
+  },
+  {
+    "question": "Co powinien zawierać WBS wg PMBOK",
+    "options": [
+      "Zadania do wykonania",
+      "Produkty do dostarczenia",
+      "Harmonogram dostarczenia produktów",
+      "Wszystkie odpowiedzi"
+    ],
+    "correct": [1]
+  },
+  {
+    "question": "Wskaż zdanie fałszywe dotyczące harmonogramu i WBS",
+    "options": [
+      "WBS stanowi dane wejściowe do harmonogramu",
+      "Harmonogram stanowi dane do WBS",
+      "WBS opisuje co jest do zrobienia",
+      "Harmonogram opisuje kiedy i co"
+    ],
+    "correct": [1]
+  },
+  {
+    "question": "Wskaż zdanie fałszywe dotyczące nazewnictwa WBS",
+    "options": [
+      "Każdy element WBS posiada swoją nazwę",
+      "Nazwa elementu WBS powinna być rzeczownikiem",
+      "Nazwa musi być czasownikiem",
+      "Słownik WBS zawiera bardziej szczegółowe opisy poszczególnych komponentów WBSa"
+    ],
+    "correct": [2]
+  },
+  {
+    "question": "Zadania/aktywności i zależności czasowe między nimi przedstawione są",
+    "options": [
+      "W dokumencie SRS",
+      "W dokumencie WBS",
+      "W harmonogramie",
+      "W WBS i harmonogramie"
+    ],
+    "correct": [2]
+  },
+  {
+    "question": "Standardowa długość cyklu wg XP",
+    "options": [
+      "7 dni",
+      "14 dni",
+      "30 dni",
+      "Zależne od zespołu"
+    ],
+    "correct": [3]
+  },
+  {
+    "question": "Spotkanie w Scrum odbywające się codziennie w trakcie iteracji",
+    "options": [
+      "Daily Scrum",
+      "Sprint Review",
+      "Sprint Retrospective",
+      "Żadne z powyższych"
+    ],
+    "correct": [0]
+  },
+  {
+    "question": "Co się dzieje z niewykonanymi zadaniami pod koniec sprinta w Scrum",
+    "options": [
+      "Są wrzucane do backloga",
+      "Są automatycznie usuwane",
+      "Przenoszone do następnego sprintu",
+      "Pozostają w sprint backlogu do końca projektu"
+    ],
+    "correct": [0]
+  },
+  {
+    "question": "Co to są zasoby pieniężne?",
+    "options": [
+      "Korzyści namacalne",
+      "Kapitał finansowy dostępny dla projektu",
+      "Zasoby ludzkie przeliczane na pieniądze",
+      "Budżet projektowy zarezerwowany na sprzęt"
+    ],
+    "correct": [1]
+  },
+  {
+    "question": "Jaka jest prawidłowa kolejność tworzenia karty projektu?",
+    "options": [
+      "Określenie celów i zakresu -> Tworzenie karty projektu -> Akceptacja",
+      "Specyfikacja wymagań -> Tworzenie karty projektu -> Akceptacja",
+      "Analiza ryzyka -> Tworzenie karty projektu -> Akceptacja"
+    ],
+    "correct": [0]
+  }
 ]
