@@ -134,6 +134,25 @@ function prepareQuiz() {
       renderQuizMode();
       break;
 
+    case "range":
+      const startInput = document.getElementById("rangeStart");
+      const endInput = document.getElementById("rangeEnd");
+      const rangeStart = Math.max(1, parseInt(startInput.value) || 1);
+      const rangeEnd = Math.min(allQuestions.length, parseInt(endInput.value) || allQuestions.length);
+      
+      if (rangeStart > rangeEnd || rangeStart > allQuestions.length) {
+        showError("❌ Błąd: Podaj prawidłowy zakres pytań!");
+        document.getElementById("mode-selector").style.display = "block";
+        return;
+      }
+      
+      title.textContent = `📍 ${currentFile.name} - Test z Zakresu`;
+      description.textContent = `Pytania od ${rangeStart} do ${rangeEnd}. Razem ${rangeEnd - rangeStart + 1} pytań. Powodzenia!`;
+      selectQuestionsInRange(rangeStart - 1, rangeEnd - 1);
+      currentQuestions = shuffleAndMapQuestions(currentQuestions);
+      renderQuizMode();
+      break;
+
     case "fullquiz":
       title.textContent = `📝 ${currentFile.name} - Pełny Egzamin`;
       description.textContent =
@@ -354,6 +373,10 @@ function selectRandomQuestions(count) {
   currentQuestions = shuffled.slice(0, Math.min(count, allQuestions.length));
 }
 
+function selectQuestionsInRange(startIndex, endIndex) {
+  currentQuestions = allQuestions.slice(startIndex, endIndex + 1);
+}
+
 function addOptionClickHandlers() {
   document.querySelectorAll(".option").forEach((option) => {
     option.addEventListener("click", (e) => {
@@ -369,6 +392,7 @@ function getModeDisplayName(mode) {
   const names = {
     study: "Tryb Nauki",
     random5: "Szybki Test",
+    range: "Test z Zakresu",
     fullquiz: "Pełny Egzamin",
   };
   return names[mode] || mode;
