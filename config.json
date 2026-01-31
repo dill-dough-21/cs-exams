@@ -57,6 +57,11 @@
           "name": "Sztuczna inteligencja",
           "file": "data/pytania_SI.json",
           "description": "Pytania ze Sztuczna inteligencja"
+        },
+        {
+          "name": "Gry Komputerowe",
+          "file": "data/pytaniaGry.json",
+          "description": "Są to pytania wygenerowane przez Gemini na bazie wykładów"
         }
       ]
     }
