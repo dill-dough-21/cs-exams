@@ -132,6 +132,16 @@
     ]
   },
   {
+    "question": "W interfejsach programistycznych baz danych niemożliwe jest mapowanie klas zawierających pola o typach użytkownika(zdefiniowanie klasy lub typy wyliczeniowe), możliwe jest wyłącznie mapowanie klas zawierając pola o typach prostych(liczbowe, tekstowe, numeryczne, logiczne)",
+    "options": [
+      "Prawda",
+      "Fałsz"
+    ],
+    "correct": [
+      1
+    ]
+  },
+  {
     "question": "Jakie cechy ma sieć losowa Erdos -Renyi ?",
     "options": [
       "Każdy węzeł ma dokładnie jedną relację",
@@ -198,6 +208,28 @@
       "MATCH (a) -[r*]->(b) RETURN length(r)",
       "MATCH p= shortestPath ((a)-[*]->(b)) RETURN p",
       "FIND SHORTEST PATH"
+    ],
+    "correct": [
+      2
+    ]
+  },
+  {
+    "question": "Dopasuj do definicji: Podniesienie wydajności poprzez dodanie większej liczby maszyn ",
+    "options": [
+      "skalowanie wertykalne (pionowe)",
+      "horyzontalne (poziome)",
+      "skalowanie systemowe"
+    ],
+    "correct": [
+      1
+    ]
+  },
+  {
+    "question": "Dopasuj definicję do typu replikacji: Klienci wysyłają każdy zapis do kilku węzłów i odczytują z kilku węzłów równolegle w celu wykrycia i skorygowania węzłów z nieaktualnymi danymi.",
+    "options": [
+      "Single-leader replication",
+      "Multi-leader replication",
+      "Leadless replication"
     ],
     "correct": [
       2
@@ -408,7 +440,7 @@
     ]
   },
   {
-    "question": "Wybierz stwierdzenia, które są prawdziwe w kontekście teorii CAP dotyczącej:Wybierz wszystkie poprawne.a. Udowodniono, że ta teoria jest już nieaktualna.b. Bazy danych mogą spełniać tylko jedno z tych kryteriów.c. Teoria CAP dotyczą baz relacyjnych i nierelacyjnych.d. Wybrane bazy danych mogą spełniać jednocześnie wszystkie trzy kryteria.e. Bazy danych mogą spełniać jednoczesnie tylko dwa z tych kryteriów.",
+    "question": "Wybierz stwierdzenia, które są prawdziwe w kontekście teorii CAP dotyczącej:",
     "options": [
       "Udowodniono, że ta teoria jest już nieaktualna.",
       "Bazy danych mogą spełniać tylko jedno z tych kryteriów.",
@@ -432,6 +464,17 @@
       0
     ]
   },
+    {
+    "question": "Zakładając, że klaster składa się z 11 węzłów umieszczonych w dwóch centrach danych (w Centrum 1 jest 6 węzłów, a w Centrum 2 jest 5 węzłów). W Cassandrze ustawiony jest CONSISTENCY QUORUM, a replication factor jest ustawiony na 6. Podaj ile węzłów będzie musiało potwierdzić zapis nowych danych do klastra, aby operacja się zakończyła sukcesem.",
+    "options": [
+      "3",
+      "4",
+      "5"
+    ],
+    "correct": [
+      1
+    ]
+  },
   {
     "question": "Wybierz stwierdzenia dotyczące baz typu klucz-wartość (key-value):",
     "options": [
@@ -442,7 +485,9 @@
       "Przykładami baz klucz-wartość są MongoDB i CouchDB."
     ],
     "correct": [
-      0
+      0,
+      1,
+      2
     ]
   },
   {
@@ -460,6 +505,7 @@
     "correct": [
       0,
       2,
+      3,
       5,
       7
     ]
@@ -472,7 +518,9 @@
       "Ścieżka łącząca zadane węzły"
     ],
     "correct": [
-      0
+      0,
+      1,
+      2
     ]
   },
   {
@@ -491,13 +539,14 @@
   {
     "question": "Rozprzestrzenianie informacji w mediach społecznościowych może być modelowane z wykorzystaniem",
     "options": [
-      "Wybierz wszystkie poprawne:",
       "modelu SIR",
       "modeli epidemiologicznych",
       "systemów agentowych"
     ],
     "correct": [
-      1
+      0,
+      1,
+      2
     ]
   },
   {
@@ -510,7 +559,8 @@
       "Cassandra"
     ],
     "correct": [
-      3
+      3,
+      4
     ]
   },
   {
@@ -532,11 +582,12 @@
       "wprowadza nowe funkcje do Języka SQL"
     ],
     "correct": [
-      0
+      0,
+      1
     ]
   },
   {
-    "question": "Dobierz typ aplikacji do jej definicji1. Przechowują dane tak. aby oni sami lub inna aplikacja mogła je później odnaleźć.2. Pozwalają użytkownikom na wyszukiwanie danych według słów kluczowych lub filtrowanie ich na różne sposoby.3.  Wysyłają wiadomość do innego procesu aby została obsłużona asynchronicznie.4. Zapamiętują wynik operacji. aby przyspieszyć odczyt.5.  Okresowo pobierają i przetwarzają duzą ilość zgromadzonych danych.",
+    "question": "Przechowują dane tak. aby oni sami lub inna aplikacja mogła je później odnaleźć",
     "options": [
       "bazy danych",
       "indeksy",
@@ -546,6 +597,58 @@
     ],
     "correct": [
       0
+    ]
+  },
+    {
+    "question": "Pozwalają użytkownikom na wyszukiwanie danych według słów kluczowych lub filtrowanie ich na różne sposoby",
+    "options": [
+      "bazy danych",
+      "indeksy",
+      "przetwarzanie strumieniowe (stream)",
+      "cache",
+      "przetwarzanie wsadowe (batch)"
+    ],
+    "correct": [
+      1
+    ]
+  },
+    {
+    "question": "Wysyłają wiadomość do innego procesu aby została obsłużona asynchronicznie",
+    "options": [
+      "bazy danych",
+      "indeksy",
+      "przetwarzanie strumieniowe (stream)",
+      "cache",
+      "przetwarzanie wsadowe (batch)"
+    ],
+    "correct": [
+      2
+    ]
+  },
+    {
+    "question": "Zapamiętują wynik operacji. aby przyspieszyć odczyt",
+    "options": [
+      "bazy danych",
+      "indeksy",
+      "przetwarzanie strumieniowe (stream)",
+      "cache",
+      "przetwarzanie wsadowe (batch)"
+    ],
+    "correct": [
+      3
+    ]
+  },
+    {
+    "question": "Okresowo pobierają i przetwarzają duzą ilość zgromadzonych danych.",
+    "options": [
+      "bazy danych",
+      "indeksy",
+      "przetwarzanie strumieniowe (stream)",
+      "cache",
+      "przetwarzanie wsadowe (batch)"
+    ],
+    "correct": [
+      4
     ]
   },
   {
@@ -558,8 +661,9 @@
       "Doctrine DBAL"
     ],
     "correct": [
-      0,
-      2
+      1,
+      2,
+      4
     ]
   },
   {
@@ -581,7 +685,8 @@
       "System grafowych baz danych"
     ],
     "correct": [
-      0
+      0,
+      1
     ]
   },
   {
@@ -597,6 +702,21 @@
     ]
   },
   {
+    "question": "Wymień etapy procesu modelowania danych na potrzeby Cassandry",
+    "options": [
+      "Relacyjny model danych",
+      "Znormalizowany model danych",
+      "Model konceptualny wraz z modelem przypływu danych w aplikacji ",
+      "Logiczny model danych",
+      "Fizyczny model danych"
+    ],
+    "correct": [
+      2,
+      3,
+      4
+    ]
+  },
+  {
     "question": "Podstawą do wyznaczenia miary closeness w analizach sieci są",
     "options": [
       "najdłuższe ściezki",
@@ -608,14 +728,15 @@
     ]
   },
   {
-    "question": "Stopień włerzchołka",
+    "question": "Stopień wierzchołka",
     "options": [
       "jest jedną z miar centralności sieci",
       "określa liczbę sąsiadów węzła",
       "jest podstawą do wyznaczania długości ściezek"
     ],
     "correct": [
-      0
+      0,
+      1
     ]
   },
   {
@@ -642,7 +763,8 @@
       "Informuje Cassandrę 0 topologii Sieci, tak aby żądania były kierowane efektywnie."
     ],
     "correct": [
-      1
+      1,
+      2
     ]
   },
   {
@@ -654,7 +776,8 @@
       "Umożliwia reprezentowanie struktur obiektowych w relacyjnej bane danych"
     ],
     "correct": [
-      2
+      2,
+      3
     ]
   },
   {
@@ -667,8 +790,22 @@
       "MySQL"
     ],
     "correct": [
+      0,
       1,
+      2,
       4
+    ]
+  },
+  {
+    "question": "Uporządkuj struktury danych w bazie Cassandra od poziomu najwyższego (największego kontenera) do najniższego (najmniejszej jednostki):",
+    "options": [
+      "Klaster, Tabela, Przestrzeń kluczy, Partycja, Wiersz, Kolumna",
+      "Przestrzeń kluczy, Klaster, Tabela, Wiersz, Partycja, Kolumna",
+      "Klaster, Przestrzeń kluczy, Tabela, Partycja, Wiersz, Kolumna",
+      "Klaster, Przestrzeń kluczy, Partycja, Tabela, Wiersz, Kolumna"
+    ],
+    "correct": [
+      2
     ]
   },
   {
@@ -694,11 +831,13 @@
       "Zapewnłają aplikacji dostęp do zestawu wielu jednocześnie otwartych połączeń do różnych baz danych"
     ],
     "correct": [
-      0
+      0,
+      1,
+      2
     ]
   },
   {
-    "question": "Sterowniki w interfejsach programistycznych dla relacyjnych baz danych (takich jak np. PDO lub JDBC)Wybierz jedną odpowiedża. umozliwiaJą rozszerzenie tych interfeJsOw o nowsze wersje języka zapytań SQL b. zapewniają możliwość jednolitego komunikowania się z bazami danych od różnych dostawców c. umozliwiają rozszerzenie możliwości obsługiwanych baz danych o nowe typy danych dla kolumn oraz dodatkowe mechanizmy indeksowania",
+    "question": "Sterowniki w interfejsach programistycznych dla relacyjnych baz danych (takich jak np. PDO lub JDBC)",
     "options": [
       "umozliwiaJą rozszerzenie tych interfeJsOw o nowsze wersje języka zapytań SQL",
       "zapewniają możliwość jednolitego komunikowania się z bazami danych od różnych dostawców",
@@ -721,10 +860,21 @@
     ]
   },
   {
-    "question": "Mechanizm szablonów zapytań SQL stosowany w interfejsach programistycznych baz danychWybierz Jedną odpowłedza. Umożliwia przesłanie wartości parametrów do szablonu zapytania SQL zapisanego wcześniej w systemie bazy danychb. Umozliwia wstawienie wartości parametrów do zapytania SQL i następnłe przesłanie kompletnego zapytania do systemu bazy danych w celu wykonania",
+    "question": "Mechanizm szablonów zapytań SQL stosowany w interfejsach programistycznych baz danych",
     "options": [
       "Umożliwia przesłanie wartości parametrów do szablonu zapytania SQL zapisanego wcześniej w systemie bazy danych",
       "Umozliwia wstawienie wartości parametrów do zapytania SQL i następnłe przesłanie kompletnego zapytania do systemu bazy danych w celu wykonania"
+    ],
+    "correct": [
+      0
+    ]
+  },
+  {
+    "question": "Język SQL trudno stosować do analizy struktur sieciowych ponieważ:",
+    "options": [
+      "działa zbyt wolno",
+      "są one zbyt duże",
+      "nie posiada dedykowanych analiz sieciowych"
     ],
     "correct": [
       1
@@ -740,7 +890,19 @@
       "Bazy NoSQL są bazami bardziej uniwersalnymi niž bazy relacyjne."
     ],
     "correct": [
-      1
+      1,
+      2
+    ]
+  },
+  {
+    "question": "Dopasuj definicję do typu replikacji:  Klienci wysyłają wszystkie zapisy do Jednego węzła, który wysyła strumień zdarzeń zmiany danych do innych replik",
+    "options": [
+      "Single-leader replication",
+      "Multi-leader replication",
+      "Leadless replication"
+    ],
+    "correct": [
+      0
     ]
   },
   {
@@ -755,7 +917,7 @@
     ]
   },
   {
-    "question": "Kaskadowość w technikach mapowania obiektowo-relacyjnego polega na: (jednaodpowiedź)a. Wczytywaniu kolekcji obiektów jednego typu w kolejności zgodnej z wartościami identyfikatora,b. Możliwość łączenia operacji na bazie danych w grupy i wykonywania ich w ustalonej kolejnościc. Wczytywaniu, zapisywaniu lub usuwaniu obiektu właściciela relacji wraz z obiektami podległymi",
+    "question": "Kaskadowość w technikach mapowania obiektowo-relacyjnego polega na: ",
     "options": [
       "Wczytywaniu kolekcji obiektów jednego typu w kolejności zgodnej z wartościami identyfikatora,",
       "Możliwość łączenia operacji na bazie danych w grupy i wykonywania ich w ustalonej kolejności",
@@ -766,7 +928,7 @@
     ]
   },
   {
-    "question": "Wybierz struktury danych, które zapisane są w każdej komórce Cassandry (na przecięciu wiersza i kolumny) (wiele odp)a. Wartość zgodnie z zadeklarowanym typem danychb. Typ danychc. Czas życia (time to live)d. Znacznik czasu (timestamp)",
+    "question": "Wybierz struktury danych, które zapisane są w każdej komórce Cassandry (na przecięciu wiersza i kolumny)",
     "options": [
       "Wartość zgodnie z zadeklarowanym typem danych",
       "Typ danych",
@@ -774,7 +936,8 @@
       "Znacznik czasu (timestamp)"
     ],
     "correct": [
-      2
+      0,
+      3
     ]
   },
   {
@@ -787,6 +950,7 @@
     ],
     "correct": [
       0,
+      1,
       3
     ]
   },
@@ -837,10 +1001,65 @@
       "Wiesze w tabeli mogą składać się z różnych wierszy.",
       "Na jednym klastrze może być tylko jeden „key space-",
       "Dane całej tabeli Są przechowywane w jednym węźle.",
-      "Dane tabeli są rozrzucone powęzłach."
+      "Dane tabeli są rozrzucone po węzłach."
     ],
     "correct": [
       4
+    ]
+  },
+  {
+    "question": "Czy w interfejsach programistycznych baz danych wykorzystujących techniki ORM możliwe jest mapowanie klas powstałych w wyniku dziedziczenia?",
+    "options": [
+      "Prawda",
+      "Fałsz"
+    ],
+    "correct": [
+      0
+    ]
+  },
+  {
+    "question": "Dopasuj do definicji: Podniesienie wydajności pojedynczej maszyny ",
+    "options": [
+      "skalowanie wertykalne (pionowe)",
+      "horyzontalne (poziome)",
+      "skalowanie systemowe"
+    ],
+    "correct": [
+      0
+    ]
+  },
+  {
+    "question": "Dopasuj definicję do typu replikacji: Klienci wysyłaJą każdy zapis do jednego z kilku węzłów liderów, z których każdy može przyjmować zapisy.",
+    "options": [
+      "Single-leader replication",
+      "Multi-leader replication",
+      "Leadless replication"
+    ],
+    "correct": [
+      1
+    ]
+  },
+
+  {
+    "question": "Dopasuj definicję typu indeksowania w środowisku rozproszonym: Indeksy wtórne przechowywane są w tej samej partycji co klucz główny i wartość. Oznacza to, że tylko jedna partycja musi być aktualizowana przy zapisie, a odczyt indeksu wtórnego wymaga rozproszenia/zgromadzenia we wszystkich partycjach.",
+    "options": [
+      "indeksy globalne",
+      "indeksy lokalne",
+      "indeksy partycjonujące"
+    ],
+    "correct": [
+      1
+    ]
+  },
+  {
+    "question": "Dopasuj definicję typu indeksowania w środowisku rozproszonym: Indeksy wtórne są partycjonowane oddzielnie, przy użyciu wartości indeksowanych. Wpis w indeksie wtórnym może zawierać rekordy ze wszystkich partycji klucza głównego. Gdy dokument jest zapisywany, kilka partycji indeksu wtór musi zostać zaktualizowanych; odczyt może być obsługiwany z pojedynczej partycji.",
+    "options": [
+      "indeksy globalne",
+      "indeksy lokalne",
+      "indeksy partycjonujące"
+    ],
+    "correct": [
+      0
     ]
   },
   {
@@ -853,7 +1072,8 @@
       "Tylko wybrane węźle (seeds) modą być węzłami koordynującymi."
     ],
     "correct": [
-      0
+      0,
+      1
     ]
   }
 ]
