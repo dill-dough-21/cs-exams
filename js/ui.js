@@ -54,9 +54,19 @@ export function renderStudyMode(questions, currentFilename) {
     const optionsHtml = q.options
       .map((option, optIndex) => {
         const isCorrect = q.correct.includes(optIndex);
-        const className = isCorrect ? "correct" : "incorrect2";
+        
+        let marker = "";
+        let className = "study-answer";
+        
+        if (isCorrect) {
+            className += " correct";
+            marker = `<span style="color: var(--color-correct-text); margin-right: 12px; font-weight: bold;">✓</span>`;
+        } else {
+            className += " incorrect2";
+            marker = `<span style="color: var(--color-text-tertiary); margin-right: 12px;">•</span>`; 
+        }
 
-        return `<div class="study-answer ${className}">${escapeHtml(option)}</div>`;
+        return `<div class="${className}">${marker}${escapeHtml(option)}</div>`;
       })
       .join("");
 

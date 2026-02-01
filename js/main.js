@@ -210,7 +210,10 @@ function checkAnswers() {
   
   processResults(correctQuestions, newlyLearnedCount);
 
-  document.getElementById("legend").style.display = "block";
+  document.getElementById("legend").style.display = "flex";
+  
+  // Hide Check button as it's useless now (inputs disabled)
+  document.getElementById("checkBtn").style.display = "none";
 
   if (currentMode === "random5") {
     document.getElementById("drawNextBtn").style.display = "inline-block";
@@ -252,8 +255,12 @@ function drawNextRandomQuestions() {
 
   document.getElementById("results").innerHTML = "";
   document.getElementById("legend").style.display = "none";
+  
   document.getElementById("drawNextBtn").style.display = "none";
+  // Show Check button again for new questions
+  document.getElementById("checkBtn").style.display = "inline-block";
   document.getElementById("checkBtn").disabled = false;
+  
   isChecked = false;
 
   const countInput = document.getElementById("questionCount");
@@ -281,7 +288,11 @@ function resetQuiz() {
     checkbox.disabled = false;
     checkbox.parentElement.classList.remove("correct", "incorrect", "missed");
   });
+  
+  // Show Check button again
+  document.getElementById("checkBtn").style.display = "inline-block";
   document.getElementById("checkBtn").disabled = false;
+  
   isChecked = false;
   document.getElementById("results").innerHTML = "";
   document.getElementById("legend").style.display = "none";
