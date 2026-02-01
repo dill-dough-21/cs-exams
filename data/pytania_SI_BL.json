@@ -420,87 +420,6 @@
     "correct": [3]
   },
   {
-    "question": "Które z poniższych wyrażeń jest poprawnie sformułowanym wyrażeniem w logice predykatów?",
-    "options": [
-      "$$ \\forall x \\Rightarrow P(x,y) \\vee R(z) $$",
-      "$$ (P(x) \\wedge \\exists y Q(y)) $$",
-      "$$ (P(x) \\vee \\forall Q(y)) $$",
-      "$$ P(x,y) \\wedge \\forall z (Q(z) \\vee R) $$"
-    ],
-    "correct": [1]
-  },
-  {
-    "question": "Które z wyrażeń w logice predykatów najlepiej wyraża wiedzę ze zdania „Studenci spędzają czas na nauce bądź relaksie”?",
-    "options": [
-      "$$ \\forall x(Student(x) \\rightarrow Uczysie(x) \\vee Relaksuje(x)) $$",
-      "$$ \\forall x(Uczysie(x) \\vee Relaksuje(x)) $$",
-      "$$ \\exists x(Student(x) \\rightarrow Uczysie(x) \\vee Relaksuje(x)) $$",
-      "$$ \\forall x(Student(x) \\wedge Uczysie(x) \\rightarrow Relaksuje(x)) $$"
-    ],
-    "correct": [0]
-  },
-  {
-    "question": "Unifikacja to procedura, która:",
-    "options": [
-      "z bazy zdań prawdziwych wyprowadza wnioski",
-      "prowadzi do substytucji kwantyfikatora ogólnego",
-      "zwraca listę najbardziej ogólnych podstawień sprawiających, że dwa termy stają się równoważne",
-      "podaje listę warunków do spełnienia dla predykatów"
-    ],
-    "correct": [2]
-  },
-  {
-    "question": "Jakie są podstawowe różnice między łańcuchowaniem regresywnym (ŁR) i progresywnym (ŁP)?",
-    "options": [
-      "ŁR to metoda oddolna, ŁP odgórna",
-      "ŁR zaczyna się od możliwych wniosków/hipotez, a ŁP od dowodów/faktów",
-      "ŁR generuje nowe dane, ŁP modyfikuje reguły",
-      "ŁR jest wykorzystywany do generowania reguł, ŁP do faktów"
-    ],
-    "correct": [1]
-  },
-  {
-    "question": "Przykładem zdania w logice predykatów pierwszego rzędu w koniunkcyjnej postaci normalnej (klauzulowej) jest:",
-    "options": [
-      "$$ ((Czlowiek(x) \\rightarrow Dobry(x)) $$",
-      "$$ \\{ \\neg Z\\_pompei(y) \\vee Rzymianin(y) \\} $$",
-      "$$ \\{ A \\wedge (B \\wedge C) \\} \\leftrightarrow \\{ (A \\wedge B) \\wedge C \\} $$",
-      "$$ Lubi(z, Ptaki) \\vee Nienawidzi(z, Ptaki) $$"
-    ],
-    "correct": [1]
-  },
-  {
-    "question": "Algorytm rezolucji działa zgodnie z zasadą: formuła B jest wnioskiem z bazy wiedzy A wtedy i tylko wtedy, gdy:",
-    "options": [
-      "$$ A \\rightarrow B $$ jest niespełnialna",
-      "$$ A \\wedge B $$ jest spełnialna",
-      "$$ A \\wedge \\neg B $$ jest niespełnialna",
-      "$$ A \\leftarrow B $$ jest niespełnialna"
-    ],
-    "correct": [2]
-  },
-  {
-    "question": "Które ze stwierdzeń najdokładniej opisuje, czym jest kod w języku programowania Prolog?",
-    "options": [
-      "zbiór wyrażeń w logice predykatów dowolnego rzędu",
-      "zbiór klauzul Horna z głową (każda z jednym pozytywnym predykatem)",
-      "zbiór klauzul Horna bez głowy",
-      "zbiór dowolnych klauzul"
-    ],
-    "correct": [1]
-  },
-  {
-    "question": "W logice predykatów podane jest zdanie $$ \\forall z(Czlowiek(z) \\wedge Prawo\\_jazdy(z) \\rightarrow Kierowca(z)) $$. Jaki jest poprawny kod w Prologu?",
-    "options": [
-      "kierowca(X) :- prawo_jazdy(X), czlowiek(X).",
-      "czlowiek(X) :- prawo_jazdy(X), kierowca(X).",
-      "prawo_jazdy(X), czlowiek(X) :- kierowca(X).",
-      "prawo_jazdy(X), czlowiek(X)."
-    ],
-    "correct": [0]
-  },
-
-  {
     "question": "W grze w „naśladownictwo” rozważanej przez Turinga bierze udział:",
     "options": [
       "1 gracz i 1 pytający",
@@ -1591,16 +1510,6 @@
     "correct": [1]
   },
   {
-    "question": "W logice predykatów pierwszego rzędu podane jest zdanie $$ \\forall_x \\text{smok}(x) \\vee \\text{wilkolak}(x) \\Rightarrow \\text{postacMagiczna}(x) $$. Poprawny kod w Prologu to:",
-    "options": [
-      "smok(x) :- postacMagiczna(x).",
-      "postacMagiczna(X) :- smok(X); wilkolak(X).",
-      "postacMagiczna(X) :- smok(X), wilkolak(X).",
-      "smok(x); wilkolak(x) :- postacMagiczna(x)."
-    ],
-    "correct": [1]
-  },
-  {
     "question": "Algorytmy genetyczne są przeznaczone do:",
     "options": [
       "rozwiązywania problemów optymalizacji w sposób przybliżony",
@@ -1609,16 +1518,6 @@
       "rozwiązywania problemów optymalizacji w sposób dokładny"
     ],
     "correct": [0]
-  },
-  {
-    "question": "Dana jest reguła: IF A ($$ LS=2.0, LN=0.3 $$) THEN B. Jeżeli zdarzenie A zaistniało, to:",
-    "options": [
-      "współczynnik LS zmniejszy przekonanie o B",
-      "współczynnik LN zwiększy przekonanie o B",
-      "prawdopodobieństwo B nie zmieni się",
-      "poprzez swoją wartość współczynnik LS zwiększy przekonanie o prawdopodobieństwie zdarzenia B"
-    ],
-    "correct": [3]
   },
   {
     "question": "W sieci bayesowskiej węzły reprezentują:",
@@ -1679,16 +1578,6 @@
       "$$ \\frac{b^{D+1}-1}{b-1} $$"
     ],
     "correct": [3]
-  },
-  {
-    "question": "Modus ponendo ponens (Modus ponens) wyraża regułę:",
-    "options": [
-      "Jeżeli $$ P \\Rightarrow Q $$ i $$ P $$, to $$ Q $$",
-      "Jeżeli $$ P \\Rightarrow Q $$ i $$ Q \\Rightarrow R $$, to $$ R $$",
-      "Jeżeli $$ P \\Rightarrow Q $$ i $$ \\neg P $$, to $$ \\neg Q $$",
-      "Jeżeli $$ P \\Rightarrow Q $$ i $$ \\neg Q $$, to $$ \\neg P $$"
-    ],
-    "correct": [0]
   },
   {
     "question": "Pewien algorytm genetyczny: $$ f(x_1)=5, f(x_2)=1, f(x_3)=10, f(x_4)=2, f(x_5)=2 $$. Selekcja ruletkowa. Wskaż prawdziwe zdanie:",
@@ -1759,16 +1648,6 @@
       "Jeżeli $$ P \\Rightarrow Q $$ i $$ \\neg Q $$, to $$ P $$"
     ],
     "correct": [1]
-  },
-  {
-    "question": "W logice predykatów: $$ \\forall_x \\text{wiedzmin}(x) \\Rightarrow \\text{mutant}(x) $$. Kod w Prologu:",
-    "options": [
-      "wiedzmin(x). mutant(x).",
-      "wiedzmin(x) :- mutant(x).",
-      "mutant(x) :- wiedzmin(x).",
-      "wiedzmin(x), mutant(x)."
-    ],
-    "correct": [2]
   },
   {
     "question": "Szachy AI: depth 3.5 + quiescence + transposition table. Co najbardziej pogorszy grę?",
@@ -2040,31 +1919,6 @@
     ],
     "correct": [0]
   },
-
-  {
-    "question": "W logice predykatów pierwszego rzędu podane jest zdanie \\\\forall x smok(x) v wilkolak(x) => postacMagiczna(x) Jaki Jest poprawny kod w Prologu wyrażający tą zależność",
-    "options": [
-      "a. smok(x) :- postacMagiczna(x). wilkolak(x):- postacMagiczna(x)",
-      "b. postacMagiczna(x):- smok(x); wilkolak(x)",
-      "c. postacMagiczna(x) :- smok(x), wilkolak(x)",
-      "d. smok(x); wilkolak(x) :- potacMagiczna(x)"
-    ],
-    "correct": [
-      1
-    ]
-  },
-  {
-    "question": "Co to jest baza wiedzy? Wybierz jedną odpowiedż",
-    "options": [
-      "a. Element systemu, który stosuje zasady logiczne by wydedukował nowe informacje.",
-      "b. Zbiór danych zapisanych zgodnie z określonymi regułami, np w postaci tabeli wypełnionej wartościami.",
-      "c. Element systemu, który zarządza danymi najczęściej w architekturze klient-serwer.",
-      "d. Zbiór zdań w języku formalnym np. w języku opartym na paradygmatach logiki zależny od opisywanej dziedziny/obszaru."
-    ],
-    "correct": [
-      3
-    ]
-  },
   {
     "question": "Algorytmy genetyczne sa przeznaczone:",
     "options": [
@@ -2086,18 +1940,6 @@
     ],
     "correct": [
       1
-    ]
-  },
-  {
-    "question": "Dana jest reguła: IF zdarzenie A (LS=2.0, LN=0.3] THEN zdarzenie B Jeżeli podano dowód, zdarzenie A zaistniało, to",
-    "options": [
-      "a. poprzez swoją wartość współczynnik LS zmniejszy przekonanie o prawdopodobieństwie zdarzenia B.",
-      "b. poprzez swoją wartość współczynnik LN zwiększy przekonanie 0 prawdopodobieństwie zdarzenia B.",
-      "c. prawdopodobieństwo zdarzenia B nie zmieni się.",
-      "d. poprzez swoją wartość współczynnik LS zwiększy przekonanie o prawdopodobieństwie zdarzenia B."
-    ],
-    "correct": [
-      3
     ]
   },
   {
@@ -2149,30 +1991,6 @@
     ]
   },
   {
-    "question": "Kod w języku programowania Prolog to zbiór",
-    "options": [
-      "a. zdań w rachunku zdań,",
-      "b. klauzul Horna. czyli takich. które zawierają więcej niż jeden niezanegowany predykat.",
-      "c. klauzul Horna, czyli takich, które zawierają co najwyżej jeden niezanegowany predykat",
-      "d. dowolnych zdań w logice predykatów pierwszego rzędu."
-    ],
-    "correct": [
-      2
-    ]
-  },
-  {
-    "question": "Modus ponendo ponens (Modus ponens) wyraża",
-    "options": [
-      "a. Jeżeli prawdziwe jest P => Q i P, to wnioskujemy prawdziwość Q",
-      "b. Jeżeli prawdziwe jest P => Q i Q =?, to wnioskujemy prawdziwość R",
-      "c. Jeżeli prawdziwe jest P => Q i ~P, to wnioskujemy prawdziwość Q",
-      "d. Jeżeli prawidzwe jest P => Q i ~Q, to wnioskujemy prawdziwość P"
-    ],
-    "correct": [
-      0
-    ]
-  },
-  {
     "question": "Dla sieci MLP z jedną warstwą ukrytą, pochodne błędu kwadratowego wag v_k,j można wyrazić wzorem",
     "options": [
       "a. (yMLP-yi)wkϕk(1-ϕk)xi,j",
@@ -2221,17 +2039,6 @@
     ]
   },
   {
-    "question": "Unifikacja to a, Procedura wnioskowania z użyciem reguły modus ponens.",
-    "options": [
-      "b. procedura/algorytm, w wyniku której uzyskuje się usunięcie wielkiego kwantyfikatora „dla każdego\".",
-      "c. procedura/algorytm, w wyniku której uzyskuje się listę najbardziej ogólnych podstawień sprawiających, że dwa termy stają się równoważne.",
-      "d. procedura nazwana też skolemizacją zastępująca kwantyfikator mały „istnieje”."
-    ],
-    "correct": [
-      1
-    ]
-  },
-  {
     "question": "Jeżeli zdarzenia dwa zdarzenia A, B są niezależne to:",
     "options": [
       "a. P(A|B) = P(A)",
@@ -2268,18 +2075,6 @@
     ]
   },
   {
-    "question": "W logice predykatów pierwszego rzędu podane jest zdanie \\\\forall x wiedzmin(x) => mutant(x) Jaki jest poprawny kod w Prologu wyrażający tą zależność?",
-    "options": [
-      "a. wiedzmin(x). mutant(x).",
-      "b. wiedzmin(x):- mutant(x).",
-      "c. mutant(x):- wiedzmin(x).",
-      "d. wiedzmin(x), mutant(x)."
-    ],
-    "correct": [
-      2
-    ]
-  },
-  {
     "question": "Powiedzmy, że pewna sztuczna inteligencja do gry w szachy pracuje z uzyciem nastaw: „przycinanie alpha-beta\" + głęboko\" 3.5 queiescence + tablica transpozycji. Wskaż zmianę, która statystycznie spoe.oduje największe pogorszenie jakości gry tej sztucznej inteligencji.",
     "options": [
       "a. przełączenie algorytmu na \"MIN-MAX\"",
@@ -2289,18 +2084,6 @@
     ],
     "correct": [
       2
-    ]
-  },
-  {
-    "question": "Baza wiedzy to:",
-    "options": [
-      "a. Zbiór danych w postaci tabeli z atrybutami i decyzją.",
-      "b. Zbiór zdań w języku formalnym np. w języku opartym na paradygmatach logiki.",
-      "c. Element systemu, który stosuje procedury by wydedllkować nowe informacje.",
-      "d. Element systemu, który zarządza danymi najczęściej w architekturze klient-serwer."
-    ],
-    "correct": [
-      1
     ]
   },
   {

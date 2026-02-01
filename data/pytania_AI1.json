@@ -1,0 +1,170 @@
+[
+  {
+    "question": "W Google Images Search można wskazać typy licencji obrazków: (1) Dowolna, (2) Do ponownego wykorzystania z modyfikacją, (3) Do ponownego wykorzystania, (4) Do ponownego wykorzystania w celach niekomercyjnych z modyfikacją, (5) Do ponownego wykorzystania w celach niekomercyjnych. Które z powyższych można wykorzystać do wstawienia na witrynę WWW przedsiębiorstwa?",
+    "options": [
+      "(1)",
+      "(2) oraz (3)",
+      "(4) oraz (5)",
+      "(2), (3), (4), (5)"
+    ],
+    "correct": [
+      1
+    ]
+  },
+  {
+    "question": "Z wykorzystaniem jakich znaczników tworzone są listy wypunktowane (nieuporządkowane)?",
+    "options": [
+      "ol do listy i li do pozycji listy",
+      "ul do listy i li do pozycji listy",
+      "list do listy i ol do pozycji listy",
+      "list do listy i ul do pozycji listy"
+    ],
+    "correct": [
+      1
+    ]
+  },
+  {
+    "question": "Który znacznik służy do umieszczania obrazków w HTML?",
+    "options": [
+      "<image>",
+      "<img>",
+      "<figure>",
+      "<media>"
+    ],
+    "correct": [
+      1
+    ]
+  },
+  {
+    "question": "Jaką właściwość i wartość w CSS należy wykorzystać do ustawienia przezroczystości obrazka na 25% (czyli obrazek ma być w 75% widoczny/nieprzezroczysty)?",
+    "options": [
+      "transparency: 0.25",
+      "transparency: 0.75",
+      "opacity: 0.25",
+      "opacity: 0.75"
+    ],
+    "correct": [
+      3
+    ]
+  },
+  {
+    "question": "Wykonano kod JS: let a = false; let i = 0; if(a) console.log( increasing i); i += 1; console.log(i); Jaka wartość zmiennej i została wydrukowana?",
+    "options": [
+      "0",
+      "1",
+      "false",
+      "brak poprawnej odpowiedzi"
+    ],
+    "correct": [
+      1
+    ]
+  },
+  {
+    "question": "Wskaż wynik porównania Artur < Zorro",    
+    "options": [
+      "true",
+      "false",
+      "null",
+      "undefined"
+    ],
+    "correct": [
+      0
+    ]
+  },
+  {
+    "question": "Wykonano kod z ramki: let a = \"5\"; let b = 1; console.log(a+b); Jaka wartość została wydrukowana?",
+    "options": [
+      "5",
+      "1",
+      "6",
+      "51"
+    ],
+    "correct": [
+      3
+    ]
+  },
+  {
+    "question": "Jak policzyć liczbę znaków w ciągu tekstowym w JavaScript?",
+    "options": [
+      "\"abc\".length",
+      "length(\"abc\")",
+      "\"abc\".count()",
+      "\"abc\".size"
+    ],
+    "correct": [
+      0
+    ]
+  },
+  {
+    "question": "Który wzorzec projektowy definiuje rodzinę algorytmów, hermetyzuje każdy z nich i czyni je wymiennymi (pozwala na dynamiczną zmianę)?",
+    "options": [
+      "Builder",
+      "Strategy (Strategia)",
+      "Facade (Fasada)",
+      "Singleton"
+    ],
+    "correct": [
+      1
+    ]
+  },
+  {
+    "question": "W jakim celu wykonuje się badanie słów kluczowych przed pisaniem tekstów (SEO)?",
+    "options": [
+      "Żeby tekst był dłuższy i miał więcej znaków",
+      "Żeby lepiej dopasować treść artykułu do tego, czego szukają użytkownicy",
+      "Żeby ukryć tekst przed robotami Google",
+      "Żeby zablokować indeksowanie strony"
+    ],
+    "correct": [
+      1
+    ]
+  },
+  {
+    "question": "Która metoda HTTP służy do zastąpienia CAŁOŚCI istniejącej encji w systemie?",
+    "options": [
+      "GET",
+      "POST",
+      "PUT",
+      "PATCH"
+    ],
+    "correct": [
+      2
+    ]
+  },
+  {
+    "question": "Która metoda HTTP służy do zastąpienia FRAGMENTU istniejącej encji w systemie?",
+    "options": [
+      "GET",
+      "POST",
+      "PUT",
+      "PATCH"
+    ],
+    "correct": [
+      3
+    ]
+  },
+  {
+    "question": "Który plik służy do głównej konfiguracji projektu w Cordova (ID, wersja, nazwa)?",
+    "options": [
+      "config.json",
+      "config.xml",
+      "parameters.yml",
+      "AndroidManifest.xml"
+    ],
+    "correct": [
+      1
+    ]
+  },
+  {
+    "question": "W jakim języku programowania tworzy się aplikacje w Cordova (bezpośrednio przez programistę)?",
+    "options": [
+      "Java / Swift",
+      "C++",
+      "JavaScript / HTML / CSS",
+      "Python"
+    ],
+    "correct": [
+      2
+    ]
+  }
+]

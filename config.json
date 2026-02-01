@@ -67,6 +67,11 @@
           "name": "IPZ",
           "file": "data/pytaniaIPZ.json",
           "description": "Pytania z IPZ"
+        },
+        {
+          "name": "Sztuczna inteligencja (bez logiki)",
+          "file": "data/pytania_SI_BL.json",
+          "description": "Pytania ze Sztuczna inteligencja (bez logiki)"
         }
       ]
     }
