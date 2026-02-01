@@ -260,6 +260,7 @@ function drawNextRandomQuestions() {
   if (currentMode !== "random5") return;
 
   document.getElementById("results").innerHTML = "";
+  document.getElementById("results").innerHTML = "";
   document.getElementById("legend").style.display = "none";
   
   document.getElementById("drawNextBtn").style.display = "none";
@@ -299,6 +300,7 @@ function resetQuiz() {
   document.getElementById("checkBtn").disabled = false;
   
   isChecked = false;
+  document.getElementById("results").innerHTML = "";
   document.getElementById("results").innerHTML = "";
   document.getElementById("legend").style.display = "none";
   document.getElementById("drawNextBtn").style.display = "none";

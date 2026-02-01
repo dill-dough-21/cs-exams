@@ -64,9 +64,7 @@ p, small { color: var(--color-text-secondary); }
   animation: fadeInUp 0.6s ease-out;
 }
 
-.hidden {
-  display: none;
-}
+
 
 .file-card, .mode-btn, .quiz-info, .question, .score, .controls {
   background: var(--color-card-bg);
@@ -503,4 +501,8 @@ button:disabled {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.hidden {
+  display: none;
 }
