@@ -67,6 +67,11 @@
           "name": "IPZ",
           "file": "data/pytaniaIPZ.json",
           "description": "Pytania z IPZ"
+        },
+	{
+          "name": "Aplikacje Internetowe",
+          "file": "data/pytaniaAI.json",
+          "description": "Pytania z Aplikacji Internetowych"
         }
       ]
     }
