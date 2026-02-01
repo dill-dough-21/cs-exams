@@ -72,6 +72,11 @@
           "name": "Sztuczna inteligencja (bez logiki)",
           "file": "data/pytania_SI_BL.json",
           "description": "Pytania ze Sztuczna inteligencja (bez logiki)"
+        },
+	{
+          "name": "Aplikacje Internetowe",
+          "file": "data/pytaniaAI.json",
+          "description": "Pytania z Aplikacji Internetowych"
         }
       ]
     }
