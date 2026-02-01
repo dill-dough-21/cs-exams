@@ -1219,5 +1219,773 @@
       "nagłówek uwierzytelnienia (AH)"
     ],
     "correct": [1]
+  },
+  {
+    "question": "Proces działający w imieniu użytkownika, który próbuje uzyskać dostęp do pliku jest znany jako:",
+    "options": [
+      "obiekt",
+      "podmiot (subject)",
+      "zasób",
+      "wybór operacji"
+    ],
+    "correct": [
+      1
+    ]
+  },
+  {
+    "question": "W modelu ... użytkownik końcowy nie może zmieniać ustawień jakichkolwiek zabezpieczeń (decyduje administrator/polityka).",
+    "options": [
+      "Discretionary Access Control (DAC)",
+      "Mandatory Access Control (MAC)",
+      "Security Access Control (SAC)",
+      "RAC"
+    ],
+    "correct": [
+      1
+    ]
+  },
+  {
+    "question": "Lista kontroli dostępu (ACL) jest zbiorem uprawnień dołączonym do:",
+    "options": [
+      "podmiotu",
+      "modyfikatora obiektu",
+      "obiektu",
+      "desygnatora wpisu zabezpieczeń"
+    ],
+    "correct": [
+      2
+    ]
+  },
+  {
+    "question": "... wykorzystuje system plikowy NTFS w systemie operacyjnym Windows do automatycznego szyfrowania wszystkich plików.",
+    "options": [
+      "Encrypting File System (EFS)",
+      "GNU PGP",
+      "IDEA",
+      "SHA-1"
+    ],
+    "correct": [
+      0
+    ]
+  },
+  {
+    "question": "Zaznacz zdanie prawdziwe o podpisie cyfrowym z załącznikiem:",
+    "options": [
+      "polega na obliczeniu wartości skrótu z wiadomości, a następnie zaszyfrowaniu tego skrótu za pomocą klucza prywatnego",
+      "polega na szyfrowaniu całej wiadomości kluczem prywatnym",
+      "polega na szyfrowaniu skrótu kluczem publicznym",
+      "nie zapewnia integralności"
+    ],
+    "correct": [
+      0
+    ]
+  },
+  {
+    "question": "Które z poniższych plików odgrywają kluczową rolę w zapobieganiu atakom słownikowym na Unix/Linux (przechowują hasła)?",
+    "options": [
+      "/etc/passwd",
+      "/etc/shadow",
+      "/etc/group",
+      "/etc/security"
+    ],
+    "correct": [
+      1
+    ]
+  },
+  {
+    "question": "Która z poniższych operacji skupia się bardziej na badaniu wzorców i trendów związanych z danymi, aniżeli na ich rzeczywistej zawartości?",
+    "options": [
+      "rejestrowanie zdarzeń",
+      "monitorowanie klawiatury",
+      "analiza ruchu",
+      "audyt bezpieczeństwa"
+    ],
+    "correct": [
+      2
+    ]
+  },
+  {
+    "question": "Co oznacza „bezpieczeństwo schematu szyfrowego\"?",
+    "options": [
+      "klucz jest niemożliwy do odgadnięcia",
+      "algorytm jest tajny",
+      "szyfrogram wygląda jak losowy ciąg bitów",
+      "adwersarz ne powinien uzyskać żadnej dodatkowej informacji o wiadomości na podstawie szyfrogramu"
+    ],
+    "correct": [
+      3
+    ]
+  },
+  {
+    "question": "Zagrożenie zrealizuje się jeśli:",
+    "options": [
+      "Istnieje tylko podatność",
+      "Istnieje tylko zagrożenie",
+      "Zagrożenie wykorzysta podatność (zbieg okoliczności)",
+      "Mamy firewall"
+    ],
+    "correct": [
+      2
+    ]
+  },
+  {
+    "question": "Protokół Kerberos służy głównie do:",
+    "options": [
+      "Szyfrowania dysków",
+      "Uwierzytelniania w sieciach otwartych przy użyciu zaufanej trzeciej strony (KDC)",
+      "Ochrony przed wirusami",
+      "Filtrowania pakietów"
+    ],
+    "correct": [
+      1
+    ]
+  },
+  {
+    "question": "Co zapewnia protokół SSH?",
+    "options": [
+      "Tylko kompresję",
+      "Bezpieczny (szyfrowany) zdalny dostęp do terminala",
+      "Ochronę tylko przed wirusami",
+      "Nic, to protokół otwarty tekstem"
+    ],
+    "correct": [
+      1
+    ]
+  },
+  {
+    "question": "Czy SSL chroni przed atakiem \"Traffic Analysis\" (analiza ruchu)?",
+    "options": [
+      "Tak, całkowicie",
+      "Nie, ponieważ nagłówki TCP/IP i wielkość pakietów są widoczne",
+      "Tak, bo szyfruje wszystko",
+      "Zależy od wersji"
+    ],
+    "correct": [
+      1
+    ]
+  },
+  {
+    "question": "Korzyści z zastosowania VLAN:",
+    "options": [
+      "Ograniczenie domen rozgłoszeniowych",
+      "Zwiększenie bezpieczeństwa (segmentacja)",
+      "Łatwość zarządzania logicznego",
+      "Wszystkie powyższe"
+    ],
+    "correct": [
+      3
+    ]
+  },
+  {
+    "question": "Jaka była główna różnica między wirusem a robakiem (Worm)?",
+    "options": [
+      "Wirus szyfruje pliki, robak je kasuje",
+      "Robak potrzebuje pliku-nosiciela, wirus nie",
+      "Wirus potrzebuje pliku-nosiciela (hosta) do replikacji, a robak jest samodzielnym programem replikującym się przez sieć",
+      "Nie ma różnicy"
+    ],
+    "correct": [
+      2
+    ]
+  },
+  {
+    "question": "Czym charakteryzuje się atak typu \"Logic Bomb\" (bomba logiczna)?",
+    "options": [
+      "Wybucha fizycznie w serwerowni",
+      "Jest to złośliwy kod, który uruchamia się po spełnieniu określonego warunku logicznego (np. konkretna data)",
+      "Jest to atak na protokół logiczny TCP",
+      "Polega na zgadywaniu loginu"
+    ],
+    "correct": [
+      1
+    ]
+  },
+  {
+    "question": "Najlepszą metodą ochrony przed atakiem SQL Injection jest:",
+    "options": [
+      "Firewall",
+      "Szyfrowanie bazy danych",
+      "Walidacja danych wejściowych i używanie zapytań parametryzowanych",
+      "Używanie długich haseł"
+    ],
+    "correct": [
+      2
+    ]
+  },
+  {
+    "question": "Przejmowanie aktywnej sesji po wstawieniu się między klienta a serwer to:",
+    "options": [
+      "Spoofing",
+      "Session Hijacking",
+      "Sniffing",
+      "Phishing"
+    ],
+    "correct": [
+      1
+    ]
+  },
+  {
+    "question": "Czy następujące środki (całodobowa administracja, antywirusy, audyty, odłączanie sieci) są wystarczające, aby całkowicie wyeliminować lub ograniczyć do zera skutek ataku wirusowego?",
+    "options": [
+      "Tak, jeśli stosowane są łącznie",
+      "Tak, ale tylko przy odłączeniu od sieci",
+      "Nie / Żaden z powyższych",
+      "Tylko audyty dają pewność"
+    ],
+    "correct": [
+      2
+    ]
+  },
+  {
+    "question": "Co to jest \"ryzyko szczątkowe\" (residual risk)?",
+    "options": [
+      "Ryzyko przed wdrożeniem zabezpieczeń",
+      "Ryzyko, które pozostaje po wdrożeniu zabezpieczeń i mechanizmów kontrolnych",
+      "Ryzyko niemożliwe do zidentyfikowania",
+      "Ryzyko związane z awarią sprzętu"
+    ],
+    "correct": [
+      1
+    ]
+  },
+  {
+    "question": "W modelu oszacowania ryzyka, \"Zagrożenie\" (Threat) definiuje się jako:",
+    "options": [
+      "Słabość systemu",
+      "Potencjalną przyczynę niepożądanego zdarzenia, która może wyrządzić szkodę systemowi lub organizacji",
+      "Wartość straty finansowej",
+      "Zabezpieczenie systemu"
+    ],
+    "correct": [
+      1
+    ]
+  },
+  {
+    "question": "Dokument polityki bezpieczeństwa informacji NIE powinien być:",
+    "options": [
+      "Zatwierdzony przez kierownictwo",
+      "Opublikowany dla pracowników",
+      "Zmieniany na bieżąco na każde żądanie bez procedury (lub \"tajny dla administratorów\")",
+      "Poddawany przeglądom"
+    ],
+    "correct": [
+      2
+    ]
+  },
+  {
+    "question": "Odebranie praw dostępu do wrażliwych danych następuje zazwyczaj:",
+    "options": [
+      "na czas odbywania urlopu",
+      "na żądanie administratora bezpieczeństwa informacji",
+      "podczas zmiany stanowiska i/lub przechodzeniu do innego działu",
+      "na czas odbywaniu szkolenia"
+    ],
+    "correct": [
+      2
+    ]
+  },
+  {
+    "question": "Technika ukrywania faktu istnienia komunikacji poprzez ukrywanie informacji w innym pliku (np. w obrazie) to:",
+    "options": [
+      "Kryptografia",
+      "Steganografia",
+      "Analiza ruchu",
+      "Znak wodny"
+    ],
+    "correct": [
+      1
+    ]
+  },
+  {
+    "question": "Praktyka polegająca na przechowywaniu kopii klucza prywatnego przez zaufaną stronę trzecią (na wypadek utraty lub na potrzeby organów ścigania) to:",
+    "options": [
+      "Zarządzanie certyfikatami",
+      "Dystrybucja kluczy",
+      "Depozyt kluczy (Key Escrow)",
+      "Kerberos"
+    ],
+    "correct": [
+      2
+    ]
+  },
+  {
+    "question": "Które z poniższych działań NIE są zazwyczaj uważane za formę etycznych testów penetracyjnych, a raczej za działanie szkodliwe/przestępcze?",
+    "options": [
+      "Ataki odmowy usługi (DoS)",
+      "Skanowanie portów",
+      "Dystrybucja złośliwego oprogramowania (np. wirusów) w sieci produkcyjnej",
+      "Próby łamania haseł"
+    ],
+    "correct": [
+      2
+    ]
+  },
+  {
+    "question": "Szyfrowanie na łączu jest lepsze niż szyfrowanie punkt-punkt, ponieważ:",
+    "options": [
+      "nikt (poza nadawcą i odbiorcą na danym odcinku) nie jest w stanie poznać zawartości przesyłanej wiadomości ani nagłówków (ukrywa analizę ruchu)",
+      "nie wymaga deszyfrowania na węzłach pośrednich",
+      "jest szybsze",
+      "wymaga mniej kluczy"
+    ],
+    "correct": [
+      0
+    ]
+  },
+  {
+    "question": "W jakim celu stosuje się \"rozciąganie\" (stretching) klucza lub wielokrotne haszowanie hasła?",
+    "options": [
+      "Aby skrócić czas logowania",
+      "Aby utrudnić ataki brute-force/słownikowe poprzez zwiększenie kosztu obliczeniowego sprawdzenia jednego hasła",
+      "Aby hasło zajmowało mniej miejsca na dysku",
+      "Aby umożliwić odzyskanie haseł"
+    ],
+    "correct": [
+      1
+    ]
+  },
+  {
+    "question": "Jaki typ zapory sieciowej (firewall) pracuje w warstwie aplikacji modelu ISO/OSI i rozumie protokoły takie jak HTTP czy FTP?",
+    "options": [
+      "Filtr pakietów (Packet Filter)",
+      "Bramka poziomu obwodu (Circuit-level Gateway)",
+      "Bramka aplikacji / Proxy (Application Gateway)",
+      "Stateful Inspection"
+    ],
+    "correct": [
+      2
+    ]
+  },
+  {
+    "question": "Jaka jest rola Monitora Referencyjnego (Reference Monitor) w Zaufanej Bazie Obliczeniowej (TCB)?",
+    "options": [
+      "Skanowanie dysku antywirusem",
+      "Pośredniczenie w każdym żądaniu dostępu podmiotu do obiektu i weryfikacja uprawnień",
+      "Monitorowanie wydajności procesora",
+      "Tworzenie kopii zapasowych"
+    ],
+    "correct": [
+      1
+    ]
+  },
+  {
+    "question": "Co oznacza SYN flood?",
+    "options": [
+      "Atak na warstwę aplikacji",
+      "Przepełnienie bufora pamięci",
+      "Atak typu odmowa usługi (DoS) na bufory TCP",
+      "Skanowanie portów"
+    ],
+    "correct": [
+      2
+    ]
+  },
+  {
+    "question": "Atak wykorzystujący paradoks dnia urodzin dotyczy:",
+    "options": [
+      "Haseł",
+      "Kluczy RSA",
+      "Znajdowania kolizji funkcji skrótu",
+      "Szyfrów strumieniowych"
+    ],
+    "correct": [
+      2
+    ]
+  },
+  {
+    "question": "Wada oprogramowania pozwalająca na dostęp do systemu bez hasła (np. pozostawiona przez programistę):",
+    "options": [
+      "Backdoor / Wytrych",
+      "Wirus",
+      "Robak",
+      "Sniffer"
+    ],
+    "correct": [
+      0
+    ]
+  },
+  {
+    "question": "Certyfikat klucza publicznego wiąże:",
+    "options": [
+      "Tożsamość użytkownika z jego kluczem publicznym",
+      "Klucz prywatny z publicznym",
+      "Podpis z użytkownikiem",
+      "Klucz prywatny z podpisem"
+    ],
+    "correct": [
+      0
+    ]
+  },
+  {
+    "question": "Najsilniejszą technologią, która daje pewność Alicji, że nadawcą wiadomości jest Bob jest:",
+    "options": [
+      "Podpis cyfrowy",
+      "Certyfikat cyfrowy",
+      "Skrót",
+      "Zaszyfrowany podpis"
+    ],
+    "correct": [
+      0
+    ]
+  },
+  {
+    "question": "W hierarchicznym modelu zaufania klucz prywatny roota (głównego CA) musi być:",
+    "options": [
+      "Dostępny publicznie",
+      "Zmieniany codziennie",
+      "Znany wszystkim użytkownikom",
+      "Bardzo mocno chroniony"
+    ],
+    "correct": [
+      3
+    ]
+  },
+  {
+    "question": "Określenie ogólnych celów (funkcji) zabezpieczeń to:",
+    "options": [
+      "Oszustwo i kradzież",
+      "Zapobieganie, Wykrywanie, Odtwarzanie",
+      "Szyfrowanie, Haszowanie, Podpisywanie",
+      "Poufność, Prywatność, Anonimowość"
+    ],
+    "correct": [
+      1
+    ]
+  },
+  {
+    "question": "Która z poniższych zasad stosowana w systemach kontroli dostępu oznacza, że każdemu może być przydzielona jedynie minimalny zbiór uprawnień niezbędnych tej osobie podczas pełnienia swojej funkcji w pracy?",
+    "options": [
+      "Pełnej odmowy",
+      "Najmniejszych uprawnień (Least Privilege)",
+      "Bezpieczeństwa korporacyjnego",
+      "Obowiązkowych ograniczeń"
+    ],
+    "correct": [
+      1
+    ]
+  },
+  {
+    "question": "Ile rund występuje w standardowym algorytmie szyfrowania DES (Data Encryption Standard)?",
+    "options": [
+      "10",
+      "12",
+      "16",
+      "32"
+    ],
+    "correct": [
+      2
+    ]
+  },
+  {
+    "question": "Jaka jest minimalna liczba kluczy używanych w algorytmie 3DES, aby zapewnić wyższy poziom bezpieczeństwa niż standardowy DES?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "correct": [
+      1
+    ]
+  },
+  {
+    "question": "Który z poniższych algorytmów kryptograficznych NIE jest algorytmem symetrycznym?",
+    "options": [
+      "DES",
+      "AES",
+      "RSA",
+      "Blowfish"
+    ],
+    "correct": [
+      2
+    ]
+  },
+  {
+    "question": "Który z trybów pracy szyfrów blokowych (np. DES lub AES) jest uznawany za najmniej bezpieczny, ponieważ identyczne bloki tekstu jawnego są szyfrowane na identyczne bloki szyfrogramu?",
+    "options": [
+      "CBC",
+      "ECB",
+      "CFB",
+      "OFB"
+    ],
+    "correct": [
+      1
+    ]
+  },
+  {
+    "question": "W trybie CBC (Cipher Block Chaining) - jeśli podczas transmisji jeden blok szyfrogramu zostanie uszkodzony (np. zmieniony jeden bit), to na które bloki odszyfrowanej wiadomości wpłynie ten błąd?",
+    "options": [
+      "Tylko na jeden odpowiadający mu blok",
+      "Na ten blok oraz następny blok",
+      "Na całą dalszą część wiadomości",
+      "Nie wpłynie na żaden blok"
+    ],
+    "correct": [
+      1
+    ]
+  },
+  {
+    "question": "W przypadku szyfrowania algorytmem DES w trybie CBC:",
+    "options": [
+      "Poprzednia wartość wektora roboczego wpływa na szyfrogram kolejnego bloku",
+      "Każdy blok szyfrowany jest niezależnie",
+      "Nie wykorzystuje się wektora inicjującego (IV)",
+      "Błędy nie propagują się pomiędzy blokami"
+    ],
+    "correct": [
+      0
+    ]
+  },
+  {
+    "question": "Który z poniższych algorytmów klucza symetrycznego jest obecnie uznawany za najsilniejszy i powszechnie stosowany standard kryptografii symetrycznej?",
+    "options": [
+      "DES",
+      "3DES",
+      "AES",
+      "2DES"
+    ],
+    "correct": [
+      2
+    ]
+  },
+  {
+    "question": "Algorytm RSA:",
+    "options": [
+      "Jest algorytmem symetrycznym",
+      "Jest algorytmem asymetrycznym (Rivest, Shamir, Adleman)",
+      "Jest algorytmem prywatnym",
+      "Nazwa oznacza Rational Signing Algorithm"
+    ],
+    "correct": [
+      1
+    ]
+  },
+  {
+    "question": "Dana jest wiadomość M podpisana cyfrowo algorytmem DSA. Które stwierdzenie jest poprawne?",
+    "options": [
+      "Można odtworzyć treść wiadomości M na podstawie samego podpisu",
+      "Podpis cyfrowy szyfruje całą wiadomość",
+      "Klucz prywatny służy do weryfikacji podpisu",
+      "Nie można odtworzyć wiadomości M na podstawie samego podpisu - potrzebna jest treść wiadomości"
+    ],
+    "correct": [
+      3
+    ]
+  },
+  {
+    "question": "Czym jest \"salting\" (solenie) w kontekście bezpiecznego przechowywania haseł?",
+    "options": [
+      "Dodawaniem losowych danych do hasła przed haszowaniem w celu ochrony przed atakami słownikowymi i tęczowymi tablicami",
+      "Szyfrowaniem hasła kluczem publicznym",
+      "Zapisywaniem hasła w postaci jawnej",
+      "Wymuszaniem zmiany hasła co 30 dni"
+    ],
+    "correct": [
+      0
+    ]
+  },
+  {
+    "question": "Do czego służą tęczowe tablice (Rainbow Tables)?",
+    "options": [
+      "Do szyfrowania danych",
+      "Do przyspieszania łamania haseł poprzez odwracanie funkcji skrótu",
+      "Do generowania kluczy kryptograficznych",
+      "Do ochrony systemów przed wirusami"
+    ],
+    "correct": [
+      1
+    ]
+  },
+  {
+    "question": "Tokeny sprzętowe generujące hasła jednorazowe (OTP):",
+    "options": [
+      "Mogą działać w trybie challenge-response",
+      "Mogą wykorzystywać synchronizację czasu",
+      "Zapewniają silne uwierzytelnianie",
+      "Wszystkie powyższe odpowiedzi są poprawne"
+    ],
+    "correct": [
+      3
+    ]
+  },
+  {
+    "question": "Który z poniższych elementów NIE jest klasycznym czynnikiem uwierzytelniania?",
+    "options": [
+      "Coś, co użytkownik wie",
+      "Coś, co użytkownik posiada",
+      "Coś, co użytkownik odkrył",
+      "Coś, kim użytkownik jest"
+    ],
+    "correct": [
+      2
+    ]
+  },
+  {
+    "question": "Hasła jednorazowe (OTP) generowane przez token z synchronizacją czasową nazywane są:",
+    "options": [
+      "OTP z podpisanym czasem",
+      "OTP oparte na wyzwaniu",
+      "OTP z synchronizowaną klawiaturą",
+      "Tokenami OTP opartymi na czasie (TOTP)"
+    ],
+    "correct": [
+      3
+    ]
+  },
+  {
+    "question": "Która właściwość bezpieczeństwa zapewnia, że jedynie uprawnione podmioty mogą uzyskać dostęp do informacji?",
+    "options": [
+      "Dostępność",
+      "Integralność",
+      "Poufność",
+      "Niezaprzeczalność"
+    ],
+    "correct": [
+      2
+    ]
+  },
+  {
+    "question": "Klasyczna triada bezpieczeństwa informacji (CIA) obejmuje:",
+    "options": [
+      "Poufność, integralność, dostępność",
+      "Prywatność, identyfikację, autoryzację",
+      "Sprzęt, oprogramowanie, ludzi",
+      "Blokowanie, wykrywanie, reagowanie"
+    ],
+    "correct": [
+      0
+    ]
+  },
+  {
+    "question": "Której z poniższych właściwości NIE można zapewnić wyłącznie za pomocą kryptografii?",
+    "options": [
+      "Poufności",
+      "Dostępności",
+      "Integralności",
+      "Autentyczności"
+    ],
+    "correct": [
+      1
+    ]
+  },
+  {
+    "question": "Podpis cyfrowy NIE zapewnia:",
+    "options": [
+      "Weryfikacji odbiorcy",
+      "Weryfikacji nadawcy",
+      "Niezaprzeczalności",
+      "Integralności danych"
+    ],
+    "correct": [
+      0
+    ]
+  },
+  {
+    "question": "Której cechy NIE można uzyskać za pomocą funkcji skrótu z kluczem (HMAC)?",
+    "options": [
+      "Integralności",
+      "Autentyczności",
+      "Poufności",
+      "Wykrywania modyfikacji"
+    ],
+    "correct": [
+      2
+    ]
+  },
+  {
+    "question": "Wiadomość podpisana cyfrowo składa się z:",
+    "options": [
+      "Wiadomości jawnej oraz skrótu zaszyfrowanego kluczem prywatnym nadawcy",
+      "Wyłącznie wiadomości zaszyfrowanej",
+      "Certyfikatu i klucza prywatnego",
+      "Wiadomości zaszyfrowanej kluczem publicznym"
+    ],
+    "correct": [
+      0
+    ]
+  },
+  {
+    "question": "Skrót DMZ oznacza:",
+    "options": [
+      "DeoxyMilo Azid",
+      "De-Militarized Zone (strefa buforowa bezpieczeństwa)",
+      "Data Management Zone",
+      "Dual Mode Zone"
+    ],
+    "correct": [
+      1
+    ]
+  },
+  {
+    "question": "Który z poniższych ataków jest przykładem socjotechniki (Social Engineering)?",
+    "options": [
+      "SQL Injection",
+      "Ping of Death",
+      "Phishing",
+      "SYN Flood"
+    ],
+    "correct": [
+      2
+    ]
+  },
+  {
+    "question": "Atak typu Man-in-the-Middle (MITM) polega na:",
+    "options": [
+      "Zgadywaniu haseł",
+      "Podsłuchiwaniu i ewentualnej modyfikacji komunikacji między stronami",
+      "Ataku niemożliwym w sieciach WiFi",
+      "Ataku wyłącznie na bazy danych"
+    ],
+    "correct": [
+      1
+    ]
+  },
+  {
+    "question": "Środowisko wykorzystujące DAC (Discretionary Access Control) jest szczególnie podatne na:",
+    "options": [
+      "Ataki siłowe",
+      "Konie trojańskie i podszywanie się",
+      "Ataki DDoS",
+      "SQL Injection"
+    ],
+    "correct": [
+      1
+    ]
+  },
+  {
+    "question": "Korzyścią bezpieczeństwa wynikającą z zastosowania VLAN jest:",
+    "options": [
+      "Logiczną separację sieci i ograniczenie ruchu rozgłoszeniowego",
+      "Szyfrowanie pakietów",
+      "Zwiększenie mocy procesora",
+      "Automatyczne usuwanie wirusów"
+    ],
+    "correct": [
+      0
+    ]
+  },
+  {
+    "question": "Które stwierdzenie o kryptografii symetrycznej jest NIEPRAWDZIWE?",
+    "options": [
+      "Charakteryzuje się małą prędkością przetwarzania danych",
+      "Ma szeroki zakres zastosowań",
+      "Wykorzystuje relatywnie krótkie klucze",
+      "Ma problem z bezpieczną dystrybucją klucza"
+    ],
+    "correct": [
+      0
+    ]
+  },
+  {
+    "question": "Gdy Bob chce wysłać poufną wiadomość do Alicji z użyciem kryptografii asymetrycznej, jakiego klucza użyje do jej zaszyfrowania?",
+    "options": [
+      "Klucza publicznego Boba",
+      "Klucza publicznego Alicji",
+      "Klucza prywatnego Boba",
+      "Klucza prywatnego Alicji"
+    ],
+    "correct": [
+      1
+    ]
   }
 ]

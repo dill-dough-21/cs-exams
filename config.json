@@ -57,6 +57,11 @@
           "name": "Sztuczna inteligencja",
           "file": "data/pytania_SI.json",
           "description": "Pytania ze Sztuczna inteligencja"
+        },
+        {
+          "name": "Sztuczna inteligencja (bez logiki)",
+          "file": "data/pytania_SI_BL.json",
+          "description": "Pytania ze Sztuczna inteligencja (bez logiki)"
         }
       ]
     }
