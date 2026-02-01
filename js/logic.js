@@ -30,8 +30,6 @@ export function selectRandomQuestions(allQuestions, count, excludeLearned, curre
 
   let pool = availableQuestions;
   if (pool.length === 0) {
-    // If all questions are learned, we might return empty array or handle it in main.js
-    // For this implementation, let's return empty and let caller handle fallback or alert
     return { questions: [], usedFallback: false, empty: true }; 
   }
 

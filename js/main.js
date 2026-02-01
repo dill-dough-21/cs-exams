@@ -3,7 +3,6 @@ import { updateQuestionProgress, isQuestionLearned, loadProgress } from "./stora
 import { shuffleAndMapQuestions, selectRandomQuestions, selectQuestionsInRange } from "./logic.js";
 import * as UI from "./ui.js";
 
-// Global State
 let availableFiles = [];
 let currentFile = null;
 let allQuestions = [];
@@ -11,7 +10,6 @@ let currentQuestions = [];
 let currentMode = null;
 let isChecked = false;
 
-// Initialization
 document.addEventListener("DOMContentLoaded", () => {
   loadConfig();
   setupEventListeners();
@@ -22,13 +20,6 @@ function setupEventListeners() {
     document.getElementById("drawNextBtn").addEventListener("click", drawNextRandomQuestions);
     document.getElementById("resetBtn").addEventListener("click", resetQuiz);
     document.getElementById("backBtn").addEventListener("click", backToMenu);
-    
-    // Scroll buttons
-    document.querySelector("button[onclick='scrollToTop()']").onclick = null; // Clean inline
-    document.querySelector("button[onclick='scrollToTop()']").addEventListener("click", scrollToTop);
-    
-    document.querySelector("button[onclick='scrollToBottom()']").onclick = null; // Clean inline
-    document.querySelector("button[onclick='scrollToBottom()']").addEventListener("click", scrollToBottom);
 }
 
 async function loadConfig() {
@@ -83,7 +74,6 @@ async function selectFile(index) {
       .scrollIntoView({ behavior: "smooth" });
 
     document.querySelectorAll(".mode-btn").forEach((btn) => {
-      // Cleaning old listeners not strictly needed if we replace elements, but good practice
       btn.onclick = () => selectMode(btn.dataset.mode); 
     });
   } catch (error) {
@@ -112,7 +102,7 @@ function prepareQuiz() {
 
   switch (currentMode) {
     case "study":
-      title.textContent = `💡 ${currentFile.name} - Tryb Nauki`;
+      title.textContent = `${currentFile.name} - Tryb Nauki`;
       description.textContent =
         "Wszystkie pytania z poprawnymi odpowiedziami. Użyj CTRL+F, aby szybko wyszukać.";
       currentQuestions = [...allQuestions];
@@ -126,7 +116,7 @@ function prepareQuiz() {
       const questionCount = parseInt(countInput.value) || 5;
       const excludeLearned = document.getElementById("excludeLearned").checked;
       
-      title.textContent = `🎲 ${currentFile.name} - Szybki Test`;
+      title.textContent = `${currentFile.name} - Szybki Test`;
       description.textContent = `Wylosowano ${questionCount} pytań z pełnej bazy. Sprawdź swoją wiedzę!`;
       
       const selection = selectRandomQuestions(allQuestions, questionCount, excludeLearned, currentFile.file);
@@ -148,12 +138,12 @@ function prepareQuiz() {
       const rangeEnd = Math.min(allQuestions.length, parseInt(endInput.value) || allQuestions.length);
       
       if (rangeStart > rangeEnd || rangeStart > allQuestions.length) {
-        UI.showError("❌ Błąd: Podaj prawidłowy zakres pytań!");
+        UI.showError("Błąd: Podaj prawidłowy zakres pytań!");
         document.getElementById("mode-selector").style.display = "block";
         return;
       }
       
-      title.textContent = `📍 ${currentFile.name} - Test z Zakresu`;
+      title.textContent = `${currentFile.name} - Test z Zakresu`;
       description.textContent = `Pytania od ${rangeStart} do ${rangeEnd}. Razem ${rangeEnd - rangeStart + 1} pytań. Powodzenia!`;
       const rangeQuestions = selectQuestionsInRange(allQuestions, rangeStart - 1, rangeEnd - 1);
       currentQuestions = shuffleAndMapQuestions(rangeQuestions);
@@ -161,14 +151,14 @@ function prepareQuiz() {
       break;
 
     case "fullquiz":
-      title.textContent = `📝 ${currentFile.name} - Pełny Egzamin`;
+      title.textContent = `${currentFile.name} - Pełny Egzamin`;
       description.textContent =
         "Wszystkie pytania w trybie quizu. Pokaż co potrafisz!";
       currentQuestions = shuffleAndMapQuestions([...allQuestions]);
       UI.renderQuizMode(currentQuestions);
       break;
   }
-  stats.innerHTML = `<strong>📊 Statystyki:</strong> ${currentQuestions.length} pytań | ${UI.getModeDisplayName(currentMode)}`;
+  stats.innerHTML = `<strong>Statystyki:</strong> ${currentQuestions.length} pytań | ${UI.getModeDisplayName(currentMode)}`;
 }
 
 function checkAnswers() {
@@ -233,25 +223,25 @@ function processResults(correctQuestions, newlyLearnedCount) {
 
   let grade, gradeColor, encouragement;
   if (percentage === 100) {
-    grade = "🏆 Perfekcja!";
-    gradeColor = "var(--color-correct)";
-    encouragement = "Absolutne mistrzostwo! 🎉";
+    grade = "Perfekcja!";
+    gradeColor = "var(--color-correct-text)";
+    encouragement = "Absolutne mistrzostwo!";
   } else if (percentage >= 80) {
-    grade = "🎉 Znakomity wynik!";
+    grade = "Znakomity wynik!";
     gradeColor = "#4A90E2";
-    encouragement = "Świetna robota! 💪";
+    encouragement = "Świetna robota!";
   } else if (percentage >= 60) {
-    grade = "👍 Dobry wynik!";
-    gradeColor = "var(--color-missed)";
-    encouragement = "Jesteś na dobrej drodze! 📈";
+    grade = "Dobry wynik!";
+    gradeColor = "var(--color-missed-text)";
+    encouragement = "Jesteś na dobrej drodze!";
   } else if (percentage >= 40) {
-    grade = "📈 Warto powtórzyć";
+    grade = "Warto powtórzyć";
     gradeColor = "#F5A623";
-    encouragement = "Następnym razem będzie lepiej! 🔄";
+    encouragement = "Następnym razem będzie lepiej!";
   } else {
-    grade = "📚 Czas na naukę";
-    gradeColor = "var(--color-incorrect)";
-    encouragement = "Nie poddawaj się! 🚀";
+    grade = "Czas na naukę";
+    gradeColor = "var(--color-incorrect-text)";
+    encouragement = "Nie poddawaj się!";
   }
   
   UI.showResults(correctQuestions, totalQuestions, percentage, grade, gradeColor, encouragement, newlyLearnedCount);

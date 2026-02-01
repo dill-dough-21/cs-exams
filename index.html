@@ -27,11 +27,11 @@
             <div id="file-grid" class="file-grid" style="margin-top: 20px;"></div>
         </div>
 
-        <div id="mode-selector" class="mode-selector" style="display: none;">
+        <div class="mode-selector" id="mode-selector" style="display: none;">
             <h3>Wybierz Tryb</h3>
             
             <div class="progress-section" style="margin-bottom: 20px; padding: 0 10px;">
-                <div class="progress-container" style="background: rgba(255, 255, 255, 0.1); border-radius: 10px; height: 20px; width: 100%; overflow: hidden;">
+                <div class="progress-container" style="background: rgba(255, 255, 255, 0.1); border-radius: 10px; height: 10px; width: 100%; overflow: hidden;">
                     <div id="global-progress-bar" style="background: linear-gradient(90deg, #4A90E2, #50E3C2); width: 0%; height: 100%; transition: width 0.5s ease;"></div>
                 </div>
                 <p id="global-progress-text" style="text-align: center; margin-top: 5px; font-size: 0.9rem; color: var(--color-text-secondary);">Postęp: 0%</p>
@@ -39,23 +39,23 @@
 
             <div class="mode-buttons">
                 <div class="mode-btn" data-mode="study">
-                    <strong>💡 Tryb Nauki</strong><br>
+                    <strong>Tryb Nauki</strong><br>
                     <small>Przeglądaj wszystkie pytania i odpowiedzi.</small>
                 </div>
                 <div class="mode-btn" data-mode="random5">
-                    <strong>🎲 Szybki Test</strong><br>
+                    <strong>Szybki Test</strong><br>
                     <small>Sprawdź się na losowych pytaniach.</small>
                     <div class="input-group" onclick="event.stopPropagation()">
                         <label for="questionCount">Liczba pytań:</label>
                         <input type="number" id="questionCount" min="1" max="50" value="5">
                     </div>
-                    <div class="input-group" onclick="event.stopPropagation()" style="margin-top: 5px; flex-direction: row; align-items: center; justify-content: center;">
+                    <div class="input-group" onclick="event.stopPropagation()" style="margin-top: 5px; flex-direction: row; align-items: center; justify-content: flex-start;">
                          <input type="checkbox" id="excludeLearned" checked style="width: auto; margin-right: 5px;">
                          <label for="excludeLearned" style="margin-bottom: 0; cursor: pointer;">Pomiń nauczone</label>
                     </div>
                 </div>
                 <div class="mode-btn" data-mode="range">
-                    <strong>📍 Test z Zakresu</strong><br>
+                    <strong>Test z Zakresu</strong><br>
                     <small>Pytania z wybranego przedziału.</small>
                     <div class="input-group" onclick="event.stopPropagation()">
                         <label for="rangeStart">Od:</label>
@@ -65,7 +65,7 @@
                     </div>
                 </div>
                 <div class="mode-btn" data-mode="fullquiz">
-                    <strong>📝 Pełny Egzamin</strong><br>
+                    <strong>Pełny Egzamin</strong><br>
                     <small>Odpowiedz na wszystkie pytania z bazy.</small>
                 </div>
             </div>
@@ -78,12 +78,10 @@
         </div>
 
         <div class="controls" id="controls" style="display: none;">
-            <button id="checkBtn">📋 Sprawdź Wyniki</button>
-            <button id="drawNextBtn" style="display: none;">🎲 Losuj kolejne</button>
-            <button id="resetBtn">🔄 Resetuj</button>
-            <button id="backBtn">🏠 Menu</button>
-            <button onclick="scrollToTop()">⬆️</button>
-            <button onclick="scrollToBottom()">⬇️</button>
+            <button id="checkBtn">Sprawdź Wyniki</button>
+            <button id="drawNextBtn" style="display: none;">Losuj kolejne</button>
+            <button id="resetBtn">Resetuj</button>
+            <button id="backBtn">Menu</button>
         </div>
 
         <div id="quiz-content"></div>

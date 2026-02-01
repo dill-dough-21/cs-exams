@@ -1,8 +1,6 @@
-import { scrollToTop } from "./utils.js";
+import { scrollToTop, escapeHtml } from "./utils.js";
 import { getQuestionStreak } from "./storage.js";
 
-// Callbacks needed by UI: selectFile(index), selectMode(mode)
-// These will be assigned by main.js
 export const uiCallbacks = {
   onSelectFile: null,
   onSelectMode: null
@@ -18,7 +16,7 @@ export function renderFileSelector(semesters, onSelectFile) {
   semesters.forEach((semester) => {
     const semesterHeader = document.createElement("div");
     semesterHeader.className = "semester-header";
-    semesterHeader.innerHTML = `<h2>${semester.title}</h2>`;
+    semesterHeader.innerHTML = `<h2>${escapeHtml(semester.title)}</h2>`;
     semesterHeader.style.width = "100%";
     semesterHeader.style.gridColumn = "1 / -1";
     semesterHeader.style.marginTop = "20px";
@@ -32,10 +30,9 @@ export function renderFileSelector(semesters, onSelectFile) {
       const card = document.createElement("div");
       card.className = "file-card";
       card.dataset.index = globalIndex;
-      card.innerHTML = `<h3>${file.name}</h3><p>${file.description}</p>`;
+      card.innerHTML = `<h3>${escapeHtml(file.name)}</h3><p>${escapeHtml(file.description)}</p>`;
 
       const capturedIndex = globalIndex;
-      // Use the function directly if passed, or callback object
       card.addEventListener("click", () => {
           if (uiCallbacks.onSelectFile) uiCallbacks.onSelectFile(capturedIndex);
       });
@@ -57,10 +54,9 @@ export function renderStudyMode(questions, currentFilename) {
     const optionsHtml = q.options
       .map((option, optIndex) => {
         const isCorrect = q.correct.includes(optIndex);
-        const marker = isCorrect ? "✅" : "—";
         const className = isCorrect ? "correct" : "incorrect2";
 
-        return `<div class="study-answer ${className}">${marker} ${option}</div>`;
+        return `<div class="study-answer ${className}">${escapeHtml(option)}</div>`;
       })
       .join("");
 
@@ -68,7 +64,7 @@ export function renderStudyMode(questions, currentFilename) {
     const progressBar = renderProgressBar(streak);
 
     questionDiv.innerHTML = `
-            <h4><span style="display:inline-block; margin-right: 10px;">${progressBar}</span>${index + 1}. ${q.question}</h4>
+            <h4><span style="display:inline-block; margin-right: 10px;">${progressBar}</span>${index + 1}. ${escapeHtml(q.question)}</h4>
 
             <div class="study-answers">
                 ${optionsHtml}
@@ -93,7 +89,7 @@ export function renderQuizMode(questions) {
         (option, optIndex) => `
             <div class="option">
                 <input type="checkbox" id="q${index}_${optIndex}" data-question="${index}" data-answer="${optIndex}">
-                <label for="q${index}_${optIndex}">${option}</label>
+                <label for="q${index}_${optIndex}">${escapeHtml(option)}</label>
             </div>
         `,
       )
@@ -101,7 +97,7 @@ export function renderQuizMode(questions) {
 
     questionDiv.innerHTML = `
             <div class="question-number">Pytanie ${index + 1}/${questions.length}</div>
-            <h3>${q.question}</h3>
+            <h3>${escapeHtml(q.question)}</h3>
             ${optionsHtml}
         `;
     quizContent.appendChild(questionDiv);
@@ -114,10 +110,18 @@ export function renderQuizMode(questions) {
 
 function addOptionClickHandlers() {
   document.querySelectorAll(".option").forEach((option) => {
+    const cb = option.querySelector('input[type="checkbox"]');
+    if (!cb) return;
+
+    cb.addEventListener("change", () => {
+      if (cb.checked) option.classList.add("selected");
+      else option.classList.remove("selected");
+    });
+
     option.addEventListener("click", (e) => {
-      if (e.target.type !== "checkbox") {
-        const cb = option.querySelector('input[type="checkbox"]');
-        if (cb && !cb.disabled) cb.checked = !cb.checked;
+      if (e.target !== cb && e.target.tagName !== "LABEL") {
+         cb.checked = !cb.checked;
+         cb.dispatchEvent(new Event("change"));
       }
     });
   });
@@ -130,14 +134,14 @@ export function renderProgressBar(streak) {
   let html = '';
   for (let i = 0; i < maxStreak; i++) {
     if (i < effectiveStreak) {
-      html += '<span style="color: #50E3C2; font-size: 0.8em;">●</span>';
+      html += '<span style="color: var(--color-correct-text); font-size: 1.2em; line-height: 1;">•</span>';
     } else {
-      html += '<span style="color: rgba(255,255,255,0.2); font-size: 0.8em;">●</span>';
+      html += '<span style="color: var(--color-element-bg); font-size: 1.2em; line-height: 1;">•</span>';
     }
   }
   
   if (streak >= 3) {
-      html += ' <span style="font-size: 0.8em;" title="Opanowane!">🎓</span>';
+      html += ' <span style="font-size: 0.8em; color: var(--color-primary); font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">[Nauczone]</span>';
   }
   
   return html;
@@ -146,7 +150,7 @@ export function renderProgressBar(streak) {
 export function showResults(correctQuestions, totalQuestions, percentage, grade, gradeColor, encouragement, newlyLearnedCount) {
   let masteryMsg = "";
   if (newlyLearnedCount > 0) {
-    masteryMsg = `<p style="margin-top: 15px; color: #4A90E2;">🎓 Nauczyłeś się <strong>${newlyLearnedCount}</strong> nowych pytań! Oby tak dalej!</p>`;
+    masteryMsg = `<p style="margin-top: 15px; color: var(--color-primary);">+${newlyLearnedCount} nowych pytań opanowanych!</p>`;
   }
 
   document.getElementById("results").innerHTML = `
@@ -183,11 +187,16 @@ export function showError(message) {
 }
 
 export function getModeDisplayName(mode) {
-  const names = {
-    study: "Tryb Nauki",
-    random5: "Szybki Test",
-    range: "Test z Zakresu",
-    fullquiz: "Pełny Egzamin",
-  };
-  return names[mode] || mode;
+  switch (mode) {
+    case "study":
+      return "Tryb Nauki";
+    case "random5":
+      return "Szybki Test";
+    case "range":
+      return "Test z Zakresu";
+    case "fullquiz":
+      return "Pełny Egzamin";
+    default:
+      return "Quiz";
+  }
 }
