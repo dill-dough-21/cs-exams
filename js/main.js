@@ -168,15 +168,17 @@ function prepareQuiz() {
 }
 
 function checkAnswers() {
-  if (currentQuestions.length === 0 || currentMode === "study") return;
-
+  if (isChecked) return;
+  scrollToTop();
+  
+  const quizContent = document.getElementById('quiz-content');
+  const questions = quizContent.querySelectorAll(".question");
   let correctQuestions = 0;
   let newlyLearnedCount = 0;
 
-  currentQuestions.forEach((question, qIndex) => {
-    const checkboxes = document.querySelectorAll(
-      `input[data-question="${qIndex}"]`,
-    );
+  questions.forEach((questionDiv, index) => {
+    const question = currentQuestions[index];
+    const checkboxes = questionDiv.querySelectorAll('input[type="checkbox"]');
     const selectedAnswers = Array.from(checkboxes)
       .filter((cb) => cb.checked)
       .map((cb) => parseInt(cb.dataset.answer));
@@ -209,8 +211,7 @@ function checkAnswers() {
     });
   });
 
-  document
-    .querySelectorAll('input[type="checkbox"]')
+  quizContent.querySelectorAll('input[type="checkbox"]')
     .forEach((cb) => (cb.disabled = true));
   isChecked = true;
   
@@ -287,7 +288,8 @@ function drawNextRandomQuestions() {
 }
 
 function resetQuiz() {
-  document.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
+  const quizContent = document.getElementById('quiz-content');
+  quizContent.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
     checkbox.checked = false;
     checkbox.disabled = false;
     checkbox.parentElement.classList.remove("correct", "incorrect", "missed");
