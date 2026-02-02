@@ -56,7 +56,7 @@
         {
           "name": "Sztuczna inteligencja",
           "file": "data/pytania_SI.json",
-          "description": "Pytania ze Sztuczna inteligencja"
+          "description": "Pytania ze Sztuczna inteligencja (Bez Logiki)"
         },
         {
           "name": "Gry Komputerowe",
@@ -67,11 +67,6 @@
           "name": "IPZ",
           "file": "data/pytaniaIPZ.json",
           "description": "Pytania z IPZ"
-        },
-        {
-          "name": "Sztuczna inteligencja (bez logiki)",
-          "file": "data/pytania_SI_BL.json",
-          "description": "Pytania ze Sztuczna inteligencja (bez logiki)"
         },
 	{
           "name": "Aplikacje Internetowe",
