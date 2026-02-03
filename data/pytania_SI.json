@@ -650,16 +650,6 @@
     "correct": [3]
   },
   {
-    "question": "Problem n-hetmanów polega na ustawieniu n hetmanów (bez wzajemnego ataku) na szachownicy o wymiarach:",
-    "options": [
-      "$$ 4 \\times 4 $$",
-      "$$ 8 \\times 8 $$",
-      "$$ n \\times n $$",
-      "$$ (n^2-1) \\times (n^2-1) $$"
-    ],
-    "correct": [2]
-  },
-  {
     "question": "„Problem jeepa” jest przykładem problemu:",
     "options": [
       "optymalizacji dyskretnej",
@@ -718,16 +708,6 @@
       "podmiana stanu"
     ],
     "correct": [3]
-  },
-  {
-    "question": "Sudoku minimalne to sudoku:",
-    "options": [
-      "najmniejszej liczbie danych i 1 rozwiązaniu",
-      "najmniejszej liczbie danych i 2 rozwiązaniach",
-      "dla planszy $$ 4 \\times 4 $$",
-      "dla planszy $$ 1 \\times 1 $$"
-    ],
-    "correct": [0]
   },
   {
     "question": "Dla układanki puzzle przesuwne postaci (1,0,5; 3,2,4; 6,7,8) wartość heurystyki „Misplaced tiles” wynosi:",
@@ -1260,32 +1240,12 @@
     "correct": [2]
   },
   {
-    "question": "W pewnym AG mamy czterech osobników o przystosowaniach $$ f(x_1)=2, f(x_2)=1, f(x_3)=4, f(x_4)=9 $$. Odpowiadające im prawdopodobieństwa sukcesji w selekcji ruletkowej to:",
-    "options": [
-      "$$ 2/9, 1/9, 4/9, 9/9 $$",
-      "$$ 2/16, 1/16, 4/16, 9/16 $$",
-      "0, 0, 0, 1",
-      "$$ 2/10, 1/10, 3/10, 4/10 $$"
-    ],
-    "correct": [1]
-  },
-  {
     "question": "W ramach poprzedniego zadania (fit=2, sum=16, N=4) oczekiwana liczba kopii osobnika x1 po selekcji wynosi?",
     "options": [
       "1",
       "2",
       "12",
       "0.5"
-    ],
-    "correct": [3]
-  },
-  {
-    "question": "W pewnym AG mamy 4 osobników o przystosowaniach $$ f(x_1)=2, f(x_2)=1, f(x_3)=4, f(x_4)=3 $$. Odpowiadające im prawdopodobieństwa sukcesji dla selekcji rankingowej wynoszą:",
-    "options": [
-      "$$ 2/16, 1/16, 4/16, 3/16 $$",
-      "$$ 2/4, 1/4, 4/4, 3/4 $$",
-      "0, 0, 0, 1",
-      "$$ 2/10, 1/10, 4/10, 3/10 $$"
     ],
     "correct": [3]
   },
@@ -1480,16 +1440,6 @@
     "correct": [0]
   },
   {
-    "question": "„Iterowany dylemat więźnia” redukuje się indukcyjnie do pojedynczego dylematu więźnia jeżeli:",
-    "options": [
-      "Gracze cały czas współpracują",
-      "Gracze cały czas zdradzają",
-      "Gracze grają wet za wet",
-      "Liczba rund jest znana z góry"
-    ],
-    "correct": [3]
-  },
-  {
     "question": "W „grze w życie” Conwaya pusta komórka przeradza się w pełną jeżeli ma:",
     "options": [
       "Dokładnie 2 sąsiadów",
@@ -1528,16 +1478,6 @@
       "wpływ jednego zdarzenia na inne"
     ],
     "correct": [1]
-  },
-  {
-    "question": "Założenie naiwne w klasyfikatorze bayesowskim mówi dokładnie, że:",
-    "options": [
-      "zmienne wejściowe są parami zależne",
-      "zmienne wejściowe są parami niezależne bezwarunkowo",
-      "zmienne wejściowe są parami niezależne warunkowo w klasach decyzyjnych",
-      "zmienne wejściowe są parami zależne warunkowo"
-    ],
-    "correct": [2]
   },
   {
     "question": "W metodzie uczenia z rozpędem (momentum), wzór na poprawkę wagi $$ v(t+1) $$ ma postać (przyjmując $$ \\mu $$ jako wsp. rozpędu):",
@@ -1600,16 +1540,6 @@
     "correct": [1]
   },
   {
-    "question": "Wskaż prawdziwe zdanie na temat metody uczenia RPROP:",
-    "options": [
-      "zaniedbywany jest znak gradientu",
-      "zaniedbywany jest współczynnik uczenia",
-      "zaniedbywana jest wielkość gradientu (używany tylko znak)",
-      "żadna z powyższych"
-    ],
-    "correct": [2]
-  },
-  {
     "question": "Jeżeli zdarzenia A, B są niezależne to:",
     "options": [
       "$$ P(A|B) = P(A) $$",
@@ -1628,16 +1558,6 @@
       "marginesu między klasami"
     ],
     "correct": [1]
-  },
-  {
-    "question": "O naiwnym klasyfikatorze Bayesa można powiedzieć, że:",
-    "options": [
-      "nie cierpi na przekleństwo wymiarowości i złożoność skaluje się kwadratowo",
-      "cierpi na przekleństwo wymiarowości",
-      "złożoność skaluje się wykładniczo",
-      "nie cierpi na przekleństwo wymiarowości i złożoność obliczenia odpowiedzi skaluje się liniowo wraz z liczbą zmiennych"
-    ],
-    "correct": [3]
   },
   {
     "question": "Schemat wnioskowania sylogizm warunkowy wyraża regułę:",
@@ -1820,16 +1740,6 @@
     "correct": [0]
   },
   {
-    "question": "Problem komiwojażera to inaczej problem znalezienia:",
-    "options": [
-      "najkrótszego cyklu Hamiltona",
-      "najkrótszego cyklu Eulera",
-      "najkrótszej ścieżki Hamiltona",
-      "najkrótszej ścieżki Eulera"
-    ],
-    "correct": [0]
-  },
-  {
     "question": "„Iterowany dylemat więźnia” redukuje się indukcyjnie do pojedynczego dylematu więźnia (zdrada jest strategią dominującą), jeżeli:",
     "options": [
       "gracze cały czas współpracują",
@@ -1918,41 +1828,6 @@
       "norma wektora wag"
     ],
     "correct": [0]
-  },
-  {
-    "question": "Algorytmy genetyczne sa przeznaczone:",
-    "options": [
-      "a. rozwiazywania problemów optymalizacji w sposób przybliżony",
-      "b. rozwiązywania problemów klasyfikacji w sposób przybliżony",
-      "c. rozwiązywania problemów klasyfikacji w sposób dokładny",
-      "d. rozwiązywania problemów optymalizacji w sposób dokładny"
-    ],
-    "correct": [
-      0
-    ]
-  },
-  {
-    "question": "Jezeli algorytm A* używa jako heurystyki dolnego ograniczenia na odległość do celu. to",
-    "options": [
-      "a. nie gwarantuje on znalezienia najkrótszej ścieżki",
-      "b. gwarantuje on znalezienie najkrótszej ścieżki c, nie wymaga on zbioru Closed",
-      "d. jest on wolniejszy niż algorytm Dijkstry"
-    ],
-    "correct": [
-      1
-    ]
-  },
-  {
-    "question": "W Sieci bayesowskiej Węzły reprezentują",
-    "options": [
-      "a. wpływ potomków na rodziców",
-      "b. zmienne losowe",
-      "c. tylko prawdopodobieństwo a priori zdarzeń",
-      "d. wpływ jednego zdarzenia na inne"
-    ],
-    "correct": [
-      1
-    ]
   },
   {
     "question": "W sieci przekonań/Bayesa krawędzie reprezentują",
@@ -2087,30 +1962,6 @@
     ]
   },
   {
-    "question": "Wskaz grupę algorytmów reprezentujących niepoinformowanetechniki przeszukiwania grafów.",
-    "options": [
-      "a. algorytm Dijkstry, Best-first search, A*",
-      "b. Breadth-first search, Depth-first search, Best-first search",
-      "c. Best-first search, A*, IDA*",
-      "d. Breadth-first search, Depth-first search, algorytm Dijkstry"
-    ],
-    "correct": [
-      3
-    ]
-  },
-  {
-    "question": "W algorytmie RPROP (przy domyślnych nastawach początkowych n0=0.1, a=1.2, b=0.5 aktualny współczynnik uczenia pewnej konkretnej wagi po czterech aktualizacjach wynosi 0.72n0. Oznacza to, że pochodne funkcji błędu ze względu na tę wagę",
-    "options": [
-      "a. dwukrotnie zmieniały znak",
-      "b. jednokrotnie zmieniały znak",
-      "c. nie zmieniały znaku",
-      "d. trzykrotnie zmieniały znak"
-    ],
-    "correct": [
-      0
-    ]
-  },
-  {
     "question": "W układance \"puzzle przesuwne\" heurystyka Manhattan:",
     "options": [
       "a. jest mniej dokładna niż heurystyka Misplaced Tiles",
@@ -2176,46 +2027,10 @@
       "a. 4×4",
       "b. 8×8",
       "c. n×n",
-      "d. (n^ 2 -1)×(n^ 2 -1)"
+      "d. (n^2 -1)×(n^2 -1)"
     ],
     "correct": [
       2
-    ]
-  },
-  {
-    "question": "\"Problem jeepa\" jest przykładem problemu:",
-    "options": [
-      "a. optymalizacji dyskretnej",
-      "b. najkrótszej ścieżki",
-      "c. klasyfikacji binarnej",
-      "d. aproksymacji"
-    ],
-    "correct": [
-      0
-    ]
-  },
-  {
-    "question": "\"Problem komiwojażera\" to problem:",
-    "options": [
-      "a. NP-zupełny",
-      "b. NP-trudny",
-      "c. decyzyjny",
-      "d. klasyfikacji"
-    ],
-    "correct": [
-      1
-    ]
-  },
-  {
-    "question": "W grze w pojedynczy \"dylemat więźnia\" racjonalnym wyborem dla każdego z graczy jest:",
-    "options": [
-      "a. milczeć",
-      "b. zdradzić",
-      "c. postąpić jak przeciwnik",
-      "d. postąpić odwrotnie niż przeciwnik"
-    ],
-    "correct": [
-      1
     ]
   },
   {
@@ -2375,18 +2190,6 @@
     ]
   },
   {
-    "question": "Prawdziwe jest następujące zdanie na tematu zbioru Closed w algorytmie A*:",
-    "options": [
-      "a. może być pominięty, jeżeli graf nie ma cykli",
-      "b. nie może przewyższać rozmiarem zbioru Open",
-      "c. stanowi wystarczający warunek stopu algorytmu",
-      "d. nie pozwala sprawdzać, czy stan był już odwiedzony"
-    ],
-    "correct": [
-      0
-    ]
-  },
-  {
     "question": "W układance puzzle przesuwne niech hMT, hM, hM+LC oznaczają odpowiednio heurystyki: Misplaced Tiles, Manhattan oraz Manhattan + Linear Conflicts. Prawdziwe jest zdanie:",
     "options": [
       "a. hMT zaniedbuje odległości płytek od ich miejsc docelowych",
@@ -2483,7 +2286,7 @@
     ]
   },
   {
-    "question": "W pewnym AG mamy czterech osobników o przystosowaniach f(x1) = 2, f(x2) = 1, f(x3) = 4, f(x4) = 9 . Odpowiadające imprawdopodobieństwa sukcesji w selekcji ruletkowej to:",
+    "question": "W pewnym AG mamy czterech osobników o przystosowaniach f(x1) = 2, f(x2) = 1, f(x3) = 4, f(x4) = 9 . Odpowiadające im prawdopodobieństwa sukcesji w selekcji ruletkowej to:",
     "options": [
       "a. 2/9, 1/9, 4/9, 9/9",
       "b. 2/16, 1/16, 4/16, 9/16",
