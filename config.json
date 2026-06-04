@@ -72,7 +72,12 @@
           "name": "Aplikacje Internetowe",
           "file": "data/pytaniaAI.json",
           "description": "Pytania z Aplikacji Internetowych"
-        },
+        }
+      ]
+    },
+      {
+      "title": "Semestr 6",
+      "files": [
         {
           "name": "Modelowanie Obiektów 3D",
           "file": "data/pytania_MO3D.json",
