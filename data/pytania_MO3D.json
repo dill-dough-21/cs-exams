@@ -1,0 +1,182 @@
+[
+  {
+    "question": "Które z podanych narzędzi służy do zaokrąglania krawędzi?",
+    "options": [
+      "bevel",
+      "extrude",
+      "inset"
+    ],
+    "correct": [0]
+  },
+  {
+    "question": "Do czego służy modyfikator mirror?",
+    "options": [
+      "do modelowania obiektu symetrycznie względem osi",
+      "do zmiany koloru obiektu",
+      "do usuwania wierzchołków"
+    ],
+    "correct": [0]
+  },
+  {
+    "question": "Jak nazywają się punkty siatki w przestrzeni 3D?",
+    "options": [
+      "edges",
+      "vertices",
+      "faces"
+    ],
+    "correct": [1]
+  },
+  {
+    "question": "Gdzie jest optymalne położenie pivota w obiekcie?",
+    "options": [
+      "na środku dolnej podstawy",
+      "tylko na górze obiektu",
+      "wyłącznie poza obiektem"
+    ],
+    "correct": [0]
+  },
+  {
+    "question": "Co znaczy skrót FPS?",
+    "options": [
+      "frames per second",
+      "files per system",
+      "fast polygon scale"
+    ],
+    "correct": [0]
+  },
+  {
+    "question": "Co to render preview?",
+    "options": [
+      "podgląd sceny z użytym oświetleniem i materiałem",
+      "automatyczne zapisywanie projektu",
+      "eksport modelu do gry"
+    ],
+    "correct": [0]
+  },
+  {
+    "question": "Co to jest edge?",
+    "options": [
+      "tekstura obiektu",
+      "krawędź łącząca 2 wierzchołki",
+      "środek obiektu"
+    ],
+    "correct": [1]
+  },
+  {
+    "question": "Co to jest face?",
+    "options": [
+      "pojedynczy punkt w przestrzeni",
+      "polygon utworzony z krawędzi i wierzchołków",
+      "typ światła w scenie"
+    ],
+    "correct": [1]
+  },
+  {
+    "question": "Funkcja tworząca nowe ściany na istniejących poprzez \"wyciągnięcie\"",
+    "options": [
+      "inset",
+      "bevel",
+      "extrude"
+    ],
+    "correct": [2]
+  },
+  {
+    "question": "Do czego można \"snapować\"?",
+    "options": [
+      "ścian, krawędzi, wierzchołków",
+      "tylko materiałów",
+      "wyłącznie kamer"
+    ],
+    "correct": [0]
+  },
+  {
+    "question": "Co to UV-unwrapping?",
+    "options": [
+      "rozłożenie siatki obiektu na płaską powierzchnię",
+      "dodawanie animacji do modelu",
+      "renderowanie sceny w czasie rzeczywistym"
+    ],
+    "correct": [0]
+  },
+  {
+    "question": "Co robi funkcja subdivide?",
+    "options": [
+      "usuwa tekstury z obiektu",
+      "dzieli geometrię na większą liczbę poligonów",
+      "zmniejsza liczbę obiektów w scenie"
+    ],
+    "correct": [1]
+  },
+  {
+    "question": "Czego użyć, aby przyciągnąć obiekt do siatki lub innych obiektów?",
+    "options": [
+      "subdivision",
+      "snap",
+      "mirror"
+    ],
+    "correct": [1]
+  },
+  {
+    "question": "Z czego składa się scena?",
+    "options": [
+      "światła, kamera, obiekty",
+      "tylko tekstury",
+      "wyłącznie animacje"
+    ],
+    "correct": [0]
+  },
+  {
+    "question": "Co to jest render?",
+    "options": [
+      "generowanie końcowego obrazu sceny",
+      "usuwanie obiektów ze sceny",
+      "zmiana pozycji kamery"
+    ],
+    "correct": [0]
+  },
+  {
+    "question": "Jakie narzędzie służy do zmiany rozmiaru obiektu?",
+    "options": [
+      "scale",
+      "rotate",
+      "mirror"
+    ],
+    "correct": [0]
+  },
+  {
+    "question": "W jakim trybie edytować pojedyncze wierzchołki?",
+    "options": [
+      "object mode",
+      "edit mode",
+      "render mode"
+    ],
+    "correct": [1]
+  },
+  {
+    "question": "Do czego służy object mode?",
+    "options": [
+      "do pracy na poszczególnych obiektach",
+      "do edycji pojedynczych wierzchołków",
+      "do renderowania animacji"
+    ],
+    "correct": [0]
+  },
+  {
+    "question": "Czym jest \"Origin Point\" objektu",
+    "options": [
+      "Miejscem, gdzie znajduje się kamera",
+      "Najwyższym punktem obiektu",
+      "Punktem, wokół którego obiekt jest obracany i skalowany"
+    ],
+    "correct": [2]
+  },
+  {
+    "question": "Co robi narzędzie loop cut?",
+    "options": [
+      "dodaje nowe pętle krawędzi",
+      "zmienia kolor obiektu",
+      "renderuje scenę"
+    ],
+    "correct": [0]
+  }
+]
