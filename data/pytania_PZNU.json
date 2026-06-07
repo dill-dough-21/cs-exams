@@ -1,0 +1,202 @@
+[
+    {
+        "question": "Model VUCA dotyczy:",
+        "options": [
+            "Volatility, Uncertainty, Complexity, Ambiguity",
+            "Prototyping and Testing",
+            "Metodyk projektowania user experience"
+        ],
+        "correct": [
+            0
+        ]
+    },
+    {   
+        "question": "Na czym polega zmiana logiki towarowej na logikę usługi?",
+        "options": [
+            "Nazwa wyrobów została zastąpiona nazwą produktów cyfrowych.",
+            "Produkty powinny mieć wartość użytkową tzn. być przydatne i kupowane w wyniku potrzeby.",
+            "Zmiana logiki zarządzania firmą z modelu kaskadowego na model agile."
+        ],
+        "correct": [
+            1
+        ]
+    },
+    {
+        "question": "Które z poniższych metod badań potrzeb użytkowników pozwalają odkryć insighty?",
+        "options": [
+            "Bezpośrednia rozmowa z użytkownikiem",
+            "Dane statystyczne",
+            "Analiza ruchu na stronie"
+        ],
+        "correct": [
+            0
+        ]
+    },
+    {
+        "question": "Mapa empatii służy do:",
+        "options": [
+            "Stworzenia archetypów użytkowników Twojego rozwiązania w oparciu o wyniki badań.",
+            "Zrozumienia szerszego kontekstu emocjonalnego stojącego za decyzjami użytkowników, w oparciu o ich interakcje ze światem zewnętrznym i przeżycia wewnętrne.",
+            "Zidentyfikowania kroków, które przechodzi użytkownik podczas korzystania z usługi."
+        ],
+        "correct": [
+            1
+        ]
+    },
+    {
+        "question": "Czym skutkuje niewłaściwa organizacja architektury informacji?",
+        "options": [
+            "Wydłuży czas dotarcia do informacji.",
+            "Niczym. Nie wpłynie na użyteczność produktu.",
+            "Uniemożliwi działanie produktu na urządzeniach mobilnych."
+        ],
+        "correct": [
+            0
+        ]
+    },
+    {
+        "question": "Elementami architektury informacji są:",
+        "options": [
+            "baza SQL, CSS, HTML",
+            "Nawigacja, etykiety, wyszukiwanie",
+            "CMS, szablon graficzny, wtyczki"
+        ],
+        "correct": [
+            1
+        ]
+    },
+    {
+        "question": "Cechą dobrze zaprojektowanej wyszukiwarki nie jest:",
+        "options": [
+            "Używanie zawsze ikony lupy",
+            "Widoczność na całej stronie, bez jej chowania i przysłaniania",
+            "Umieszczanie jej na każdej stronie i aplikacji bez względu na ilość treści."
+        ],
+        "correct": [
+            2
+        ]
+    },
+    {
+        "question": "Jaka jest zasada projektowania przycisków?",
+        "options": [
+            "Używamy znanych kształtów.",
+            "Im więcej przycisków tym więcej możliwości wyboru.",
+            "Kolory nie mogą przyciągać uwagi i rozpraszać."
+        ],
+        "correct": [
+            0
+        ]
+    },
+    {
+        "question": "Każdy projektant UX/UI powinien znać:",
+        "options": [
+            "Heurystyki Nielsena",
+            "Systemy zarządzania treścią CMS",
+            "Technologie webowe"
+        ],
+        "correct": [
+            0
+        ]
+    },
+    {
+        "question": "Czym się różni prototyp Lo-Fi od Hi-Fi?",
+        "options": [
+            "Lo-Fi to tylko makieta graficzna, a Hi-Fi to zaimplementowany produkt gotowy do wdrożenia.",
+            "Poziomem szczegółowości. Lo-Hi to szkielet ekranów, a Hi-Fi to również interakcje i dopracowana grafika.",
+            "Przy prototypie Hi-Fi mamy jeszcze dokumentację technologiczną."
+        ],
+        "correct": [
+            1
+        ]
+    },
+    {
+        "question": "Na czym polegają testy A/B?",
+        "options": [
+            "Na rozmowie z użytkownikiem i zapytam go która z wersji produktu jest dla niego lepsza - A czy B?",
+            "Porównujemy dwie różne wersje projektu przy użyciu metod obiektywnych np. eye-trackera.",
+            "Na sprawdzeniu jakie są pierwsze wrażenia i kroki użytkownika na stronie."
+        ],
+        "correct": [
+            1
+        ]
+    },
+    {
+        "question": "Co przedstawiają mapy cieplne?",
+        "options": [
+            "Odzwierciedlają obszary, na których najdłużej koncentruje się wzrok odbiorcy.",
+            "Miejsca w projekcie graficznym z dużą ilością wolnej przestrzeni tzn. światło.",
+            "Miejsca na ścieżce użytkownika, które powodują negatywne emocje."
+        ],
+        "correct": [
+            0
+        ]
+    },
+    {
+        "question": "W skład komponentów UI nie wchodzi:",
+        "options": [
+            "Projektowanie layoutu strony czy aplikacji",
+            "Dobór fontu, grafiki czy kolorów.",
+            "Projekt architektury informacji."
+        ],
+        "correct": [
+            2
+        ]
+    },
+    {
+        "question": "Którą metodę można wykorzystać do przetestowania architektury informacji?",
+        "options": [
+            "First-click testing",
+            "Tree testing",
+            "Concept testing"
+        ],
+        "correct": [
+            1
+        ]
+    },    
+    {    
+        "question": "Jakie są systemy organizacji treści? (pytanie otwarte)",
+        "options": [
+            "Hierarchiczny lub drzewiasty - informacje są pogrupowane, poukładane według poziomu wazności, najczęściej przyjmuje formę menu głównego z podmenu na 1-2 poziomach zagniedzdżenia.",
+            "Sekwencyjny - treści wyświetlane są jako ściezka uzytkownika, uzytkownik nie widzi co znajduje się na kolejnych ekranach, ale ma tego świadomość i poczucie, e jest prowadzony.",
+            "Matrix - treści są ułoone według preferencji uzytkownika, np. według daty lub tematu."
+        ],
+        "correct": [
+            0, 1, 2
+        ]
+    },
+    {
+        "question": "Wypisz 5 cech dobrze zaprojektowanego formularza (pytanie otwarte)",
+        "options": [
+            "Pytaj tylko o niezbędne informacje.",
+            "Zachowaj logiczną kolejność pytań.",
+            "Podziel formularz na sekcje tematyczne",
+            "Minimalizuj liczbę pól do wypełnienia.",
+            "Nie stosuj pól opcjonalnych",
+            "Nie uywaj wartości domyślnych, chyba że są oczywiste (np. kraj zamieszkania, dzisiejsza data).",
+            "Etykiety umieszczaj bezpośrednio nad polami, lub po lewej stronie. Nigdy jako placeholder.",
+            "Formularz powinien zwracać informację o poprawnym wysłaniu.",
+            "Błędy powinny być jasno komunikowane, najlepiej bezpośrednio przy polu, którego dotyczą."
+        ],
+        "correct": [
+            0, 1, 2, 3, 4, 5, 6, 7, 8
+        ]
+    },
+    {
+        "question": "Wypisz 5 cech dobrze zaprojektowanego koszyka (pytanie otwarte)",
+        "options": [
+            "Ikona koszyka powinna znajdować się w prawym górnym rogu strony i być widoczna na każdej podstronie.",
+            "Wyświetlaj ilość produktów w koszyku",
+            "Szybki podgląd na wszystkie produkty",
+            "Moliwość zmiany ilości produktów i usunięcia na kadym etapie, nawet przy końcowym etapie płatności.",
+            "Daj uzytkownikowi mozliwość wyjścia z koszyka czy kontynuowania zakupów",
+            "Nie wymagaj zakładania konta, aby dokończyć zakup.",
+            "Podziel proces zakupu na kroki",
+            "Zoptymalizuj formularze",
+            "Wyczyść graficznie stronę koszyka, aby użytkownik mógł skupić się na zakupie.",
+            "Zadbaj o jasną komunikację o kosztach, czasie dostawy i dostępności produktów."
+        ],
+        "correct": [
+            0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+        ]
+    }
+]

@@ -82,6 +82,11 @@
           "name": "Modelowanie Obiektów 3D",
           "file": "data/pytania_MO3D.json",
           "description": "Pytania z Modelowania Obiektów 3D z egzaminu"
+        },
+        {
+          "name": "Projektowanie zorientowane na uytkownika",
+          "file": "data/pytania_PZNU.json",
+          "description": "Pytania z Projektowania interfejsów użytkownika z egzaminu"
         }
       ]
     }
