@@ -36,7 +36,7 @@
       "Zrekonstruowaną z wektorów ruchu i klatek typu B",
       "Wynikającą z sąsiadujących klatek I"
     ],
-    "correct": [1]
+    "correct": [1, 3]
   },
   {
     "question": "Sprawność kodowania R dla ciągu informacyjnego o długości k=3 bity i ciągu kodowego n=6 bitów wynosi:",
@@ -717,11 +717,11 @@
     "question": "System multimedialny składa się z:",
     "options": [
       "systemu rzeczywistości poznawczej",
-      "kantekstu sytuacyjnego",
+      "kontekstu sytuacyjnego",
       "systemu rzeczywistości wirtualnej",
       "systemu rzeczywistości rozszerzonej"
     ],
-    "correct": [3]
+    "correct": [0, 1, 2]
   },
   {
     "question": "Rozproszony system VOD charakteryzuje się:",
@@ -747,13 +747,13 @@
   {
     "question": "Kamera plenoptyczna pozwala na",
     "options": [
-      "rejestrowanie animacji z szybkością większą niż 1000 klatek na sekunde",
-      "zapisanie obrazu, który mozna modyfikować, symulując zmianę przesłony",
+      "rejestrowanie animacji z szybkością większą niż 1000 klatek na sekundę",
+      "zapisanie obrazu, który można modyfikować, symulując zmianę przesłony",
       "Rejestrację setek obrazów w ciągu jednego cyklu otwarcia migawki",
       "zapisanie obrazu, który można modyfikować, symulując zmianę ostrości w różnych planach sceny",
       "zapisanie obrazu, który można modyfikować, symulując zmianę perspektywy"
     ],
-    "correct": [1, 3, 4]
+    "correct": [2]
   },
   {
     "question": "Z punktu widzenia fizyki, częstotliwość dźwięku odbierana jako:",
