@@ -86,7 +86,12 @@
         {
           "name": "Projektowanie zorientowane na użytkownika",
           "file": "data/pytania_UXUI.json",
-          "description": "Pytania z UX/UI"
+          "description": "Pytania z Projektowanie zorientowane na użytkownika"
+        },
+        {
+          "name": "Systemy multimedialne",
+          "file": "data/pytania_SM.json",
+          "description": "Pytania z Systemów multimedialnych"
         }
       ]
     }

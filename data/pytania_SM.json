@@ -1,0 +1,791 @@
+[
+  {
+    "question": "Zmienna przepływność",
+    "options": [
+      "Gwarantuje utrzymanie stałej jakości sygnału wyjściowego, nie zaś stałej ilości danych przypadających na daną jednostkę czasu",
+      "Zapisuje określony fragment nagrania przy pomocy różnej liczby bitów, zależnie od stopnia skomplikowania",
+      "Dopasowuje liczbę bitów do maksymalnej aplitudy sygnału",
+      "Zapisuje określony fragment nagrania zawsze przy pomocy tej samej liczby bitów, niezależnie od stopnia skomplikowania zapisywanych danych"
+    ],
+    "correct": [1, 0]
+  },
+  {
+    "question": "Kodowanie Huffmana dla ciągu 123123123 ...",
+    "options": [
+      "Da dużą oszczędność miejsca",
+      "Nie zmieni objętości danych zakodowanych w stosunku do oryginalnych",
+      "Zwiększy zapotrzebowanie na miejsce potrzebne do zapisania formy zakodowanej"
+    ],
+    "correct": [2]
+  },
+  {
+    "question": "W algorytmie LZW alfabet jest znany ...",
+    "options": [
+      "W zależności od wielkości alfabetu, przez kompresor albo dekompresor",
+      "Wyłącznie przez dekompresor",
+      "wyłącznie przez kompresor",
+      "zarówno przez kompresor jak i dekompresor"
+    ],
+    "correct": [3]
+  },
+  {
+    "question": "Klatki typu P przechowują informację...",
+    "options": [
+      "Całkowitą o obrazie",
+      "Różnicową",
+      "Zrekonstruowaną z wektorów ruchu i klatek typu B",
+      "Wynikającą z sąsiadujących klatek I"
+    ],
+    "correct": [1]
+  },
+  {
+    "question": "Sprawność kodowania R dla ciągu informacyjnego o długości k=3 bity i ciągu kodowego n=6 bitów wynosi:",
+    "options": [
+      "R=k-n, czyli R=-3",
+      "R=k/n, czyli R=1/2",
+      "R=n-k czyli R=3",
+      "R=n/k, czyli R=2"
+    ],
+    "correct": [1]
+  },
+  {
+    "question": "Aktywne zasoby w systemie operacyjnym to",
+    "options": [
+      "karta sieciowa",
+      "pasmo transmisji sieciowej",
+      "CPU",
+      "pamięć operacyjna"
+    ],
+    "correct": [2, 0]
+  },
+  {
+    "question": "Typowy rozmiar skompresowanych ramek P w komresji wideo...",
+    "options": [
+      "jest znacznie większy niż ramek B",
+      "nie zależy od ramek I",
+      "jest znacznie mniejszy niż ramek I",
+      "zależy silnie od ramek B"
+    ],
+    "correct": [2, 0]
+  },
+  {
+    "question": "Stała przepływność",
+    "options": [
+      "Zapisuje określony fragment nagrania przy pomocy różnej liczby bitów, zależnie od stopnia skomplikowania",
+      "Zapisuje określony fragment nagrania zawsze przy pomocy tej samej liczby bitów, niezależnie od stopnia skomplikowania zapisywanych danych",
+      "Gwarantuje wypełnienie określonego pasma transmisyjnego",
+      "Stosuje stałą liczbę bitów dla maksymalnej ampltudy sygnału"
+    ],
+    "correct": [1, 2]
+  },
+  {
+    "question": "Długość fali lasera dla nosników CD-ROM jest:",
+    "options": [
+      "pomiędzy DVR-ROM a DVD-RW",
+      "krótsza niż dla DVD-ROM",
+      "taka sama jak dla DVD-ROM",
+      "dłuższa niż dla DVD-ROM"
+    ],
+    "correct": [3]
+  },
+  {
+    "question": "Ze względu na zastosowany typ przetwornika elektroakustycznego, wyróżniamy mikrofony:",
+    "options": [
+      "elektrostatyczne",
+      "dynamiczne",
+      "węglowe",
+      "stykowe",
+      "kwasowe",
+      "piezoelektryczne",
+      "laserowe",
+      "suche",
+      "magnetoelektryczne",
+      "mokre"
+    ],
+    "correct": [4, 2, 3, 5, 1, 8, 6, 0]
+  },
+  {
+    "question": "Pakiety w transmisji cyfrowej TV poddaje się tzw. randomizacji aby:",
+    "options": [
+      "zaszyfrować przekaz",
+      "zwiększyc odpornośc przekazu na zakłócenia",
+      "rozproszyć energię sygnału",
+      "zabezpieczyć przed wysyłaniem pozornie niemodulowanej fali nośnej"
+    ],
+    "correct": [2, 3, 1]
+  },
+  {
+    "question": "W typowym przypadku cyfrowej transmisji TV w pojedynczym kanale mozna przesłać około:",
+    "options": [
+      "1 program",
+      "10 programów",
+      "16 programów",
+      "4 programy"
+    ],
+    "correct": [1]
+  },
+  {
+    "question": "Scentralizowany system VOD charakteryzuje się:",
+    "options": [
+      "dużą przepustowością",
+      "łatwością zarządzania",
+      "dobrą skalowalnością",
+      "stosunkowo niską przepustowością"
+    ],
+    "correct": [3, 1]
+  },
+  {
+    "question": "Cele cyfrowego znakowania wodnego:",
+    "options": [
+      "śledzenie transakcji",
+      "zabezpieczenie przed nieuprawnionym dostępem",
+      "ochrona praw autorskiech",
+      "uwierzytelnianie treści",
+      "ukrycie tajnej komunikacji"
+    ],
+    "correct": [2, 0, 3]
+  },
+  {
+    "question": "W technologii nośników holograficznych wykorzystuje się:",
+    "options": [
+      "laser czerwony",
+      "laser niebieski",
+      "laser biały",
+      "laser zielony"
+    ],
+    "correct": [3, 0]
+  },
+  {
+    "question": "Po wykonaniu algorytmu ByteRun na ciągu 1,1,1,1,2,2,2,3,3,3,3,1,2,3,1,2,3,4,5 uzyska się następujący wynik:",
+    "options": [
+      "4,1,3,2,4,3,0,7,1,2,3,1,2,3,4,5,0",
+      "-3,1,-2,2,-3,3,7,1,2,3,1,2,3,4,5,0",
+      "-3,1,-2,2,-3,3,7,1,2,3,1,2,3,4,5",
+      "3,1,3,2,4,3,0,7,1,2,3,1,2,3,4,5"
+    ],
+    "correct": [2]
+  },
+  {
+    "question": "Zaznacz rodzaje pamieci masowej:",
+    "options": [
+      "pamięc obiektowa",
+      "pamięc równoległa",
+      "pamięć szeregowa",
+      "pamięc plikowa",
+      "pamięć blokowa"
+    ],
+    "correct": [4, 0, 3]
+  },
+  {
+    "question": "Kompensacja ruchu to:",
+    "options": [
+      "Algorytm redukcji drgań w zapisie video",
+      "Usuwanie obiektów ruchomych ze strumienia video",
+      "Sposób zapisu wektorów przesunięć"
+    ],
+    "correct": [2]
+  },
+  {
+    "question": "Najmniej zasobów po stronie komputera odbiorcy angażuje w cloud gamingu metoda:",
+    "options": [
+      "Game streaming (GS)",
+      "Progresywne pobieranie (PD - Procgressive download)",
+      "Peer-to-Peer (P2P)"
+    ],
+    "correct": [0]
+  },
+  {
+    "question": "Modulacja EFM stosowana w zapisie CD-ROM oznacza, że:",
+    "options": [
+      "do 8 bitów wejściowych dodaje się 4 bity parzystości",
+      "8 bitów wejściowych jest zastępowane 14 bitami wyjściowymi",
+      "14 bitów wejściowych uzupełnianych jest 8 bitami parzystości",
+      "8 bitow wejściowych jest łączone z 14 bitami, co daje 22 bity na wyjściu"
+    ],
+    "correct": [1]
+  },
+  {
+    "question": "Subsampling (opisywany np. jako 4:2:2) stosowany w JPEG i MPEG dotyczy:",
+    "options": [
+      "Kwantyzacji współczynników transformaty DCT w kolejnych blokach obrazu",
+      "Stosunku liczby zapamiętanych w obrazie pikseli luminancji i chrominancji",
+      "Proporcji liczby klatek I, P i B",
+      "Stosunku wielkości bloków w algorytmie estymacji ruchu"
+    ],
+    "correct": [1]
+  },
+  {
+    "question": "Cechą charakterystyczną redundancji informacyjnej jest...",
+    "options": [
+      "Wysoka entropia strumienia danych",
+      "Losowy rozkład symboli w ciagu danych",
+      "Niska entropia strumienia danych",
+      "Częste powtarzanie się symboli w ciągu danych"
+    ],
+    "correct": [2, 3]
+  },
+  {
+    "question": "Wielkość pojedynczego piksela w typowej matrycy CCD jest w przedziale",
+    "options": [
+      "3 - 25 mikrometrów",
+      "0.2 - 0.5 milimetra",
+      "0.2 - 0.5 nanometra",
+      "3 - 25 nanometrów"
+    ],
+    "correct": [0]
+  },
+  {
+    "question": "Kodowanie danych ma na celu:",
+    "options": [
+      "ograniczenie dostępu poprzez szyfrowanie,",
+      "ujednolicenie formy danych dla róznych kanałów transmisyjnych",
+      "zmniejszenie objętości poprzez kompresję,",
+      "poprawę jakości transmisji przez korekcję błędów,"
+    ],
+    "correct": [3, 2, 0]
+  },
+  {
+    "question": "metoda znakowania wodnego na bazie LSB wykorzystuje:",
+    "options": [
+      "niskie częstotliwości widma FFT obrazu,",
+      "składowe jasnosci w modelu HSB,",
+      "najbardziej znaczące bity słowa opisującego piksel,",
+      "najmniej znaczące bity słowa opisującego piksel,"
+    ],
+    "correct": [3]
+  },
+  {
+    "question": "Zaznacz metody/standardy stratnej kompresji dźwięku",
+    "options": [
+      "ADPCM",
+      "A-law",
+      "ALAC",
+      "AAC",
+      "FLAC",
+      "APE",
+      "MP3"
+    ],
+    "correct": [1, 0, 3, 6]
+  },
+  {
+    "question": "Cechy mikrofonów węglowych:",
+    "options": [
+      "duża skuteczność",
+      "małe zniekształcenia",
+      "mały poziom szumu",
+      "duży poziom szumu",
+      "niegoraniczone pasmo przenoszenia",
+      "duze zniekształcenia"
+    ],
+    "correct": [3, 5, 0]
+  },
+  {
+    "question": "Skrót 4CC oznacza",
+    "options": [
+      "algorytm korekcji błędów z czterema bitami nadmiarowymi",
+      "format zapisu liczb 32-bitowych w procesorach sygnałowych",
+      "identyfikator przestrzenie barwnej wykorzystywanej w plikach video",
+      "format kompresji czwrórkowej obrazu statycznego"
+    ],
+    "correct": [2]
+  },
+  {
+    "question": "Metoda podwójnej ślepej próby (test ABC) w ocenie jakości dźwięku wykorzystuje",
+    "options": [
+      "dowolną liczbę sygnałów, przy założeniu, że tylko jeden jest referencyjny",
+      "4 sygnaty",
+      "3 sygnały",
+      "2 sygnały"
+    ],
+    "correct": [2]
+  },
+  {
+    "question": "Różnica pomiędzy CCD a CMOS w matrycach światłoczułych polega na tym, iż",
+    "options": [
+      "w matrycach CMOS konwersja ładunku na napiecie odbywa się w każdym pikselu matrycy",
+      "odczyt wartości z matrycy CMOS odbywa się w jednym kroku",
+      "odczyt warości z matrycy CMOS odbywa się na wierszami",
+      "w matrycach CMOS konwersja ładunku na napięcie odbywa sie poprzez pojedynczą konwersję dla całej matrycy"
+    ],
+    "correct": [0, 2]
+  },
+  {
+    "question": "Kwantyzacja BTC",
+    "options": [
+      "jest metodą stratnej kompresji obrazu",
+      "zachowuje wariancję wartości pikseli w blokach",
+      "pracuje wyłącznie na obrazach dwupoziomowych",
+      "zachowuje średnią wartości pikseli w blokach",
+      "dokonuje dwupoziomowej kwantyzacji w blokach obrazu"
+    ],
+    "correct": [4, 3, 1, 0]
+  },
+  {
+    "question": "Zaznacz prawidłowe:",
+    "options": [
+      "Treść linearna wymaga kontroli nawigacyjnej ze strony odbiorcy",
+      "Treść nielinearna oferuje interaktywność",
+      "Treść nielinearna to treść hipermedialna",
+      "Przykładem treści linearnej jest np. przekaz kinowy"
+    ],
+    "correct": [1, 2, 3]
+  },
+  {
+    "question": "MDCT (modified DCT) pozwala na",
+    "options": [
+      "Zmniejszenie zniekształceń na granicach ramek audo w kompresji stratnej",
+      "Obliczanie jedynie połowy współczynników widma DCT dla zwiększenia szybkości działania",
+      "Realizację przekształcenia na blokach nachodzących na siebie w czasie",
+      "Działanie na danych w skali logarytmicznej"
+    ],
+    "correct": [0, 2]
+  },
+  {
+    "question": "Kodeki parametryczne w kodowaniu mowy wykorzystują",
+    "options": [
+      "transmisję parametrów modelu",
+      "syntezę mowy na podstawie otrzymanych parametrów",
+      "analizę parametrów mowy",
+      "pasmo 20Hz - 20 kHz",
+      "model statystyczny sygnału"
+    ],
+    "correct": [0, 1, 2]
+  },
+  {
+    "question": "Wyróżniamy nastpujące znaczenia komunikatu:",
+    "options": [
+      "wirtualne (domniemane)",
+      "wewnętrzne (prawdziwe, obiektywne)",
+      "pierwotne (założnie, prokjekt)",
+      "zewnętrzne (zakładane)",
+      "wtórne (odbiór, subiektywne)"
+    ],
+    "correct": [2, 4, 1]
+  },
+  {
+    "question": "Elementy \"bezstratne\" algorytmu kompresji JPEG to",
+    "options": [
+      "podział na bloki 8x8",
+      "skanowanie zig-zag",
+      "kwantyzację",
+      "subsampling kolorów"
+    ],
+    "correct": [0, 1]
+  },
+  {
+    "question": "Dla dowolnego obrazka kolorowego zapisanego z dokładnością 8-bitową alfabet kompresora LZW ...",
+    "options": [
+      "Może zawierać maksymalnie 256 symboli",
+      "Będzie zawierał więcej niż 256 symboli",
+      "Będzie równy liczbie symboli w słowniku"
+    ],
+    "correct": [0]
+  },
+  {
+    "question": "Binning pozwala na",
+    "options": [
+      "wzmocnienie prądu odczytywanego z pojedynczego piksela matrycy światłoczułej",
+      "łączenie pikseli w matrycy w celu zmniejszenia poziomu szumu w obrazie",
+      "zwiększenie rozdzielczosci przestrzennej obrazu",
+      "rejestrowanie obrazów w słabym oświetleniu"
+    ],
+    "correct": [3, 1]
+  },
+  {
+    "question": "Szum kwantyzacji obniża się",
+    "options": [
+      "wraz ze wzrostem głebokości bitowej rejestrowanego dźwięku",
+      "wraz ze zmniejszeniem się głebokości bitowej rejestrowanego dźwięku",
+      "nie zalaży od głębokości bitowej rejestrowanwgo dźwięku"
+    ],
+    "correct": [0]
+  },
+  {
+    "question": "Kodowanie Huffmana jest",
+    "options": [
+      "Metodą zmniejszania szumów w strumieniach audio",
+      "Metodą kompresji bsezstratnej",
+      "Metodą kompresji stratnej",
+      "Metodą kompresji stratnej lub bezstratnej w zależności od danych",
+      "Metodą kodowania sygnału stereo w strumieniu mono"
+    ],
+    "correct": [1]
+  },
+  {
+    "question": "PhotoStimulating Luminescence pozwala na",
+    "options": [
+      "rejestrację promieniowana X w cyfrowych urządzeniach medycznych",
+      "wykrywanie obiektów o naturalnej luninescencji w obrazach mikroskopowych",
+      "budowę obrazów radiograficznych",
+      "pomiar energii przenoszonej przez promieniowanie cieplne"
+    ],
+    "correct": [0, 2]
+  },
+  {
+    "question": "cechą wspólną algorytmów JPEG2000, WSQ i DjVu jest to, że",
+    "options": [
+      "działają na obazach wielopoziomowych",
+      "dokonują segmentacji tła",
+      "dzielą obraz na bloki 8x8",
+      "wykorzystują transformatę falkową"
+    ],
+    "correct": [3, 0]
+  },
+  {
+    "question": "Zaznacz prawdziwe:",
+    "options": [
+      "Integracja dyskretnych i ciągłych danych multimedialnych wymaga dodatkowych usług systemu operacyjnego",
+      "Multimedialny system operacyjny nie uwzględnia ograniczeń czasowych ale zapewna gwarancję obsługi",
+      "System operacyjny zapewnia wygodne środowisko do wykonywania programów i efektywne wykorzystanie sprzętu komputerowego",
+      "Aplikacje multimedialne wymagają dużej liczby manipulacji danymi"
+    ],
+    "correct": [2, 3, 0]
+  },
+  {
+    "question": "Wadą znakowania wodnego dla video wykorzystującego takie same znaki wodne dla kazdej klatki jest:",
+    "options": [
+      "problem z zachowaniem niewidzialności statystycznej,",
+      "duża złozonośc obliczeniowa,",
+      "łatwość usuwania znaków wodnych,",
+      "zmienny poziom szumu dla róznych klatek,"
+    ],
+    "correct": [0]
+  },
+  {
+    "question": "Proszę zaznaczyć technologie realizujace koncepcję IBB:",
+    "options": [
+      "DRM",
+      "HybridCast",
+      "HbbTV",
+      "DAB+"
+    ],
+    "correct": [1, 2]
+  },
+  {
+    "question": "Algorytmy kodowania bez analizy calego zbioru danych to m.in. :",
+    "options": [
+      "ByteRun",
+      "RLE",
+      "LZW",
+      "LZ77",
+      "Kodowanie arytmetyczne",
+      "Kodowanie Huffmana"
+    ],
+    "correct": [0, 1, 2, 3]
+  },
+  {
+    "question": "profile MPEG",
+    "options": [
+      "podzbiory składni, dzięki którym dekodery pracujące w pewnym określonym obszarze nie muszą obsługiwać wszystkich założonych w standardzie funkcji",
+      "definiują kryteria wyszukiwania w bazach wideo",
+      "określają rodzaj materiału wideo, który podlega kompresji (dymanika sceny, złożonośc obiektów, liczba kolorów)",
+      "są ułożone hierarchicznie"
+    ],
+    "correct": [0, 3]
+  },
+  {
+    "question": "Kompresja fraktalna obrazu wykorzystuje",
+    "options": [
+      "bloki zakresów (range blocks)",
+      "kodowanie arytmetyczne",
+      "modelowanie tła",
+      "filtry splotowe",
+      "bloki domen (domain blocks)",
+      "transformacje afiniczne"
+    ],
+    "correct": [0, 4, 5]
+  },
+  {
+    "question": "Model barw YCbCr używany jest w kompresji obrazów ponieważ:",
+    "options": [
+      "Jest to przestrzeń bardziej percepcyjnie jednorodna niż RGB",
+      "Kolory w nim są odwzorowane z większą dokładnością",
+      "Obliczenia w nim są szybsze niż w RGB",
+      "Dzięki rozdzieleniu luminancji od chrominancji można uzyskać wyższy stopień kompresji"
+    ],
+    "correct": [3]
+  },
+  {
+    "question": "Percepcja to:",
+    "options": [
+      "mechanizm stratnej kompresji dźwięku i obrazu",
+      "zdolność wzroku do skupienia ostrości na wybranym punkcie",
+      "organizacja i interpretacja wrażeń zmysłowych, w celu zrozumienia otoczenia",
+      "metoda oceny jakości obrazu lub dźwięku"
+    ],
+    "correct": [2]
+  },
+  {
+    "question": "Algorytmy RLE i ByteRun umożliwiają",
+    "options": [
+      "Kompresję prostych obrazów",
+      "Eliminację redundancji informacyjnej w postaci powtarzających się bajtów",
+      "Skalowanie obrazu z interpolacją",
+      "Próbkowanie co drugiego bajtu odpowiedzialnego za kolor w algorytmie JPEG"
+    ],
+    "correct": [1, 0]
+  },
+  {
+    "question": "Podstawowe zalety systemów ARQ (Automatic Repeat Request) to:",
+    "options": [
+      "zwiększenie szybkości i efektywności transmisji",
+      "operacja detekcji błędów może być zrealizowana w prosty i szybki sposób",
+      "brak konieczności buforowania danych",
+      "dane przekazywane użytkownikowi koricowemu są pozbawione błędów"
+    ],
+    "correct": [3, 1]
+  },
+  {
+    "question": "Wyższa częstotliwość próbkowania pozwala na",
+    "options": [
+      "poszerzenie zakodowanego pasma częstotliwości",
+      "zawężenie zakodowanego pasma częstotliwości",
+      "nie wpływa na szerokość pasma zakodowanego dźwięku"
+    ],
+    "correct": [0]
+  },
+  {
+    "question": "Zniekształcenia strukturalne w ocenie jakości obrazu to m.in.",
+    "options": [
+      "zmianajasności",
+      "przesunięcie wszystkich piseli w macierzy obrazu",
+      "rozmycie",
+      "zaszumienie",
+      "kompresja startna oparta na falkach",
+      "kompresja stratna typu JPEG",
+      "zmiana kontrastu",
+      "zmiana współczynnika gamma"
+    ],
+    "correct": [3, 2, 5, 4]
+  },
+  {
+    "question": "Na odbiór danej barwy wpływ ma wiele bodźców, m. in.:",
+    "options": [
+      "skład widmowy promieniowana",
+      "samopoczucie odbiorcy odczuwane danego dnia",
+      "obecnos¢ innych barw w pobliżu",
+      "ilos¢ energii świetlnej",
+      "liczba równoczesnych odbiorców"
+    ],
+    "correct": [0, 3, 2, 1]
+  },
+  {
+    "question": "Komunikat wizualny obejmuje (zawiera) m.in.",
+    "options": [
+      "obraz kolor",
+      "spostrzeżenie, informację",
+      "gest, ruch",
+      "sygnał, bodziec",
+      "wrażenie, wiadomość"
+    ],
+    "correct": [3, 1, 4]
+  },
+  {
+    "question": "QuadBayer to nazwa",
+    "options": [
+      "matrycy kolorowej o 4 filtrach kolorystycznych (w przeciewieństwie do typowych 3 filtrów)",
+      "metody zwiększania czułości i efektywności kwantowej w przypadku słabego oóświetlenia",
+      "specjalnego sensora o rozdzielczości przestrzennej 4x większej niż zwykłe sensory",
+      "specjalnego sensora o rozdzielczości przestrzennej 4x mniejszej niż zwykłe sensory"
+    ],
+    "correct": [2, 1]
+  },
+  {
+    "question": "Pasywne zasoby w systemie operacyjnym to",
+    "options": [
+      "pasmo systemu plików",
+      "CPU",
+      "karta sieciowa",
+      "pamięć operacyjna",
+      "pasmo transmisji sieciowej"
+    ],
+    "correct": [3, 4, 0]
+  },
+  {
+    "question": "W modelu data-pull dla interfejsu dźwiękowego",
+    "options": [
+      "brak jest synchronizacji z zegarem interfejsu",
+      "jest dostępna synchronizacja z zegarem interfejsu",
+      "synchronizacja zależy od tego, czy odtwarzamy, czy nagrywamy dzwiek"
+    ],
+    "correct": [2]
+  },
+  {
+    "question": "Zaznacz metody/standardy bezstratnej kompresji obrazu",
+    "options": [
+      "JPEG2000",
+      "JBIGY",
+      "JPEG-LS",
+      "CALIC",
+      "GIFY"
+    ],
+    "correct": [1, 2, 3, 4]
+  },
+  {
+    "question": "Po wykonaniu algorytmu RLE na ciągu 1,1,1,1,2,2,2,3,3,3,3,1,2,3,1,2,3,4,5 uzyska się następujący wynik:",
+    "options": [
+      "413 308123123450",
+      "-51,-32-33812312345",
+      "4132430812312345 ol",
+      "-51,32-33812312345 ,0"
+    ],
+    "correct": []
+  },
+  {
+    "question": "Zaznacz metody/standardy bezstratnej kompresji dźwięku",
+    "options": [
+      "FLAC",
+      "ALAC",
+      "ADPCM",
+      "A-Law",
+      "APE"
+    ],
+    "correct": [0, 1, 4]
+  },
+  {
+    "question": "Wyróżniamy następujące rodzaje transmisji strumieniowej",
+    "options": [
+      "Transmisja wielu-do-wielu (ang. Varicast)",
+      "Transmisja rozgłoszeniowa (ang. Broadcast)",
+      "Transmisja jeden-do-wielu (ang. Multicast)",
+      "Transmisja jeden-do-jednego (ang. Unicast)"
+    ],
+    "correct": [3, 2, 1]
+  },
+  {
+    "question": "Zasada Huygensa pozwala na",
+    "options": [
+      "stworzenie pozornych źródeł poza obszarem odsłuchu",
+      "zmniejszenie echa w przypadku nagłaśniania dużych pomieszczeń",
+      "odwzorowanie przestrzennego rozkładu pola akustycznego",
+      "podwyższenie jakości dźwięku kompresowanego algorytmami stratnymi"
+    ],
+    "correct": [2, 0]
+  },
+  {
+    "question": "Drogą przekazu wyłączenie akustycznego człowiek przyjmuje około X% informacji. Przy przekazie słownym i wizualnym — około Y%",
+    "options": [
+      "X=10, Y=70",
+      "X=50, Y=100",
+      "X=20, Y=30",
+      "X=30, Y=80"
+    ],
+    "correct": [3]
+  },
+  {
+    "question": "kompensacja ruchu wykorzystuje:",
+    "options": [
+      "mechanizmy przeszukiwania (pełny i logarytmiczny)",
+      "ocenę błędu MAE",
+      "wykrywanie błędów predykcji",
+      "zmianę kroku kwantyzacji współczynników DCT"
+    ],
+    "correct": [0, 1]
+  },
+  {
+    "question": "Jak nazywa się mechanizm ochrony dysków SSD przed zbyt szybkim zużyciem:",
+    "options": [
+      "Multi-level cell protection,",
+      "Wear-leveling,",
+      "Error Correction Code,",
+      "Kerreffect,"
+    ],
+    "correct": [1]
+  },
+  {
+    "question": "Nosnikiem optycznym NIE JEST:",
+    "options": [
+      "Streramer,",
+      "GD-ROM,",
+      "Pamięć bębnowa,",
+      "Blu-ray,",
+      "OTPROM,"
+    ],
+    "correct": [2, 0, 4]
+  },
+  {
+    "question": "Utrata synchronizacji to sytuacja w znakowaniu wodnym, kiedy:",
+    "options": [
+      "znak wodny jest obecny ale nie może zostać wykryty,",
+      "obraz po dodaniu znaku wodnego staje się nieczytelny,",
+      "znak wodny przestaje korelować z obrazem,",
+      "znak wodny jest usuwany, ale jakośc obrazu znacząco spada,"
+    ],
+    "correct": [0]
+  },
+  {
+    "question": "System multimedialny składa się z:",
+    "options": [
+      "systemu rzeczywistości poznawczej",
+      "kantekstu sytuacyjnego",
+      "systemu rzeczywistości wirtualnej",
+      "systemu rzeczywistości rozszerzonej"
+    ],
+    "correct": [3]
+  },
+  {
+    "question": "Rozproszony system VOD charakteryzuje się:",
+    "options": [
+      "dużą przepustowością",
+      "większym opóźnieniem",
+      "stosunkowo dużą trudnością zarządzania",
+      "słabą skalowalnością"
+    ],
+    "correct": [0, 2]
+  },
+  {
+    "question": "Dane bardzo trudne lub niemożliwe do skompresowania metodami bezstratnymi to:",
+    "options": [
+      "strumienie liczb pseudolosowych",
+      "dane skompresowane za pomocą tego samego lub innego algorytmu",
+      "pliki JPEGi MP3",
+      "strumienie liczb losowych",
+      "wszystkie obrazy monochromatyczne"
+    ],
+    "correct": [0, 1, 2, 3]
+  },
+  {
+    "question": "Kamera plenoptyczna pozwala na",
+    "options": [
+      "rejestrowanie animacji z szybkością większą niż 1000 klatek na sekunde",
+      "zapisanie obrazu, który mozna modyfikować, symulując zmianę przesłony",
+      "Rejestrację setek obrazów w ciągu jednego cyklu otwarcia migawki",
+      "zapisanie obrazu, który można modyfikować, symulując zmianę ostrości w różnych planach sceny",
+      "zapisanie obrazu, który można modyfikować, symulując zmianę perspektywy"
+    ],
+    "correct": [1, 3, 4]
+  },
+  {
+    "question": "Z punktu widzenia fizyki, częstotliwość dźwięku odbierana jako:",
+    "options": [
+      "barwa dźwięku",
+      "stosunek (proporcje) częstotliwości podstawowej do aktualnie rejestrowanej",
+      "wysokość tonu",
+      "kontur melodii"
+    ],
+    "correct": [2]
+  },
+  {
+    "question": "Kryteria dotyczące wymagań aplikacji multimedialnych i strumieni danych to m.in.",
+    "options": [
+      "opóźnienie globalne (od końca do końca)",
+      "liczba obsługiwanych plików w lokalnym systemie plików",
+      "przepustowość",
+      "niezawodność",
+      "rozmiar zaalokowanej pamięci wirtualnej",
+      "jitter",
+      "opóźnienie lokalne (przy zasobie)"
+    ],
+    "correct": [0, 2, 3, 5, 6]
+  },
+  {
+    "question": "Kompresja stratna obrazu jest możliwa m.in. dzięki:",
+    "options": [
+      "Niedoskonałości ludzkiego wzroku",
+      "Niskiej rozdzielczości współczesnych monitorów",
+      "Transformacji do dziedziny częstotliwości i kwantyzacji współczynników widma",
+      "Szumom wprowadzanym przez sensory CCD/CMOS"
+    ],
+    "correct": [0, 2]
+  }
+]
