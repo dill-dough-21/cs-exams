@@ -19,6 +19,7 @@ export function shuffleAndMapQuestions(questions) {
       ...q,
       options: newOptions,
       correct: newCorrect,
+      _optionIndexMap: indices,
     };
   });
 }
