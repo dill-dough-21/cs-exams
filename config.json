@@ -4,24 +4,24 @@
       "title": "Semestr 4",
       "files": [
         {
-          "name": "Inżynieria oprogramowania",
+          "name": "Inżynieria Oprogramowania",
           "file": "data/pytania_IO.json",
           "description": "Pytania z inżynierii oprogramowania"
         },
         {
           "name": "Zarządzanie informacją",
           "file": "data/pytania_ZI.json",
-          "description": "Pytania z zarządzania informacją"
+          "description": "Pytania z Zarządzania informacją"
         },
         {
-          "name": "Grafika komputerowa",
+          "name": "Grafika Komputerowa",
           "file": "data/pytania_GK.json",
-          "description": "Pytania z grafiki komputerowej"
+          "description": "Pytania z grafiki komputerowej z obu terminów"
         },
         {
-          "name": "Transmisja danych",
+          "name": "Transmisja Danych",
           "file": "data/pytania_TD.json",
-          "description": "Pytania z transmisji danych"
+          "description": "Pytania z Transmisji danych z obu terminów"
         }
       ]
     },
@@ -31,27 +31,27 @@
         {
           "name": "Podstawy ochrony informacji",
           "file": "data/pytania_POI.json",
-          "description": "Pytania z podstaw ochrony informacji"
+          "description": "Pytania z Podstaw ochrony informacji"
         },
         {
-          "name": "Zarządzanie informacją II",
+          "name": "Zarządzanie informacją 2",
           "file": "data/pytania_ZI2.json",
-          "description": "Pytania z zarządzania informacją II"
+          "description": "Pytania z Zarządzania informacją 2"
         },
         {
-          "name": "Komunikacja człowiek-maszyna",
+          "name": "Komunikacja człowiek maszyna",
           "file": "data/pytania_KCM.json",
-          "description": "Pytania z komunikacji człowiek-maszyna"
+          "description": "Pytania z komunikacja człowiek maszyna"
         },
         {
           "name": "Sztuczna inteligencja",
           "file": "data/pytania_SI.json",
-          "description": "Pytania ze sztucznej inteligencji"
+          "description": "Pytania ze Sztuczna inteligencja (Bez Logiki)"
         },
         {
-          "name": "Gry komputerowe",
+          "name": "Gry Komputerowe",
           "file": "data/pytaniaGry.json",
-          "description": "Pytania z gier komputerowych"
+          "description": "Są to pytania wygenerowane przez Gemini na bazie wykładów"
         },
         {
           "name": "IPZ",
@@ -59,29 +59,29 @@
           "description": "Pytania z IPZ"
         },
         {
-          "name": "Aplikacje internetowe",
+          "name": "Aplikacje Internetowe",
           "file": "data/pytaniaAI.json",
-          "description": "Pytania z aplikacji internetowych"
+          "description": "Pytania z Aplikacji Internetowych"
         }
       ]
     },
-    {
+      {
       "title": "Semestr 6",
       "files": [
         {
-          "name": "Modelowanie obiektów 3D",
+          "name": "Modelowanie Obiektów 3D",
           "file": "data/pytania_MO3D.json",
-          "description": "Pytania z modelowania obiektów 3D"
+          "description": "Pytania z Modelowania Obiektów 3D z egzaminu"
         },
         {
           "name": "Projektowanie zorientowane na użytkownika",
           "file": "data/pytania_UXUI.json",
-          "description": "Pytania z projektowania zorientowanego na użytkownika"
+          "description": "Pytania z Projektowanie zorientowane na użytkownika"
         },
         {
           "name": "Systemy multimedialne",
           "file": "data/pytania_SM.json",
-          "description": "Pytania z systemów multimedialnych"
+          "description": "Pytania z Systemów multimedialnych"
         }
       ]
     }
