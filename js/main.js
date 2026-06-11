@@ -212,6 +212,9 @@ function checkAnswers() {
   isChecked = true;
   
   processResults(correctQuestions, newlyLearnedCount);
+  if (correctQuestions === currentQuestions.length && currentQuestions.length > 0) {
+    launchConfetti();
+  }
 
   document.getElementById("legend").style.display = "flex";
   
@@ -252,9 +255,48 @@ function processResults(correctQuestions, newlyLearnedCount) {
   UI.showResults(correctQuestions, totalQuestions, percentage, grade, gradeColor, encouragement, newlyLearnedCount);
 }
 
+function launchConfetti() {
+  removeConfetti();
+
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  const container = document.createElement("div");
+  container.className = "confetti-layer";
+  container.setAttribute("aria-hidden", "true");
+
+  const colors = ["#4ade80", "#3b82f6", "#f6ad55", "#fc8181", "#ffffff"];
+  const pieces = 120;
+
+  for (let i = 0; i < pieces; i++) {
+    const piece = document.createElement("span");
+    const size = 6 + Math.random() * 8;
+    const duration = 2200 + Math.random() * 1600;
+
+    piece.className = "confetti-piece";
+    piece.style.left = `${Math.random() * 100}vw`;
+    piece.style.width = `${size}px`;
+    piece.style.height = `${size * (0.6 + Math.random())}px`;
+    piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+    piece.style.animationDelay = `${Math.random() * 350}ms`;
+    piece.style.setProperty("--confetti-drift", `${(Math.random() - 0.5) * 240}px`);
+    piece.style.setProperty("--confetti-rotation", `${360 + Math.random() * 720}deg`);
+    piece.style.setProperty("--confetti-duration", `${duration}ms`);
+
+    container.appendChild(piece);
+  }
+
+  document.body.appendChild(container);
+  window.setTimeout(removeConfetti, 4500);
+}
+
+function removeConfetti() {
+  document.querySelectorAll(".confetti-layer").forEach((layer) => layer.remove());
+}
+
 function drawNextRandomQuestions() {
   if (currentMode !== "random5") return;
 
+  removeConfetti();
   document.getElementById("results").innerHTML = "";
   document.getElementById("results").innerHTML = "";
   document.getElementById("legend").style.display = "none";
@@ -285,6 +327,7 @@ function drawNextRandomQuestions() {
 }
 
 function resetQuiz() {
+  removeConfetti();
   const quizContent = document.getElementById('quiz-content');
   quizContent.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
     checkbox.checked = false;
@@ -304,6 +347,7 @@ function resetQuiz() {
 }
 
 function backToMenu() {
+  removeConfetti();
   ["quiz-info", "controls", "legend"].forEach(
     (id) => (document.getElementById(id).style.display = "none"),
   );
