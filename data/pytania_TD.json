@@ -70,7 +70,7 @@
       "rozpraszaniu błędów transmisyjnych",
       "zwiększenia szybkości transmisji"
     ],
-    "correct": [1,2]
+    "correct": [1, 2]
   },
   {
     "question": "Kodowanie predykcyjne polega na",
@@ -1059,17 +1059,6 @@
       "Żadna z odpowiedzi nie jest poprawna."
     ],
     "correct": [1]
-  },
-  {
-    "question": "Rozdzielczość widmowa zależy od:",
-    "options": [
-      "Liczby próbek wektora wejściowego",
-      "Maksymalnej amplitudy sygnału wejściowego",
-      "Mocy sygnału wejściowego",
-      "Okresu próbkowania sygnału wejściowego",
-      "Żadna z odpowiedzi nie jest poprawna."
-    ],
-    "correct": [0, 3]
   },
   {
     "question": "Splot sygnałów w dziedzinie czasu odpowiada następującej operacji w dziedzinie częstotliwości:",
