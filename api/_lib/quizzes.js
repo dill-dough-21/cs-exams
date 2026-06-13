@@ -2,11 +2,12 @@ const fs = require("fs");
 const path = require("path");
 
 let cachedQuizFiles = null;
+const projectRoot = path.resolve(__dirname, "../..");
 
 function loadQuizFiles() {
   if (cachedQuizFiles) return cachedQuizFiles;
 
-  const configPath = path.join(process.cwd(), "config.json");
+  const configPath = path.join(projectRoot, "config.json");
   const config = JSON.parse(fs.readFileSync(configPath, "utf8"));
   const files = [];
 
@@ -31,8 +32,8 @@ function loadQuiz(quizId) {
   const meta = getQuizMeta(quizId);
   if (!meta) return null;
 
-  const quizPath = path.join(process.cwd(), meta.file);
-  const relativePath = path.relative(process.cwd(), quizPath);
+  const quizPath = path.join(projectRoot, meta.file);
+  const relativePath = path.relative(projectRoot, quizPath);
   if (relativePath.startsWith("..") || path.isAbsolute(relativePath)) return null;
 
   const questions = JSON.parse(fs.readFileSync(quizPath, "utf8"));

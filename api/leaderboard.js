@@ -16,12 +16,13 @@ module.exports = async function handler(request, response) {
 
   const quizId = request.query?.quiz_id;
   const limit = clampLimit(request.query?.limit, 10, 50);
-  if (!getQuizMeta(quizId)) {
-    sendJson(response, 400, { error: "unknown_quiz" });
-    return;
-  }
 
   try {
+    if (!getQuizMeta(quizId)) {
+      sendJson(response, 400, { error: "unknown_quiz" });
+      return;
+    }
+
     const rows = await supabaseRequest("/rest/v1/quiz_scores", {
       query: {
         select: "nickname,score,correct_count,total_questions,duration_seconds,updated_at",

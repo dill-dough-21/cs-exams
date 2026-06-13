@@ -1,0 +1,10 @@
+{
+  "functions": {
+    "api/*.js": {
+      "includeFiles": [
+        "config.json",
+        "data/**"
+      ]
+    }
+  }
+}

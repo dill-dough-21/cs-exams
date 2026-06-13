@@ -36,17 +36,17 @@ module.exports = async function handler(request, response) {
   }
 
   try {
+    const quiz = loadQuiz(quizId);
+    if (!quiz) {
+      sendJson(response, 400, { error: "unknown_quiz" });
+      return;
+    }
+
     await enforceRateLimit(request, "submit-score", playerId, { limit: 12, windowSeconds: 3600 });
 
     const turnstile = await verifyTurnstile(body.turnstile_token, request);
     if (!turnstile.ok) {
       sendJson(response, 403, { error: turnstile.error });
-      return;
-    }
-
-    const quiz = loadQuiz(quizId);
-    if (!quiz) {
-      sendJson(response, 400, { error: "unknown_quiz" });
       return;
     }
 
