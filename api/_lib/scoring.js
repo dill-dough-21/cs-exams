@@ -21,13 +21,17 @@ function calculateScore(correctCount, totalQuestions, durationSeconds) {
   return baseScore + speedBonus + perfectBonus;
 }
 
+function getMinimumDurationSeconds(totalQuestions) {
+  return Math.max(3, totalQuestions);
+}
+
 function evaluateSubmission({ quiz, questionIndices, answers, durationSeconds }) {
   if (!Array.isArray(answers)) {
     return { ok: false, error: "answers_must_be_array" };
   }
 
   const totalQuestions = questionIndices.length;
-  const minDurationSeconds = Math.max(8, totalQuestions * 2);
+  const minDurationSeconds = getMinimumDurationSeconds(totalQuestions);
   if (!Number.isFinite(durationSeconds) || durationSeconds < minDurationSeconds) {
     return { ok: false, error: "too_fast", minDurationSeconds };
   }
@@ -101,4 +105,5 @@ function evaluateSubmission({ quiz, questionIndices, answers, durationSeconds })
 module.exports = {
   calculateScore,
   evaluateSubmission,
+  getMinimumDurationSeconds,
 };
