@@ -11,6 +11,8 @@ let currentMode = null;
 let isChecked = false;
 let currentSessionId = null;
 let quizStartedAt = null;
+let quizSessionPromise = null;
+let rankingBackendEnabled = null;
 let heartbeatIntervalId = null;
 let sitePresenceSessionId = null;
 let sitePresenceIntervalId = null;
@@ -37,6 +39,7 @@ function setupEventListeners() {
     document.getElementById("profileModalClose")?.addEventListener("click", closeProfileModal);
     document.getElementById("saveNickButton")?.addEventListener("click", savePlayerNick);
     document.getElementById("anonymousNickButton")?.addEventListener("click", useAnonymousNick);
+    document.getElementById("playerNick")?.addEventListener("input", clearPlayerNickError);
     document.getElementById("profileModal")?.addEventListener("click", (event) => {
       if (event.target.id === "profileModal" && localStorage.getItem(PLAYER_NICK_CHOICE_KEY)) {
         closeProfileModal();
@@ -67,6 +70,7 @@ function openProfileModal(canClose) {
 
   modal.dataset.canClose = canClose ? "true" : "false";
   closeButton?.classList.toggle("hidden", !canClose);
+  clearPlayerNickError();
   modal.classList.remove("hidden");
   window.setTimeout(() => nickInput?.focus(), 0);
 }
@@ -80,6 +84,12 @@ function closeProfileModal() {
 function savePlayerNick() {
   const nickInput = document.getElementById("playerNick");
   const nick = nickInput?.value?.trim().slice(0, 24) || "";
+
+  if (containsProfanity(nick)) {
+    showPlayerNickError("Ten nick zawiera niedozwolone słowo. Wybierz inny nick.");
+    nickInput?.focus();
+    return;
+  }
 
   if (nick) {
     localStorage.setItem(PLAYER_NICK_KEY, nick);
@@ -100,6 +110,7 @@ function useAnonymousNick() {
   localStorage.removeItem(PLAYER_NICK_KEY);
   localStorage.setItem(PLAYER_NICK_CHOICE_KEY, "anonymous");
   sessionStorage.setItem(PLAYER_NICK_SKIP_SESSION_KEY, "true");
+  clearPlayerNickError();
   const nickInput = document.getElementById("playerNick");
   if (nickInput) nickInput.value = "";
 
@@ -131,7 +142,27 @@ function getPlayerId() {
 function getPlayerNick() {
   if (localStorage.getItem(PLAYER_NICK_CHOICE_KEY) === "anonymous") return "Student";
   const rawNick = localStorage.getItem(PLAYER_NICK_KEY) || "";
-  return rawNick.slice(0, 24) || "Student";
+  return containsProfanity(rawNick) ? "Student" : rawNick.slice(0, 24) || "Student";
+}
+
+function containsProfanity(value) {
+  return window.ProfanityFilter?.containsProfanity(value) === true;
+}
+
+function showPlayerNickError(message) {
+  const errorElement = document.getElementById("playerNickError");
+  if (!errorElement) return;
+
+  errorElement.textContent = message;
+  errorElement.classList.remove("hidden");
+}
+
+function clearPlayerNickError() {
+  const errorElement = document.getElementById("playerNickError");
+  if (!errorElement) return;
+
+  errorElement.textContent = "";
+  errorElement.classList.add("hidden");
 }
 
 function getTurnstileSiteKey() {
@@ -283,13 +314,15 @@ function stopQuizHeartbeat() {
 async function startQuizSession() {
   stopQuizHeartbeat();
   currentSessionId = null;
+  quizSessionPromise = null;
+  rankingBackendEnabled = null;
   quizStartedAt = Date.now();
 
   if (!currentFile || currentMode === "study" || currentQuestions.length === 0) {
     return;
   }
 
-  try {
+  quizSessionPromise = (async () => {
     const response = await fetch("/api/start-quiz", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -302,14 +335,25 @@ async function startQuizSession() {
     });
 
     const data = await response.json();
+    rankingBackendEnabled = data.enabled !== false;
+
     if (!data.enabled) {
       return;
+    }
+
+    if (!response.ok || !data.session_id) {
+      throw new Error(data.error || "start_failed");
     }
 
     currentSessionId = data.session_id;
     updatePresenceCounter(data.active_count);
     heartbeatIntervalId = window.setInterval(sendQuizHeartbeat, 60_000);
+  })();
+
+  try {
+    await quizSessionPromise;
   } catch {
+    currentSessionId = null;
   }
 }
 
@@ -397,9 +441,18 @@ function selectMode(mode) {
   prepareQuiz();
 }
 
+function setQuizNavigationVisible(isVisible) {
+  const controls = document.getElementById("controls");
+  const appBar = document.querySelector(".app-bar");
+
+  controls?.classList.toggle("hidden", !isVisible);
+  controls?.removeAttribute("style");
+  appBar?.classList.toggle("is-quiz-active", isVisible);
+}
+
 function prepareQuiz() {
   document.getElementById("quiz-info").style.display = "block";
-  document.getElementById("controls").style.display = "flex";
+  setQuizNavigationVisible(true);
   document.getElementById("drawNextBtn").style.display = "none";
   
 
@@ -450,6 +503,8 @@ function prepareQuiz() {
       
       if (rangeStart > rangeEnd || rangeStart > allQuestions.length) {
         UI.showError("Błąd: Podaj prawidłowy zakres pytań!");
+        setQuizNavigationVisible(false);
+        document.getElementById("quiz-info").style.display = "none";
         document.getElementById("mode-selector").style.display = "block";
         return;
       }
@@ -594,8 +649,48 @@ function showScoreSubmitStatus(message, type = "info") {
   status.className = `score-submit-status ${type}`;
 }
 
+function getScoreSubmitErrorMessage(data) {
+  switch (data?.error) {
+    case "too_fast":
+      return `Nie zapisano wyniku: test rozwiązany za szybko (minimum ${data.min_duration_seconds}s).`;
+    case "session_not_found":
+      return "Nie zapisano wyniku: sesja testu wygasła. Spróbuj uruchomić test ponownie.";
+    case "invalid_submission":
+    case "invalid_answer_shape":
+    case "answer_count_mismatch":
+    case "duplicate_answer":
+    case "unknown_question":
+    case "answer_index_out_of_range":
+      return "Nie zapisano wyniku: odpowiedzi nie pasują do rozpoczętej sesji testu.";
+    case "unknown_quiz":
+      return "Nie zapisano wyniku: ten quiz nie jest dostępny w rankingu.";
+    case "invalid_duration":
+      return "Nie zapisano wyniku: czas testu jest nieprawidłowy.";
+    default:
+      return `Nie zapisano wyniku: ${data?.error || "błąd API"}`;
+  }
+}
+
 async function submitScoreToBackend() {
-  if (!currentSessionId || !currentFile || currentMode === "study" || !quizStartedAt) return;
+  if (!currentFile || currentMode === "study" || !quizStartedAt) return;
+
+  if (!currentSessionId && quizSessionPromise) {
+    showScoreSubmitStatus("Przygotowywanie zapisu wyniku...", "info");
+    try {
+      await quizSessionPromise;
+    } catch {
+      currentSessionId = null;
+    }
+  }
+
+  if (!currentSessionId) {
+    if (rankingBackendEnabled === false) {
+      showScoreSubmitStatus("Ranking nie jest skonfigurowany w tym środowisku.", "warning");
+    } else {
+      showScoreSubmitStatus("Nie zapisano wyniku: nie udało się utworzyć sesji rankingu. Odśwież stronę i spróbuj ponownie.", "error");
+    }
+    return;
+  }
 
   const turnstileToken = getTurnstileToken();
   if (turnstileWidgetId !== null && !turnstileToken) {
@@ -636,8 +731,13 @@ async function submitScoreToBackend() {
         return;
       }
 
-      const message = `Nie zapisano wyniku: ${data.error || "błąd API"}`;
-      showScoreSubmitStatus(message, "error");
+      if (data.error === "profane_nickname") {
+        showScoreSubmitStatus("Nie zapisano wyniku: nick zawiera niedozwolone słowo.", "error");
+        openProfileModal(true);
+        return;
+      }
+
+      showScoreSubmitStatus(getScoreSubmitErrorMessage(data), "error");
       return;
     }
 
@@ -749,7 +849,8 @@ function resetQuiz() {
 function backToMenu() {
   stopQuizHeartbeat();
   removeConfetti();
-  ["quiz-info", "controls", "legend"].forEach(
+  setQuizNavigationVisible(false);
+  ["quiz-info", "legend"].forEach(
     (id) => (document.getElementById(id).style.display = "none"),
   );
   ["quiz-content", "results"].forEach(

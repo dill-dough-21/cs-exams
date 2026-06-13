@@ -44,23 +44,23 @@ body {
 .presence-counter {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 10px 14px;
-  border: 1px solid rgba(74, 222, 128, 0.35);
-  border-radius: var(--border-radius-pill);
-  background: rgba(17, 17, 17, 0.92);
-  box-shadow: var(--shadow-panel);
+  justify-content: center;
+  gap: 6px;
+  min-height: 32px;
+  padding: 0 9px;
+  border: 1px solid rgba(74, 222, 128, 0.28);
+  border-radius: 9px;
+  background: rgba(18, 24, 20, 0.86);
   color: var(--color-text-secondary);
-  font-size: 0.85rem;
-  backdrop-filter: blur(12px);
+  font-size: 0.72rem;
+  font-weight: 500;
   min-width: 0;
-  justify-self: start;
 }
 
 .presence-counter::before {
   content: "";
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   background: var(--color-correct-text);
   box-shadow: 0 0 12px rgba(74, 222, 128, 0.8);
@@ -68,23 +68,7 @@ body {
 
 .presence-counter strong {
   color: var(--color-text-primary);
-  font-size: 0.95rem;
-}
-
-@media (max-width: 600px) {
-  .presence-counter {
-    position: fixed;
-    right: 10px;
-    bottom: 10px;
-    z-index: 120;
-    padding: 8px 10px;
-    font-size: 0.75rem;
-    gap: 8px;
-  }
-
-  .presence-counter span {
-    display: none;
-  }
+  font-size: 0.82rem;
 }
 
 h1, h2, h3, h4 {
@@ -114,62 +98,66 @@ p, small { color: var(--color-text-secondary); }
   position: sticky;
   top: 12px;
   z-index: 100;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: minmax(150px, 1fr) auto minmax(150px, 1fr);
   align-items: center;
-  justify-content: space-between;
   gap: 12px;
-  min-height: 70px;
   margin-bottom: 30px;
-  padding: 12px 16px;
-  border: 1px solid #333;
-  border-radius: var(--border-radius-main);
-  background: rgba(10, 10, 10, 0.94);
-  box-shadow: var(--shadow-panel);
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 18px;
+  background: rgba(9, 10, 12, 0.88);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.34);
   backdrop-filter: blur(16px);
 }
 
-.app-bar-left,
+.app-bar-brand,
+.app-bar-utilities,
 .app-bar-actions {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  position: relative;
-  z-index: 1;
+  min-width: 0;
 }
 
-.app-bar-left {
+.app-bar-brand {
+  grid-column: 1;
   justify-self: start;
+  padding-left: 8px;
+}
+
+.app-bar-utilities {
+  grid-column: 3;
+  justify-self: end;
+  justify-content: flex-end;
+  gap: 8px;
 }
 
 .app-bar-actions {
-  margin-left: auto;
+  gap: 8px;
 }
 
 .app-bar h1 {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   margin: 0;
-  text-align: center;
-  font-size: 2rem;
+  font-size: 1.35rem;
+  font-weight: 700;
   line-height: 1;
-  max-width: calc(100% - 300px);
+  letter-spacing: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  pointer-events: none;
+  text-align: left;
+  text-shadow: none;
 }
 
 .app-bar-icon {
-  width: 44px;
-  height: 44px;
-  min-width: 44px;
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
   display: grid;
   place-items: center;
-  border: 1px solid rgba(59, 130, 246, 0.4);
-  border-radius: var(--border-radius-small);
-  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
   color: var(--color-text-primary);
   cursor: pointer;
   text-decoration: none;
@@ -180,7 +168,7 @@ p, small { color: var(--color-text-secondary); }
 .app-bar-icon:hover,
 .app-bar-icon:focus-visible {
   border-color: var(--color-primary);
-  background: rgba(59, 130, 246, 0.18);
+  background: rgba(59, 130, 246, 0.16);
   box-shadow: var(--glow-primary);
   outline: none;
 }
@@ -217,15 +205,51 @@ p, small { color: var(--color-text-secondary); }
 
   .app-bar {
     top: 8px;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "brand utilities"
+      "controls controls";
     gap: 8px;
-    min-height: 44px;
     margin-bottom: 8px;
-    padding: 6px 8px;
-    border: 1px solid #252525;
-    border-radius: var(--border-radius-small);
+    padding: 8px;
+    border-radius: 12px;
     background: rgba(10, 10, 10, 0.96);
     box-shadow: 0 3px 14px rgba(0, 0, 0, 0.35);
     backdrop-filter: blur(12px);
+  }
+
+  .app-bar-brand {
+    grid-area: brand;
+    padding-left: 2px;
+  }
+
+  .app-bar-utilities {
+    grid-area: utilities;
+  }
+
+  .app-bar .controls {
+    grid-area: controls;
+    grid-column: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(112px, 1fr));
+    width: 100%;
+    justify-content: stretch;
+    margin: 0;
+    overflow: visible;
+  }
+
+  .app-bar-actions {
+    gap: 6px;
+  }
+
+  .presence-counter {
+    min-height: 28px;
+    padding: 0 8px;
+    border-radius: 8px;
+  }
+
+  .presence-counter span {
+    display: none;
   }
 
   .app-bar-icon {
@@ -242,17 +266,13 @@ p, small { color: var(--color-text-secondary); }
   }
 
   .app-bar h1 {
-    position: static;
-    transform: none;
-    flex: 1;
-    min-width: 0;
-    max-width: none;
     font-size: 1rem;
     font-weight: 500;
     line-height: 1;
-    text-align: left;
-    text-shadow: none;
-    pointer-events: auto;
+  }
+
+  .app-bar:not(.is-quiz-active) {
+    grid-template-areas: "brand utilities";
   }
 
 }
@@ -312,6 +332,13 @@ p, small { color: var(--color-text-secondary); }
   outline: none;
   border-color: var(--color-primary);
   box-shadow: var(--glow-primary);
+}
+
+.profile-error {
+  margin-top: 8px;
+  color: var(--color-incorrect-text);
+  font-size: 0.85rem;
+  line-height: 1.35;
 }
 
 .profile-modal-close {
@@ -676,12 +703,68 @@ p, small { color: var(--color-text-secondary); }
 }
 
 .app-bar .controls {
+  grid-column: 2;
+  justify-self: center;
   position: static;
   top: auto;
-  z-index: 1;
-  order: 10;
-  flex: 0 0 auto;
-  margin: 6px auto 0;
+  z-index: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  flex-wrap: nowrap;
+  max-width: 100%;
+  width: auto;
+  gap: 8px;
+}
+
+.app-bar:not(.is-quiz-active) {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.app-bar:not(.is-quiz-active) .app-bar-utilities {
+  grid-column: 2;
+}
+
+.app-bar .controls.hidden {
+  display: none !important;
+}
+
+.app-bar .controls button {
+  min-height: 38px;
+  padding: 0 18px;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.app-bar.is-quiz-active {
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    "brand utilities"
+    "controls controls";
+}
+
+.app-bar.is-quiz-active .controls {
+  grid-area: controls;
+  grid-column: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  align-items: center;
+  justify-content: stretch;
+  justify-self: stretch;
+  width: 100%;
+  max-width: none;
+  gap: 8px;
+}
+
+.app-bar.is-quiz-active .controls button {
+  width: 100%;
+  max-width: none;
+  min-width: 0;
 }
 
 @media (max-width: 600px) {
@@ -701,9 +784,7 @@ p, small { color: var(--color-text-secondary); }
   }
 
   .app-bar .controls {
-    flex-basis: 100%;
-    justify-content: center;
-    margin: 4px auto 0;
+    box-shadow: none;
   }
   
   .controls button {
@@ -723,6 +804,14 @@ p, small { color: var(--color-text-secondary); }
     word-break: normal;
     text-align: center;
   }
+
+  .app-bar .controls button {
+    width: 100%;
+    min-width: 0;
+    min-height: 34px;
+    padding: 0 8px;
+    font-size: 0.72rem;
+  }
   
   .controls button:only-child {
     min-width: 0;
@@ -731,6 +820,31 @@ p, small { color: var(--color-text-secondary); }
   
   #drawNextBtn {
     font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 760px) {
+  .app-bar.is-quiz-active {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "brand utilities"
+      "controls controls";
+  }
+
+  .app-bar.is-quiz-active .controls {
+    grid-area: controls;
+    grid-column: auto;
+    grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
+    gap: 6px;
+    justify-self: stretch;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .app-bar.is-quiz-active .controls button {
+    max-width: none;
+    min-width: 0;
   }
 }
 

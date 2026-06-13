@@ -4,6 +4,7 @@ const { loadQuiz } = require("./_lib/quizzes");
 const { normalizeId, parseBody, sanitizeNickname, sendJson } = require("./_lib/http");
 const { isSupabaseConfigured, supabaseRequest } = require("./_lib/supabase");
 const { verifyTurnstile } = require("./_lib/turnstile");
+const { containsProfanity } = require("../js/profanity-filter");
 
 module.exports = async function handler(request, response) {
   if (request.method !== "POST") {
@@ -23,6 +24,11 @@ module.exports = async function handler(request, response) {
   const quizId = typeof body.quiz_id === "string" ? body.quiz_id : null;
   const nickname = sanitizeNickname(body.nickname);
   const durationSeconds = Number(body.duration_seconds);
+
+  if (containsProfanity(body.nickname)) {
+    sendJson(response, 422, { error: "profane_nickname" });
+    return;
+  }
 
   if (!playerId || !sessionId || !quizId) {
     sendJson(response, 400, { error: "invalid_submission" });

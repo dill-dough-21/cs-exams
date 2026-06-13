@@ -19,33 +19,37 @@
 <body>
     <div class="quiz-container">
         <header class="app-bar">
-            <div id="presence-counter" class="presence-counter hidden" aria-live="polite">
-                <span id="presence-label">Aktywni teraz</span>
-                <strong id="presence-count">--</strong>
-            </div>
-            <h1>BazaSiada</h1>
-            <div class="app-bar-actions">
-                <button id="profileSettingsButton" class="app-bar-icon" type="button" aria-label="Zmień nick" title="Zmień nick">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M20 21a8 8 0 0 0-16 0"></path>
-                        <path d="M12 13a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"></path>
-                    </svg>
-                </button>
-                <a href="ranking.html" id="rankingsShortcut" class="app-bar-icon" aria-label="Przejdź do rankingu" title="Ranking">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M7 20h10"></path>
-                        <path d="M9 20v-4h6v4"></path>
-                        <path d="M8 4h8v5a4 4 0 0 1-8 0V4z"></path>
-                        <path d="M8 6H5a3 3 0 0 0 3 4"></path>
-                        <path d="M16 6h3a3 3 0 0 1-3 4"></path>
-                    </svg>
-                </a>
+            <div class="app-bar-brand">
+                <h1>BazaSiada</h1>
             </div>
             <div class="controls hidden" id="controls">
                 <button id="checkBtn">Sprawdź Wyniki</button>
                 <button id="drawNextBtn" class="hidden">Losuj kolejne</button>
                 <button id="resetBtn">Resetuj</button>
                 <button id="backBtn">Menu</button>
+            </div>
+            <div class="app-bar-utilities">
+                <div id="presence-counter" class="presence-counter hidden" aria-live="polite">
+                    <span id="presence-label">Aktywni teraz</span>
+                    <strong id="presence-count">--</strong>
+                </div>
+                <div class="app-bar-actions">
+                    <button id="profileSettingsButton" class="app-bar-icon" type="button" aria-label="Zmień nick" title="Zmień nick">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M20 21a8 8 0 0 0-16 0"></path>
+                            <path d="M12 13a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"></path>
+                        </svg>
+                    </button>
+                    <a href="ranking.html" id="rankingsShortcut" class="app-bar-icon" aria-label="Przejdź do rankingu" title="Ranking">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M7 20h10"></path>
+                            <path d="M9 20v-4h6v4"></path>
+                            <path d="M8 4h8v5a4 4 0 0 1-8 0V4z"></path>
+                            <path d="M8 6H5a3 3 0 0 0 3 4"></path>
+                            <path d="M16 6h3a3 3 0 0 1-3 4"></path>
+                        </svg>
+                    </a>
+                </div>
             </div>
         </header>
 
@@ -56,6 +60,7 @@
                 <p id="profileModalDescription">Będzie widoczny przy Twoich wynikach.</p>
                 <label for="playerNick">Nick</label>
                 <input type="text" id="playerNick" maxlength="24" autocomplete="nickname" placeholder="Student">
+                <p id="playerNickError" class="profile-error hidden" role="alert"></p>
                 <div id="turnstile-container" class="turnstile-container hidden"></div>
                 <div class="profile-modal-actions">
                     <button id="saveNickButton" class="primary-action" type="button">Zapisz nick</button>
@@ -135,6 +140,7 @@
 
     </div>
 
+    <script src="js/profanity-filter.js"></script>
     <script type="module" src="js/main.js"></script>
 </body>
 </html>
