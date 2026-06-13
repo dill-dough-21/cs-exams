@@ -82,6 +82,11 @@
           "name": "Systemy multimedialne",
           "file": "data/pytania_SM.json",
           "description": "Pytania z Systemów multimedialnych"
+        },
+        {
+          "name": "Zarządzanie projektami",
+          "file": "data/pytania_ZP.json",
+          "description": "Pytania z Zarządzania projektami"
         }
       ]
     }
