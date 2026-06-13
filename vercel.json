@@ -1,10 +1,7 @@
 {
   "functions": {
     "api/*.js": {
-      "includeFiles": [
-        "config.json",
-        "data/**"
-      ]
+      "includeFiles": "{config.json,data/**}"
     }
   }
 }
