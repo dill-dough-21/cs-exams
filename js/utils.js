@@ -16,10 +16,6 @@ export function scrollToTop() {
   window.scrollTo({ top: 0, behavior: "auto" });
 }
 
-export function scrollToBottom() {
-  window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
-}
-
 export function escapeHtml(text) {
   if (!text) return text;
   return text

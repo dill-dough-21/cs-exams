@@ -1,6 +1,7 @@
-import { arraysEqual, scrollToTop } from "./utils.js";
-import { updateQuestionProgress, isQuestionLearned, loadProgress } from "./storage.js";
+import { arraysEqual, escapeHtml, scrollToTop } from "./utils.js";
+import { updateQuestionProgress, isQuestionLearned } from "./storage.js";
 import { shuffleAndMapQuestions, selectRandomQuestions, selectQuestionsInRange } from "./logic.js";
+import { getPlayerId, startSitePresence, updatePresenceCounter } from "./presence-client.js";
 import * as UI from "./ui.js";
 
 let availableFiles = [];
@@ -14,8 +15,6 @@ let quizStartedAt = null;
 let quizSessionPromise = null;
 let rankingBackendEnabled = null;
 let heartbeatIntervalId = null;
-let sitePresenceSessionId = null;
-let sitePresenceIntervalId = null;
 let turnstileWidgetId = null;
 let pendingScoreSubmission = false;
 const PLAYER_NICK_KEY = "bazasiada-player-nick";
@@ -31,20 +30,39 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function setupEventListeners() {
-    document.getElementById("checkBtn").addEventListener("click", checkAnswers);
-    document.getElementById("drawNextBtn").addEventListener("click", drawNextRandomQuestions);
-    document.getElementById("resetBtn").addEventListener("click", resetQuiz);
-    document.getElementById("backBtn").addEventListener("click", backToMenu);
-    document.getElementById("profileSettingsButton")?.addEventListener("click", () => openProfileModal(true));
-    document.getElementById("profileModalClose")?.addEventListener("click", closeProfileModal);
-    document.getElementById("saveNickButton")?.addEventListener("click", savePlayerNick);
-    document.getElementById("anonymousNickButton")?.addEventListener("click", useAnonymousNick);
-    document.getElementById("playerNick")?.addEventListener("input", clearPlayerNickError);
-    document.getElementById("profileModal")?.addEventListener("click", (event) => {
-      if (event.target.id === "profileModal" && localStorage.getItem(PLAYER_NICK_CHOICE_KEY)) {
-        closeProfileModal();
-      }
-    });
+  document.getElementById("checkBtn").addEventListener("click", checkAnswers);
+  document.getElementById("drawNextBtn").addEventListener("click", drawNextRandomQuestions);
+  document.getElementById("resetBtn").addEventListener("click", resetQuiz);
+  document.getElementById("backBtn").addEventListener("click", backToMenu);
+  document.getElementById("profileSettingsButton")?.addEventListener("click", () => openProfileModal(true));
+  document.getElementById("profileModalClose")?.addEventListener("click", closeProfileModal);
+  document.getElementById("saveNickButton")?.addEventListener("click", savePlayerNick);
+  document.getElementById("anonymousNickButton")?.addEventListener("click", useAnonymousNick);
+  document.getElementById("playerNick")?.addEventListener("input", clearPlayerNickError);
+  document.getElementById("profileModal")?.addEventListener("click", (event) => {
+    if (event.target.id === "profileModal" && localStorage.getItem(PLAYER_NICK_CHOICE_KEY)) {
+      closeProfileModal();
+    }
+  });
+  document.getElementById("mode-selector")?.addEventListener("click", (event) => {
+    const target = event.target instanceof Element ? event.target : null;
+    const modeButton = target?.closest(".mode-btn");
+    if (modeButton) selectMode(modeButton.dataset.mode);
+  });
+  document.getElementById("mode-selector")?.addEventListener("keydown", (event) => {
+    const target = event.target instanceof Element ? event.target : null;
+    if (!target || target.closest(".input-group")) return;
+
+    const modeButton = target.closest(".mode-btn");
+    if (modeButton && (event.key === "Enter" || event.key === " ")) {
+      event.preventDefault();
+      selectMode(modeButton.dataset.mode);
+    }
+  });
+
+  document.querySelectorAll(".mode-btn .input-group").forEach((group) => {
+    group.addEventListener("click", (event) => event.stopPropagation());
+  });
 }
 
 function initPlayerProfile() {
@@ -118,25 +136,6 @@ function useAnonymousNick() {
   if (modal) modal.dataset.canClose = "true";
   modal?.classList.add("hidden");
   retryPendingScoreSubmission();
-}
-
-function getPlayerId() {
-  const storageKey = "bazasiada-player-id";
-  try {
-    const existing = localStorage.getItem(storageKey);
-    if (existing) return existing;
-
-    const sessionId = window.crypto?.randomUUID
-      ? window.crypto.randomUUID()
-      : `${Date.now()}-${Math.random().toString(36).slice(2)}`;
-
-    localStorage.setItem(storageKey, sessionId);
-    return sessionId;
-  } catch {
-    return window.crypto?.randomUUID
-      ? window.crypto.randomUUID()
-      : `${Date.now()}-${Math.random().toString(36).slice(2)}`;
-  }
 }
 
 function getPlayerNick() {
@@ -226,82 +225,6 @@ function retryPendingScoreSubmission() {
     if (!pendingScoreSubmission) return;
     submitScoreToBackend();
   }, 0);
-}
-
-function updatePresenceCounter(count) {
-  const counter = document.getElementById("presence-counter");
-  const countElement = document.getElementById("presence-count");
-  const labelElement = document.getElementById("presence-label");
-  if (!counter || !countElement || !labelElement) return;
-
-  if (typeof count !== "number") {
-    counter.classList.add("hidden");
-    return;
-  }
-
-  countElement.textContent = String(count);
-  labelElement.textContent = "Aktywni teraz";
-  counter.classList.remove("hidden");
-}
-
-function hidePresenceCounter() {
-  document.getElementById("presence-counter")?.classList.add("hidden");
-}
-
-function stopSitePresence() {
-  if (sitePresenceIntervalId) {
-    window.clearInterval(sitePresenceIntervalId);
-    sitePresenceIntervalId = null;
-  }
-}
-
-async function startSitePresence() {
-  stopSitePresence();
-
-  try {
-    const response = await fetch("/api/presence", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        action: "start",
-        player_id: getPlayerId(),
-        path: window.location.pathname,
-      }),
-    });
-
-    const data = await response.json();
-    if (!data.enabled) {
-      hidePresenceCounter();
-      return;
-    }
-
-    sitePresenceSessionId = data.session_id;
-    updatePresenceCounter(data.active_count);
-    sitePresenceIntervalId = window.setInterval(sendSitePresenceHeartbeat, 60_000);
-  } catch {
-    hidePresenceCounter();
-  }
-}
-
-async function sendSitePresenceHeartbeat() {
-  if (!sitePresenceSessionId) return;
-
-  try {
-    const response = await fetch("/api/presence", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        action: "heartbeat",
-        player_id: getPlayerId(),
-        session_id: sitePresenceSessionId,
-      }),
-    });
-
-    const data = await response.json();
-    if (data.enabled) updatePresenceCounter(data.active_count);
-  } catch {
-    hidePresenceCounter();
-  }
 }
 
 function stopQuizHeartbeat() {
@@ -397,7 +320,7 @@ async function loadConfig() {
     document.getElementById("file-selector").style.display = "block";
   } catch (error) {
     UI.showError(
-      `<strong>Błąd konfiguracji!</strong><br>Sprawdź plik 'config.json'.<br><small>${error.message}</small>`,
+      `<strong>Błąd konfiguracji!</strong><br>Sprawdź plik 'config.json'.<br><small>${escapeHtml(error.message)}</small>`,
     );
   }
 }
@@ -426,11 +349,8 @@ async function selectFile(index) {
       .getElementById("mode-selector")
       .scrollIntoView({ behavior: "smooth" });
 
-    document.querySelectorAll(".mode-btn").forEach((btn) => {
-      btn.onclick = () => selectMode(btn.dataset.mode); 
-    });
   } catch (error) {
-    UI.showError(`Błąd wczytywania pliku: ${error.message}`);
+    UI.showError(`Błąd wczytywania pliku: ${escapeHtml(error.message)}`);
   }
 }
 
@@ -444,10 +364,12 @@ function selectMode(mode) {
 function setQuizNavigationVisible(isVisible) {
   const controls = document.getElementById("controls");
   const appBar = document.querySelector(".app-bar");
+  const quizActions = document.querySelector(".quiz-actions");
 
   controls?.classList.toggle("hidden", !isVisible);
   controls?.removeAttribute("style");
   appBar?.classList.toggle("is-quiz-active", isVisible);
+  quizActions?.classList.toggle("is-active", isVisible);
 }
 
 function prepareQuiz() {
@@ -790,12 +712,16 @@ function removeConfetti() {
   document.querySelectorAll(".confetti-layer").forEach((layer) => layer.remove());
 }
 
+function clearResults() {
+  const results = document.getElementById("results");
+  if (results) results.innerHTML = "";
+}
+
 function drawNextRandomQuestions() {
   if (currentMode !== "random5") return;
 
   removeConfetti();
-  document.getElementById("results").innerHTML = "";
-  document.getElementById("results").innerHTML = "";
+  clearResults();
   document.getElementById("legend").style.display = "none";
   
   document.getElementById("drawNextBtn").style.display = "none";
@@ -838,8 +764,7 @@ function resetQuiz() {
   document.getElementById("checkBtn").disabled = false;
   
   isChecked = false;
-  document.getElementById("results").innerHTML = "";
-  document.getElementById("results").innerHTML = "";
+  clearResults();
   document.getElementById("legend").style.display = "none";
   document.getElementById("drawNextBtn").style.display = "none";
   startQuizSession();
@@ -857,9 +782,7 @@ function backToMenu() {
     (id) => (document.getElementById(id).innerHTML = ""),
   );
   document.getElementById("score-submit-status")?.classList.add("hidden");
-  ["file-selector"].forEach(
-    (id) => (document.getElementById(id).style.display = "block"),
-  );
+  document.getElementById("file-selector").style.display = "block";
   document.getElementById("mode-selector").style.display = "none";
   if (currentFile) updateGlobalProgressWithDOM();
   currentMode = null;
@@ -883,6 +806,7 @@ function updateGlobalProgressWithDOM() {
   
   if (bar && text) {
     bar.style.width = `${percentage}%`;
+    bar.setAttribute("aria-valuenow", String(percentage));
     text.textContent = `Postęp: ${learnedCount}/${total} opanowanych (${percentage}%)`;
   }
 }

@@ -1,108 +1,12 @@
 import { escapeHtml } from "./utils.js";
+import { startSitePresence } from "./presence-client.js";
 
-let sitePresenceSessionId = null;
-let sitePresenceIntervalId = null;
 let availableRankings = [];
 
 document.addEventListener("DOMContentLoaded", () => {
   initRankingPage();
   startSitePresence();
 });
-
-function getPlayerId() {
-  const storageKey = "bazasiada-player-id";
-  try {
-    const existing = localStorage.getItem(storageKey);
-    if (existing) return existing;
-
-    const sessionId = window.crypto?.randomUUID
-      ? window.crypto.randomUUID()
-      : `${Date.now()}-${Math.random().toString(36).slice(2)}`;
-
-    localStorage.setItem(storageKey, sessionId);
-    return sessionId;
-  } catch {
-    return window.crypto?.randomUUID
-      ? window.crypto.randomUUID()
-      : `${Date.now()}-${Math.random().toString(36).slice(2)}`;
-  }
-}
-
-function updatePresenceCounter(count) {
-  const counter = document.getElementById("presence-counter");
-  const countElement = document.getElementById("presence-count");
-  const labelElement = document.getElementById("presence-label");
-  if (!counter || !countElement || !labelElement) return;
-
-  if (typeof count !== "number") {
-    counter.classList.add("hidden");
-    return;
-  }
-
-  countElement.textContent = String(count);
-  labelElement.textContent = "Aktywni teraz";
-  counter.classList.remove("hidden");
-}
-
-function hidePresenceCounter() {
-  document.getElementById("presence-counter")?.classList.add("hidden");
-}
-
-function stopSitePresence() {
-  if (sitePresenceIntervalId) {
-    window.clearInterval(sitePresenceIntervalId);
-    sitePresenceIntervalId = null;
-  }
-}
-
-async function startSitePresence() {
-  stopSitePresence();
-
-  try {
-    const response = await fetch("/api/presence", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        action: "start",
-        player_id: getPlayerId(),
-        path: window.location.pathname,
-      }),
-    });
-
-    const data = await response.json();
-    if (!data.enabled) {
-      hidePresenceCounter();
-      return;
-    }
-
-    sitePresenceSessionId = data.session_id;
-    updatePresenceCounter(data.active_count);
-    sitePresenceIntervalId = window.setInterval(sendSitePresenceHeartbeat, 60_000);
-  } catch {
-    hidePresenceCounter();
-  }
-}
-
-async function sendSitePresenceHeartbeat() {
-  if (!sitePresenceSessionId) return;
-
-  try {
-    const response = await fetch("/api/presence", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        action: "heartbeat",
-        player_id: getPlayerId(),
-        session_id: sitePresenceSessionId,
-      }),
-    });
-
-    const data = await response.json();
-    if (data.enabled) updatePresenceCounter(data.active_count);
-  } catch {
-    hidePresenceCounter();
-  }
-}
 
 async function initRankingPage() {
   const selector = document.getElementById("rankingSelector");

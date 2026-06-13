@@ -1,15 +1,9 @@
 import { scrollToTop, escapeHtml } from "./utils.js";
 import { getQuestionStreak } from "./storage.js";
 
-export const uiCallbacks = {
-  onSelectFile: null,
-  onSelectMode: null
-};
-
 export function renderFileSelector(semesters, onSelectFile) {
   const grid = document.getElementById("file-grid");
   grid.innerHTML = "";
-  uiCallbacks.onSelectFile = onSelectFile;
 
   let globalIndex = 0;
 
@@ -17,24 +11,27 @@ export function renderFileSelector(semesters, onSelectFile) {
     const semesterHeader = document.createElement("div");
     semesterHeader.className = "semester-header";
     semesterHeader.innerHTML = `<h2>${escapeHtml(semester.title)}</h2>`;
-    semesterHeader.style.width = "100%";
-    semesterHeader.style.gridColumn = "1 / -1";
-    semesterHeader.style.marginTop = "20px";
-    semesterHeader.style.marginBottom = "10px";
-    semesterHeader.style.color = "var(--color-text-primary)";
-    semesterHeader.style.borderBottom = "1px solid var(--color-glass-border)";
-    semesterHeader.style.paddingBottom = "10px";
     grid.appendChild(semesterHeader);
 
     semester.files.forEach((file) => {
       const card = document.createElement("div");
       card.className = "file-card";
       card.dataset.index = globalIndex;
+      card.setAttribute("role", "button");
+      card.tabIndex = 0;
       card.innerHTML = `<h3>${escapeHtml(file.name)}</h3><p>${escapeHtml(file.description)}</p>`;
 
       const capturedIndex = globalIndex;
-      card.addEventListener("click", () => {
-          if (uiCallbacks.onSelectFile) uiCallbacks.onSelectFile(capturedIndex);
+      const selectCard = () => {
+        onSelectFile(capturedIndex);
+      };
+
+      card.addEventListener("click", selectCard);
+      card.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          selectCard();
+        }
       });
 
       grid.appendChild(card);
@@ -138,7 +135,7 @@ function addOptionClickHandlers() {
   });
 }
 
-export function renderProgressBar(streak) {
+function renderProgressBar(streak) {
   const maxStreak = 3;
   const effectiveStreak = Math.min(streak, maxStreak);
   
@@ -177,7 +174,7 @@ export function showResults(correctQuestions, totalQuestions, percentage, grade,
     .scrollIntoView({ behavior: "smooth", block: "center" });
 }
 
-export function renderLatex() {
+function renderLatex() {
   if (typeof renderMathInElement === "function") {
     renderMathInElement(document.getElementById("quiz-content"), {
       delimiters: [

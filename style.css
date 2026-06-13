@@ -1,3 +1,4 @@
+/* Theme tokens */
 :root {
   --font-main: "Inter", "Segoe UI", Roboto, system-ui, sans-serif;
   --color-bg-base: #050505;
@@ -24,6 +25,7 @@
   --glow-primary: 0 0 15px rgba(59, 130, 246, 0.3);
 }
 
+/* Base */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -41,6 +43,7 @@ body {
   min-height: 100vh;
 }
 
+/* App bar and presence */
 .presence-counter {
   display: inline-flex;
   align-items: center;
@@ -277,6 +280,7 @@ p, small { color: var(--color-text-secondary); }
 
 }
 
+/* Profile modal */
 .profile-modal {
   position: fixed;
   inset: 0;
@@ -423,6 +427,7 @@ p, small { color: var(--color-text-secondary); }
 
 
 
+/* Course, mode, and quiz panels */
 .file-card, .mode-btn, .quiz-info, .question, .score, .controls {
   background: var(--color-card-bg);
   border: 1px solid #333;
@@ -442,7 +447,10 @@ p, small { color: var(--color-text-secondary); }
   transition: background var(--transition-speed);
 }
 
-.file-card:hover::before, .mode-btn:hover::before {
+.file-card:hover::before,
+.file-card:focus-visible::before,
+.mode-btn:focus-visible::before,
+.mode-btn:hover::before {
   background: var(--color-primary);
 }
 
@@ -452,10 +460,14 @@ p, small { color: var(--color-text-secondary); }
   animation: fadeInUp 0.6s ease-out backwards;
 }
 
-.file-card:hover, .mode-btn:hover {
+.file-card:hover,
+.file-card:focus-visible,
+.mode-btn:focus-visible,
+.mode-btn:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 30px rgba(0,0,0,0.5);
   border-color: #555;
+  outline: none;
 }
 
 .file-grid {
@@ -467,11 +479,12 @@ p, small { color: var(--color-text-secondary); }
 
 .semester-header {
   grid-column: 1 / -1;
+  width: 100%;
   border-bottom: 1px solid #333;
   padding-bottom: 10px;
-  margin-top: 30px;
-  margin-bottom: 20px;
-  color: var(--color-primary);
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: var(--color-text-primary);
   text-transform: uppercase;
   font-size: 0.8rem;
   letter-spacing: 0.15em;
@@ -562,6 +575,7 @@ p, small { color: var(--color-text-secondary); }
   color: var(--color-text-secondary);
 }
 
+/* Quiz content */
 .question-number {
   display: inline-block;
   color: var(--color-primary);
@@ -748,23 +762,38 @@ p, small { color: var(--color-text-secondary); }
     "controls controls";
 }
 
+.app-bar.is-quiz-active .app-bar-brand {
+  grid-area: brand;
+  grid-column: auto;
+}
+
+.app-bar.is-quiz-active .app-bar-utilities {
+  grid-area: utilities;
+  grid-column: auto;
+}
+
 .app-bar.is-quiz-active .controls {
   grid-area: controls;
-  grid-column: auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  align-items: center;
-  justify-content: stretch;
+  grid-column: 1 / -1;
   justify-self: stretch;
   width: 100%;
   max-width: none;
-  gap: 8px;
 }
 
-.app-bar.is-quiz-active .controls button {
+.quiz-actions {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 8px;
   width: 100%;
+  min-width: 0;
+}
+
+.app-bar.is-quiz-active .quiz-actions button {
+  flex: 1 1 0;
   max-width: none;
   min-width: 0;
+  width: 100%;
 }
 
 @media (max-width: 600px) {
@@ -833,19 +862,59 @@ p, small { color: var(--color-text-secondary); }
 
   .app-bar.is-quiz-active .controls {
     grid-area: controls;
-    grid-column: auto;
-    grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
-    gap: 6px;
+    grid-column: 1 / -1;
     justify-self: stretch;
     width: 100%;
     max-width: 100%;
     margin: 0;
   }
 
-  .app-bar.is-quiz-active .controls button {
+  .app-bar.is-quiz-active .quiz-actions {
+    gap: 6px;
+  }
+
+  .app-bar.is-quiz-active .quiz-actions button {
     max-width: none;
     min-width: 0;
   }
+}
+
+.app-bar .controls:not(.hidden) {
+  grid-column: 1 / -1;
+  justify-self: stretch;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+}
+
+.app-bar .controls:not(.hidden) .quiz-actions {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.app-bar .controls:not(.hidden) .quiz-actions button {
+  flex: 1 1 0;
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+}
+
+.quiz-actions.is-active {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.quiz-actions.is-active button {
+  flex: 1 1 0;
+  width: 100%;
+  min-width: 0;
+  max-width: none;
 }
 
 button {
@@ -934,6 +1003,7 @@ button:disabled {
   background: var(--color-incorrect-bg);
 }
 
+/* Ranking page */
 .ranking-page {
   max-width: 760px;
   margin: 0 auto;
@@ -1126,6 +1196,7 @@ button:disabled {
   }
 }
 
+/* Utilities */
 .hidden {
   display: none;
 }
