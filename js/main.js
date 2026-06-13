@@ -1,6 +1,7 @@
-import { arraysEqual, scrollToTop, scrollToBottom } from "./utils.js";
-import { updateQuestionProgress, isQuestionLearned, loadProgress } from "./storage.js";
+import { arraysEqual, escapeHtml, scrollToTop } from "./utils.js";
+import { updateQuestionProgress, isQuestionLearned } from "./storage.js";
 import { shuffleAndMapQuestions, selectRandomQuestions, selectQuestionsInRange } from "./logic.js";
+import { getPlayerId, startSitePresence, updatePresenceCounter } from "./presence-client.js";
 import * as UI from "./ui.js";
 
 let availableFiles = [];
@@ -9,17 +10,293 @@ let allQuestions = [];
 let currentQuestions = [];
 let currentMode = null;
 let isChecked = false;
+let currentSessionId = null;
+let quizStartedAt = null;
+let quizSessionPromise = null;
+let rankingBackendEnabled = null;
+let heartbeatIntervalId = null;
+let turnstileWidgetId = null;
+let pendingScoreSubmission = false;
+const PLAYER_NICK_KEY = "bazasiada-player-nick";
+const PLAYER_NICK_CHOICE_KEY = "bazasiada-player-nick-choice";
+const PLAYER_NICK_SKIP_SESSION_KEY = "bazasiada-player-nick-skip-session";
 
 document.addEventListener("DOMContentLoaded", () => {
   loadConfig();
   setupEventListeners();
+  initPlayerProfile();
+  initTurnstileWidget();
+  startSitePresence();
 });
 
 function setupEventListeners() {
-    document.getElementById("checkBtn").addEventListener("click", checkAnswers);
-    document.getElementById("drawNextBtn").addEventListener("click", drawNextRandomQuestions);
-    document.getElementById("resetBtn").addEventListener("click", resetQuiz);
-    document.getElementById("backBtn").addEventListener("click", backToMenu);
+  document.getElementById("checkBtn").addEventListener("click", checkAnswers);
+  document.getElementById("drawNextBtn").addEventListener("click", drawNextRandomQuestions);
+  document.getElementById("resetBtn").addEventListener("click", resetQuiz);
+  document.getElementById("backBtn").addEventListener("click", backToMenu);
+  document.getElementById("profileSettingsButton")?.addEventListener("click", () => openProfileModal(true));
+  document.getElementById("profileModalClose")?.addEventListener("click", closeProfileModal);
+  document.getElementById("saveNickButton")?.addEventListener("click", savePlayerNick);
+  document.getElementById("anonymousNickButton")?.addEventListener("click", useAnonymousNick);
+  document.getElementById("playerNick")?.addEventListener("input", clearPlayerNickError);
+  document.getElementById("profileModal")?.addEventListener("click", (event) => {
+    if (event.target.id === "profileModal" && localStorage.getItem(PLAYER_NICK_CHOICE_KEY)) {
+      closeProfileModal();
+    }
+  });
+  document.getElementById("mode-selector")?.addEventListener("click", (event) => {
+    const target = event.target instanceof Element ? event.target : null;
+    const modeButton = target?.closest(".mode-btn");
+    if (modeButton) selectMode(modeButton.dataset.mode);
+  });
+  document.getElementById("mode-selector")?.addEventListener("keydown", (event) => {
+    const target = event.target instanceof Element ? event.target : null;
+    if (!target || target.closest(".input-group")) return;
+
+    const modeButton = target.closest(".mode-btn");
+    if (modeButton && (event.key === "Enter" || event.key === " ")) {
+      event.preventDefault();
+      selectMode(modeButton.dataset.mode);
+    }
+  });
+
+  document.querySelectorAll(".mode-btn .input-group").forEach((group) => {
+    group.addEventListener("click", (event) => event.stopPropagation());
+  });
+}
+
+function initPlayerProfile() {
+  const nickInput = document.getElementById("playerNick");
+  if (!nickInput) return;
+
+  nickInput.value = localStorage.getItem(PLAYER_NICK_KEY) || "";
+
+  if (!localStorage.getItem(PLAYER_NICK_KEY) && !sessionStorage.getItem(PLAYER_NICK_SKIP_SESSION_KEY)) {
+    openProfileModal(false);
+  }
+}
+
+function openProfileModal(canClose) {
+  const modal = document.getElementById("profileModal");
+  const closeButton = document.getElementById("profileModalClose");
+  const nickInput = document.getElementById("playerNick");
+  if (!modal) return;
+
+  if (nickInput) {
+    nickInput.value = localStorage.getItem(PLAYER_NICK_KEY) || "";
+  }
+
+  modal.dataset.canClose = canClose ? "true" : "false";
+  closeButton?.classList.toggle("hidden", !canClose);
+  clearPlayerNickError();
+  modal.classList.remove("hidden");
+  window.setTimeout(() => nickInput?.focus(), 0);
+}
+
+function closeProfileModal() {
+  const modal = document.getElementById("profileModal");
+  if (!modal || modal.dataset.canClose !== "true") return;
+  modal.classList.add("hidden");
+}
+
+function savePlayerNick() {
+  const nickInput = document.getElementById("playerNick");
+  const nick = nickInput?.value?.trim().slice(0, 24) || "";
+
+  if (containsProfanity(nick)) {
+    showPlayerNickError("Ten nick zawiera niedozwolone słowo. Wybierz inny nick.");
+    nickInput?.focus();
+    return;
+  }
+
+  if (nick) {
+    localStorage.setItem(PLAYER_NICK_KEY, nick);
+    localStorage.setItem(PLAYER_NICK_CHOICE_KEY, "named");
+  } else {
+    localStorage.removeItem(PLAYER_NICK_KEY);
+    localStorage.setItem(PLAYER_NICK_CHOICE_KEY, "anonymous");
+    sessionStorage.setItem(PLAYER_NICK_SKIP_SESSION_KEY, "true");
+  }
+
+  const modal = document.getElementById("profileModal");
+  if (modal) modal.dataset.canClose = "true";
+  modal?.classList.add("hidden");
+  retryPendingScoreSubmission();
+}
+
+function useAnonymousNick() {
+  localStorage.removeItem(PLAYER_NICK_KEY);
+  localStorage.setItem(PLAYER_NICK_CHOICE_KEY, "anonymous");
+  sessionStorage.setItem(PLAYER_NICK_SKIP_SESSION_KEY, "true");
+  clearPlayerNickError();
+  const nickInput = document.getElementById("playerNick");
+  if (nickInput) nickInput.value = "";
+
+  const modal = document.getElementById("profileModal");
+  if (modal) modal.dataset.canClose = "true";
+  modal?.classList.add("hidden");
+  retryPendingScoreSubmission();
+}
+
+function getPlayerNick() {
+  if (localStorage.getItem(PLAYER_NICK_CHOICE_KEY) === "anonymous") return "Student";
+  const rawNick = localStorage.getItem(PLAYER_NICK_KEY) || "";
+  return containsProfanity(rawNick) ? "Student" : rawNick.slice(0, 24) || "Student";
+}
+
+function containsProfanity(value) {
+  return window.ProfanityFilter?.containsProfanity(value) === true;
+}
+
+function showPlayerNickError(message) {
+  const errorElement = document.getElementById("playerNickError");
+  if (!errorElement) return;
+
+  errorElement.textContent = message;
+  errorElement.classList.remove("hidden");
+}
+
+function clearPlayerNickError() {
+  const errorElement = document.getElementById("playerNickError");
+  if (!errorElement) return;
+
+  errorElement.textContent = "";
+  errorElement.classList.add("hidden");
+}
+
+function getTurnstileSiteKey() {
+  return document.querySelector('meta[name="turnstile-site-key"]')?.content?.trim() || "";
+}
+
+function initTurnstileWidget() {
+  const siteKey = getTurnstileSiteKey();
+  const container = document.getElementById("turnstile-container");
+  if (!siteKey || !container) return;
+
+  container.classList.remove("hidden");
+  let attempts = 0;
+  const tryRender = () => {
+    attempts++;
+    if (window.turnstile && turnstileWidgetId === null) {
+      turnstileWidgetId = window.turnstile.render(container, {
+        sitekey: siteKey,
+        theme: "dark",
+        callback: () => {
+          if (pendingScoreSubmission) {
+            retryPendingScoreSubmission();
+          }
+        },
+        "expired-callback": () => {
+          pendingScoreSubmission = false;
+        },
+      });
+      return;
+    }
+
+    if (attempts < 30 && turnstileWidgetId === null) {
+      window.setTimeout(tryRender, 300);
+    }
+  };
+
+  tryRender();
+}
+
+function getTurnstileToken() {
+  if (turnstileWidgetId === null || !window.turnstile) return null;
+  return window.turnstile.getResponse(turnstileWidgetId) || null;
+}
+
+function resetTurnstile() {
+  if (turnstileWidgetId !== null && window.turnstile) {
+    window.turnstile.reset(turnstileWidgetId);
+  }
+}
+
+function requestRankingVerification(message) {
+  pendingScoreSubmission = true;
+  showScoreSubmitStatus(message, "warning");
+  openProfileModal(true);
+}
+
+function retryPendingScoreSubmission() {
+  if (!pendingScoreSubmission) return;
+
+  window.setTimeout(() => {
+    if (!pendingScoreSubmission) return;
+    submitScoreToBackend();
+  }, 0);
+}
+
+function stopQuizHeartbeat() {
+  if (heartbeatIntervalId) {
+    window.clearInterval(heartbeatIntervalId);
+    heartbeatIntervalId = null;
+  }
+}
+
+async function startQuizSession() {
+  stopQuizHeartbeat();
+  currentSessionId = null;
+  quizSessionPromise = null;
+  rankingBackendEnabled = null;
+  quizStartedAt = Date.now();
+
+  if (!currentFile || currentMode === "study" || currentQuestions.length === 0) {
+    return;
+  }
+
+  quizSessionPromise = (async () => {
+    const response = await fetch("/api/start-quiz", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        player_id: getPlayerId(),
+        quiz_id: currentFile.file,
+        mode: currentMode,
+        question_indices: currentQuestions.map((question) => question._originalIndex),
+      }),
+    });
+
+    const data = await response.json();
+    rankingBackendEnabled = data.enabled !== false;
+
+    if (!data.enabled) {
+      return;
+    }
+
+    if (!response.ok || !data.session_id) {
+      throw new Error(data.error || "start_failed");
+    }
+
+    currentSessionId = data.session_id;
+    updatePresenceCounter(data.active_count);
+    heartbeatIntervalId = window.setInterval(sendQuizHeartbeat, 60_000);
+  })();
+
+  try {
+    await quizSessionPromise;
+  } catch {
+    currentSessionId = null;
+  }
+}
+
+async function sendQuizHeartbeat() {
+  if (!currentSessionId) return;
+
+  try {
+    const response = await fetch("/api/heartbeat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        player_id: getPlayerId(),
+        session_id: currentSessionId,
+      }),
+    });
+
+    const data = await response.json();
+    if (data.enabled) updatePresenceCounter(data.active_count);
+  } catch {
+  }
 }
 
 async function loadConfig() {
@@ -43,7 +320,7 @@ async function loadConfig() {
     document.getElementById("file-selector").style.display = "block";
   } catch (error) {
     UI.showError(
-      `<strong>Błąd konfiguracji!</strong><br>Sprawdź plik 'config.json'.<br><small>${error.message}</small>`,
+      `<strong>Błąd konfiguracji!</strong><br>Sprawdź plik 'config.json'.<br><small>${escapeHtml(error.message)}</small>`,
     );
   }
 }
@@ -68,16 +345,12 @@ async function selectFile(index) {
     document.getElementById("loading").style.display = "none";
     document.getElementById("mode-selector").style.display = "block";
     updateGlobalProgressWithDOM();
-
     document
       .getElementById("mode-selector")
       .scrollIntoView({ behavior: "smooth" });
 
-    document.querySelectorAll(".mode-btn").forEach((btn) => {
-      btn.onclick = () => selectMode(btn.dataset.mode); 
-    });
   } catch (error) {
-    UI.showError(`Błąd wczytywania pliku: ${error.message}`);
+    UI.showError(`Błąd wczytywania pliku: ${escapeHtml(error.message)}`);
   }
 }
 
@@ -88,9 +361,20 @@ function selectMode(mode) {
   prepareQuiz();
 }
 
+function setQuizNavigationVisible(isVisible) {
+  const controls = document.getElementById("controls");
+  const appBar = document.querySelector(".app-bar");
+  const quizActions = document.querySelector(".quiz-actions");
+
+  controls?.classList.toggle("hidden", !isVisible);
+  controls?.removeAttribute("style");
+  appBar?.classList.toggle("is-quiz-active", isVisible);
+  quizActions?.classList.toggle("is-active", isVisible);
+}
+
 function prepareQuiz() {
   document.getElementById("quiz-info").style.display = "block";
-  document.getElementById("controls").style.display = "flex";
+  setQuizNavigationVisible(true);
   document.getElementById("drawNextBtn").style.display = "none";
   
 
@@ -141,6 +425,8 @@ function prepareQuiz() {
       
       if (rangeStart > rangeEnd || rangeStart > allQuestions.length) {
         UI.showError("Błąd: Podaj prawidłowy zakres pytań!");
+        setQuizNavigationVisible(false);
+        document.getElementById("quiz-info").style.display = "none";
         document.getElementById("mode-selector").style.display = "block";
         return;
       }
@@ -161,6 +447,7 @@ function prepareQuiz() {
       break;
   }
   stats.innerHTML = `<strong>Statystyki:</strong> ${currentQuestions.length} pytań | ${UI.getModeDisplayName(currentMode)}`;
+  startQuizSession();
 }
 
 function checkAnswers() {
@@ -215,6 +502,7 @@ function checkAnswers() {
   if (correctQuestions === currentQuestions.length && currentQuestions.length > 0) {
     launchConfetti();
   }
+  submitScoreToBackend();
 
   document.getElementById("legend").style.display = "flex";
   
@@ -255,6 +543,137 @@ function processResults(correctQuestions, newlyLearnedCount) {
   UI.showResults(correctQuestions, totalQuestions, percentage, grade, gradeColor, encouragement, newlyLearnedCount);
 }
 
+function getSubmissionAnswers() {
+  const quizContent = document.getElementById("quiz-content");
+  const questionElements = quizContent.querySelectorAll(".question");
+
+  return currentQuestions.map((question, index) => {
+    const checkboxes = questionElements[index]?.querySelectorAll('input[type="checkbox"]') || [];
+    const optionMap = question._optionIndexMap || question.options.map((_, optionIndex) => optionIndex);
+    const selected = Array.from(checkboxes)
+      .filter((checkbox) => checkbox.checked)
+      .map((checkbox) => optionMap[parseInt(checkbox.dataset.answer, 10)])
+      .filter((answerIndex) => Number.isInteger(answerIndex))
+      .sort((a, b) => a - b);
+
+    return {
+      question_index: question._originalIndex,
+      selected,
+    };
+  });
+}
+
+function showScoreSubmitStatus(message, type = "info") {
+  const status = document.getElementById("score-submit-status");
+  if (!status) return;
+
+  status.textContent = message;
+  status.className = `score-submit-status ${type}`;
+}
+
+function getScoreSubmitErrorMessage(data) {
+  switch (data?.error) {
+    case "too_fast":
+      return `Nie zapisano wyniku: test rozwiązany za szybko (minimum ${data.min_duration_seconds}s).`;
+    case "session_not_found":
+      return "Nie zapisano wyniku: sesja testu wygasła. Spróbuj uruchomić test ponownie.";
+    case "invalid_submission":
+    case "invalid_answer_shape":
+    case "answer_count_mismatch":
+    case "duplicate_answer":
+    case "unknown_question":
+    case "answer_index_out_of_range":
+      return "Nie zapisano wyniku: odpowiedzi nie pasują do rozpoczętej sesji testu.";
+    case "unknown_quiz":
+      return "Nie zapisano wyniku: ten quiz nie jest dostępny w rankingu.";
+    case "invalid_duration":
+      return "Nie zapisano wyniku: czas testu jest nieprawidłowy.";
+    default:
+      return `Nie zapisano wyniku: ${data?.error || "błąd API"}`;
+  }
+}
+
+async function submitScoreToBackend() {
+  if (!currentFile || currentMode === "study" || !quizStartedAt) return;
+
+  if (!currentSessionId && quizSessionPromise) {
+    showScoreSubmitStatus("Przygotowywanie zapisu wyniku...", "info");
+    try {
+      await quizSessionPromise;
+    } catch {
+      currentSessionId = null;
+    }
+  }
+
+  if (!currentSessionId) {
+    if (rankingBackendEnabled === false) {
+      showScoreSubmitStatus("Ranking nie jest skonfigurowany w tym środowisku.", "warning");
+    } else {
+      showScoreSubmitStatus("Nie zapisano wyniku: nie udało się utworzyć sesji rankingu. Odśwież stronę i spróbuj ponownie.", "error");
+    }
+    return;
+  }
+
+  const turnstileToken = getTurnstileToken();
+  if (turnstileWidgetId !== null && !turnstileToken) {
+    requestRankingVerification("Potwierdź weryfikację, żeby zapisać wynik w rankingu.");
+    return;
+  }
+
+  pendingScoreSubmission = false;
+  showScoreSubmitStatus("Zapisywanie wyniku w rankingu...", "info");
+
+  try {
+    const response = await fetch("/api/submit-score", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        player_id: getPlayerId(),
+        nickname: getPlayerNick(),
+        quiz_id: currentFile.file,
+        session_id: currentSessionId,
+        duration_seconds: Math.max(0, Math.round((Date.now() - quizStartedAt) / 1000)),
+        answers: getSubmissionAnswers(),
+        turnstile_token: turnstileToken,
+      }),
+    });
+
+    const data = await response.json();
+    resetTurnstile();
+
+    if (!data.enabled) {
+      showScoreSubmitStatus("Ranking nie jest skonfigurowany w tym środowisku.", "warning");
+      return;
+    }
+
+    if (!response.ok) {
+      if (data.error === "missing_turnstile_token" || data.error === "turnstile_failed") {
+        resetTurnstile();
+        requestRankingVerification("Potwierdź weryfikację, żeby zapisać wynik w rankingu.");
+        return;
+      }
+
+      if (data.error === "profane_nickname") {
+        showScoreSubmitStatus("Nie zapisano wyniku: nick zawiera niedozwolone słowo.", "error");
+        openProfileModal(true);
+        return;
+      }
+
+      showScoreSubmitStatus(getScoreSubmitErrorMessage(data), "error");
+      return;
+    }
+
+    if (data.saved) {
+      showScoreSubmitStatus(`Zapisano najlepszy wynik: ${data.score} pkt.`, "success");
+    } else {
+      showScoreSubmitStatus(`Wynik ${data.score} pkt nie przebił rekordu (${data.best_score} pkt).`, "info");
+    }
+
+  } catch {
+    showScoreSubmitStatus("Nie udało się połączyć z API rankingu.", "error");
+  }
+}
+
 function launchConfetti() {
   removeConfetti();
 
@@ -293,12 +712,16 @@ function removeConfetti() {
   document.querySelectorAll(".confetti-layer").forEach((layer) => layer.remove());
 }
 
+function clearResults() {
+  const results = document.getElementById("results");
+  if (results) results.innerHTML = "";
+}
+
 function drawNextRandomQuestions() {
   if (currentMode !== "random5") return;
 
   removeConfetti();
-  document.getElementById("results").innerHTML = "";
-  document.getElementById("results").innerHTML = "";
+  clearResults();
   document.getElementById("legend").style.display = "none";
   
   document.getElementById("drawNextBtn").style.display = "none";
@@ -324,10 +747,12 @@ function drawNextRandomQuestions() {
   }
   
   UI.renderQuizMode(currentQuestions);
+  startQuizSession();
 }
 
 function resetQuiz() {
   removeConfetti();
+  document.getElementById("score-submit-status")?.classList.add("hidden");
   const quizContent = document.getElementById('quiz-content');
   quizContent.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
     checkbox.checked = false;
@@ -339,24 +764,25 @@ function resetQuiz() {
   document.getElementById("checkBtn").disabled = false;
   
   isChecked = false;
-  document.getElementById("results").innerHTML = "";
-  document.getElementById("results").innerHTML = "";
+  clearResults();
   document.getElementById("legend").style.display = "none";
   document.getElementById("drawNextBtn").style.display = "none";
+  startQuizSession();
   scrollToTop();
 }
 
 function backToMenu() {
+  stopQuizHeartbeat();
   removeConfetti();
-  ["quiz-info", "controls", "legend"].forEach(
+  setQuizNavigationVisible(false);
+  ["quiz-info", "legend"].forEach(
     (id) => (document.getElementById(id).style.display = "none"),
   );
   ["quiz-content", "results"].forEach(
     (id) => (document.getElementById(id).innerHTML = ""),
   );
-  ["file-selector"].forEach(
-    (id) => (document.getElementById(id).style.display = "block"),
-  );
+  document.getElementById("score-submit-status")?.classList.add("hidden");
+  document.getElementById("file-selector").style.display = "block";
   document.getElementById("mode-selector").style.display = "none";
   if (currentFile) updateGlobalProgressWithDOM();
   currentMode = null;
@@ -380,6 +806,7 @@ function updateGlobalProgressWithDOM() {
   
   if (bar && text) {
     bar.style.width = `${percentage}%`;
+    bar.setAttribute("aria-valuenow", String(percentage));
     text.textContent = `Postęp: ${learnedCount}/${total} opanowanych (${percentage}%)`;
   }
 }

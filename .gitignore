@@ -1,2 +1,4 @@
 .idea
 *.sh
+.env*
+.vercel

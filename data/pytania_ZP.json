@@ -1,0 +1,643 @@
+[
+  {
+    "question": "Które z wymienionych stanowią komponenty (tematy) wykorzystywane w ramach procesów realizowanych wg. metodyki PRINCE2?",
+    "options": [
+      "Uzasadnienie biznesowe",
+      "Zamykanie projektu",
+      "Organizacja",
+      "Zarządzanie dostarczaniem produktów",
+      "Ryzyko"
+    ],
+    "correct": [
+      0,
+      2,
+      4
+    ]
+  },
+  {
+    "question": "Według metodyki PRINCE2 każde zarejestrowane ryzyko ma przypisanego:",
+    "options": [
+      "Głównego Użytkownika",
+      "Właściciela Ryzyka",
+      "Głównego Dostawcę"
+    ],
+    "correct": [
+      1
+    ]
+  },
+  {
+    "question": "RUP składa się z następujących faz:",
+    "options": [
+      "Wizji, Opracowywania, Konstrukcji, Przekazania",
+      "Rozpoczęcia, Planowania, Opracowania, Przekazania",
+      "Rozpoczęcia, Opracowania, Budowy, Przekazania"
+    ],
+    "correct": [
+      2
+    ]
+  },
+  {
+    "question": "RUP oprócz faz specyfikuje również elementy, do których należą między innymi modelowanie biznesowe czy zarządzanie zmianą i konfiguracją.",
+    "options": [
+      "Dyscypliny"
+    ],
+    "correct": [
+      0
+    ]
+  },
+  {
+    "question": "W metodyce PRINCE2 komponent (temat) Organizacja definiuje następujące role projektowe:",
+    "options": [
+      "Przewodniczący",
+      "Kierownik Zespołu",
+      "Wsparcie projektu",
+      "Właściciel produktu",
+      "Główny Dostawca"
+    ],
+    "correct": [
+      0,
+      1,
+      2,
+      4
+    ]
+  },
+  {
+    "question": "Przygotowanie Projektu w PRINCE2 koncentruje się na:",
+    "options": [
+      "Powołaniu zespołu projektowego",
+      "Definicji celów projektu",
+      "Założeniu Rejestru Ryzyk",
+      "Stworzeniu zarysu Uzasadnienia Biznesowego"
+    ],
+    "correct": [
+      0,
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "question": "Podpisanie umowy pomiędzy klientem a wybranym wykonawcą następuje zwykle po fazie:",
+    "options": [
+      "Testowania",
+      "Koncepcji",
+      "Inicjacji",
+      "Wdrażania",
+      "Realizacji",
+      "Eksploatacji"
+    ],
+    "correct": [
+      1
+    ]
+  },
+  {
+    "question": "Wartość ujemna NPV wyznaczona przy ocenie opłacalności projektu oznacza:",
+    "options": [
+      "Projekt nie jest efektywny z punktu widzenia finansowego",
+      "Projekt jest efektywny z punktu widzenia finansowego",
+      "Stopa rentowności przedsięwzięcia jest wyższa niż stopa procentowa przyjęta do obliczenia współczynnika dyskontowego, zatem inwestycja jest opłacalna",
+      "Stopa rentowności przedsięwzięcia jest niższa niż stopa procentowa przyjęta do obliczenia współczynnika dyskontowego, zatem oceniana inwestycja w projekt nie zwiększa wartości podmiotu"
+    ],
+    "correct": [
+      0,
+      3
+    ]
+  },
+  {
+    "question": "Integracja metodyki wytwarzania RUP ze środowiskiem zarządzania metodyki PRINCE2 dotyczy fazy:",
+    "options": [
+      "Rozpoczęcia i Opracowania",
+      "Rozpoczęcia, Opracowania, Budowy, Przekazania",
+      "Wizji, Planowania, Konstrukcji, Stabilizacji"
+    ],
+    "correct": [
+      1
+    ]
+  },
+  {
+    "question": "Interfejsem łączącym metodykę PRINCE2 z metodyką RUP jest przede wszystkim proces:",
+    "options": [
+      "Zarządzanie Dostarczaniem Produktów",
+      "Zarządzanie Strategiczne Projektem",
+      "Przygotowanie Projektu"
+    ],
+    "correct": [
+      0
+    ]
+  },
+  {
+    "question": "W którym procesie PRINCE2 zakładany jest Rejestr Ryzyka?",
+    "options": [
+      "Inicjowanie Projektu",
+      "Sterowanie Etapem",
+      "Przygotowanie Projektu"
+    ],
+    "correct": [
+      0
+    ]
+  },
+  {
+    "question": "Obsługa zmian w PRINCE2 powoływana jest głównie w celu:",
+    "options": [
+      "Zarządzania sytuacjami ryzykownymi",
+      "Zarządzania sytuacjami niepożądanymi",
+      "Obsługi dużej liczby zagadnień projektowych"
+    ],
+    "correct": [
+      2
+    ]
+  },
+  {
+    "question": "Raport nadzwyczajny w PRINCE2 przygotowywany jest:",
+    "options": [
+      "Pod koniec Inicjowania Projektu",
+      "Gdy przekroczone zostały tolerancje projektowe",
+      "Jako część Strategii Zarządzania Konfiguracją"
+    ],
+    "correct": [
+      1
+    ]
+  },
+  {
+    "question": "Obowiązki dotyczące Jakości w PRINCE2 mieszczą się w kategoriach:",
+    "options": [
+      "Wytwórca",
+      "Kontroler",
+      "Zatwierdzający",
+      "Właściciel",
+      "Audytor"
+    ],
+    "correct": [
+      0,
+      1,
+      2
+    ]
+  },
+  {
+    "question": "Ryzyka projektowe w metodyce PRINCE2 oceniane są przez pryzmat:",
+    "options": [
+      "Wpływu na projekt",
+      "Prawdopodobieństwa wystąpienia",
+      "Bliskości wystąpienia",
+      "Iloczynu prawdopodobieństwa i wpływu"
+    ],
+    "correct": [
+      0,
+      1,
+      3
+    ]
+  },
+  {
+    "question": "Tolerancje dla korzyści w PRINCE2 zawarte są w:",
+    "options": [
+      "Uzasadnieniu Biznesowym",
+      "Strategii Zarządzania Jakością",
+      "Planie Projektu"
+    ],
+    "correct": [
+      0
+    ]
+  },
+  {
+    "question": "Kontrolowanie postępów w projekcie obejmuje pomiary faktycznych wyników w odniesieniu do docelowych wskaźników wykonania:",
+    "options": [
+      "Czasu",
+      "Kosztów",
+      "Jakości",
+      "Zakresu",
+      "Korzyści",
+      "Ryzyka"
+    ],
+    "correct": [
+      0,
+      1,
+      2,
+      3,[
+  {
+    "question": "Które z wymienionych stanowią komponenty (tematy) wykorzystywane w ramach procesów realizowanych wg. metodyki PRINCE2?",
+    "options": [
+      "Uzasadnienie biznesowe",
+      "Zamykanie projektu",
+      "Organizacja",
+      "Zarządzanie dostarczaniem produktów",
+      "Ryzyko"
+    ],
+    "correct": [
+      0,
+      2,
+      4
+    ]
+  },
+  {
+    "question": "Według metodyki PRINCE2 każde zarejestrowane ryzyko ma przypisanego:",
+    "options": [
+      "Głównego Użytkownika",
+      "Właściciela Ryzyka",
+      "Głównego Dostawcę"
+    ],
+    "correct": [
+      1
+    ]
+  },
+  {
+    "question": "RUP składa się z następujących faz:",
+    "options": [
+      "Wizji, Opracowywania, Konstrukcji, Przekazania",
+      "Rozpoczęcia, Planowania, Opracowania, Przekazania",
+      "Rozpoczęcia, Opracowania, Budowy, Przekazania"
+    ],
+    "correct": [
+      2
+    ]
+  },
+  {
+    "question": "RUP oprócz faz specyfikuje również elementy, do których należą między innymi modelowanie biznesowe czy zarządzanie zmianą i konfiguracją.",
+    "options": [
+      "Dyscypliny"
+    ],
+    "correct": [
+      0
+    ]
+  },
+  {
+    "question": "W metodyce PRINCE2 komponent (temat) Organizacja definiuje następujące role projektowe:",
+    "options": [
+      "Przewodniczący",
+      "Kierownik Zespołu",
+      "Wsparcie projektu",
+      "Właściciel produktu",
+      "Główny Dostawca"
+    ],
+    "correct": [
+      0,
+      1,
+      2,
+      4
+    ]
+  },
+  {
+    "question": "Przygotowanie Projektu w PRINCE2 koncentruje się na:",
+    "options": [
+      "Powołaniu zespołu projektowego",
+      "Definicji celów projektu",
+      "Założeniu Rejestru Ryzyk",
+      "Stworzeniu zarysu Uzasadnienia Biznesowego"
+    ],
+    "correct": [
+      0,
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "question": "Podpisanie umowy pomiędzy klientem a wybranym wykonawcą następuje zwykle po fazie:",
+    "options": [
+      "Testowania",
+      "Koncepcji",
+      "Inicjacji",
+      "Wdrażania",
+      "Realizacji",
+      "Eksploatacji"
+    ],
+    "correct": [
+      1
+    ]
+  },
+  {
+    "question": "Wartość ujemna NPV wyznaczona przy ocenie opłacalności projektu oznacza:",
+    "options": [
+      "Projekt nie jest efektywny z punktu widzenia finansowego",
+      "Projekt jest efektywny z punktu widzenia finansowego",
+      "Stopa rentowności przedsięwzięcia jest wyższa niż stopa procentowa przyjęta do obliczenia współczynnika dyskontowego, zatem inwestycja jest opłacalna",
+      "Stopa rentowności przedsięwzięcia jest niższa niż stopa procentowa przyjęta do obliczenia współczynnika dyskontowego, zatem oceniana inwestycja w projekt nie zwiększa wartości podmiotu"
+    ],
+    "correct": [
+      0,
+      3
+    ]
+  },
+  {
+    "question": "Integracja metodyki wytwarzania RUP ze środowiskiem zarządzania metodyki PRINCE2 dotyczy fazy:",
+    "options": [
+      "Rozpoczęcia i Opracowania",
+      "Rozpoczęcia, Opracowania, Budowy, Przekazania",
+      "Wizji, Planowania, Konstrukcji, Stabilizacji"
+    ],
+    "correct": [
+      1
+    ]
+  },
+  {
+    "question": "Interfejsem łączącym metodykę PRINCE2 z metodyką RUP jest przede wszystkim proces:",
+    "options": [
+      "Zarządzanie Dostarczaniem Produktów",
+      "Zarządzanie Strategiczne Projektem",
+      "Przygotowanie Projektu"
+    ],
+    "correct": [
+      0
+    ]
+  },
+  {
+    "question": "W którym procesie PRINCE2 zakładany jest Rejestr Ryzyka?",
+    "options": [
+      "Inicjowanie Projektu",
+      "Sterowanie Etapem",
+      "Przygotowanie Projektu"
+    ],
+    "correct": [
+      0
+    ]
+  },
+  {
+    "question": "Obsługa zmian w PRINCE2 powoływana jest głównie w celu:",
+    "options": [
+      "Zarządzania sytuacjami ryzykownymi",
+      "Zarządzania sytuacjami niepożądanymi",
+      "Obsługi dużej liczby zagadnień projektowych"
+    ],
+    "correct": [
+      2
+    ]
+  },
+  {
+    "question": "Raport nadzwyczajny w PRINCE2 przygotowywany jest:",
+    "options": [
+      "Pod koniec Inicjowania Projektu",
+      "Gdy przekroczone zostały tolerancje projektowe",
+      "Jako część Strategii Zarządzania Konfiguracją"
+    ],
+    "correct": [
+      1
+    ]
+  },
+  {
+    "question": "Obowiązki dotyczące Jakości w PRINCE2 mieszczą się w kategoriach:",
+    "options": [
+      "Wytwórca",
+      "Kontroler",
+      "Zatwierdzający",
+      "Właściciel",
+      "Audytor"
+    ],
+    "correct": [
+      0,
+      1,
+      2
+    ]
+  },
+  {
+    "question": "Ryzyka projektowe w metodyce PRINCE2 oceniane są przez pryzmat:",
+    "options": [
+      "Wpływu na projekt",
+      "Prawdopodobieństwa wystąpienia",
+      "Bliskości wystąpienia",
+      "Iloczynu prawdopodobieństwa i wpływu"
+    ],
+    "correct": [
+      0,
+      1,
+      3
+    ]
+  },
+  {
+    "question": "Tolerancje dla korzyści w PRINCE2 zawarte są w:",
+    "options": [
+      "Uzasadnieniu Biznesowym",
+      "Strategii Zarządzania Jakością",
+      "Planie Projektu"
+    ],
+    "correct": [
+      0
+    ]
+  },
+  {
+    "question": "Kontrolowanie postępów w projekcie obejmuje pomiary faktycznych wyników w odniesieniu do docelowych wskaźników wykonania:",
+    "options": [
+      "Czasu",
+      "Kosztów",
+      "Jakości",
+      "Zakresu",
+      "Korzyści",
+      "Ryzyka"
+    ],
+    "correct": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "question": "W metodyce PRINCE2 wykorzystanie zarządzania etapowego jest:",
+    "options": [
+      "Obowiązkowe",
+      "Liczba etapów jest elastyczna",
+      "Liczba etapów zależy od ryzyka projektu",
+      "Każdy projekt składa się z Przygotowania Projektu, Inicjowania Projektu oraz przynajmniej jednego Etapu Zarządczego"
+    ],
+    "correct": [
+      0,
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "question": "Uzasadnienie Biznesowe wskazuje:",
+    "options": [
+      "Powody podjęcia projektu",
+      "Możliwe rozwiązania biznesowe",
+      "Terminy",
+      "Koszty",
+      "Główne ryzyka",
+      "Główne zagadnienia",
+      "Kryteria akceptacji dla jakości produktów projektu"
+    ],
+    "correct": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "question": "SCRUM definiuje w projekcie następujące role:",
+    "options": [
+      "Właściciel produktu",
+      "Właściciel procesu",
+      "Scrum Master",
+      "Członek zespołu",
+      "Wsparcie projektu"
+    ],
+    "correct": [
+      0,
+      2,
+      3
+    ]
+  },
+  {
+    "question": "W metodyce SCRUM kluczowym mechanizmem do rejestracji zadań, który definiuje wysokopoziomowe, biznesowe funkcje aplikacji jest:",
+    "options": [
+      "Rejestr produktu (product backlog)",
+      "Rejestr zadań etapu",
+      "Dziennik zadań projektu"
+    ],
+    "correct": [
+      0
+    ]
+  },
+  {
+    "question": "Struktura metodyki PRINCE2 opiera się na:",
+    "options": [
+      "Procesach",
+      "Tematach",
+      "Pryncypiach",
+      "Dyscyplinach"
+    ],
+    "correct": [
+      0,
+      1,
+      2
+    ]
+  },
+  {
+    "question": "Mechanizmy sterowania zagadnieniami i zarządzanie konfiguracją w metodyce PRINCE2 są definiowane na etapie:",
+    "options": [
+      "Przygotowania Projektu",
+      "Inicjowania Projektu",
+      "Zarządzania Dostarczaniem Produktów"
+    ],
+    "correct": [
+      1
+    ]
+  },
+  {
+    "question": "Opis produktu Końcowego Projektu w metodyce PRINCE2 zawiera:",
+    "options": [
+      "Ogólne przeznaczenie produktu",
+      "Jego zawartość, tj. zestaw produktów, które musi on zawierać",
+      "Oczekiwania jakościowe klienta",
+      "Kryteria, metody i obowiązki dotyczące akceptacji",
+      "Tolerancje jakości"
+    ],
+    "correct": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+]
+      4,
+      5
+    ]
+  },
+  {
+    "question": "W metodyce PRINCE2 wykorzystanie zarządzania etapowego jest:",
+    "options": [
+      "Obowiązkowe",
+      "Liczba etapów jest elastyczna",
+      "Liczba etapów zależy od ryzyka projektu",
+      "Każdy projekt składa się z Przygotowania Projektu, Inicjowania Projektu oraz przynajmniej jednego Etapu Zarządczego"
+    ],
+    "correct": [
+      0,
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "question": "Uzasadnienie Biznesowe wskazuje:",
+    "options": [
+      "Powody podjęcia projektu",
+      "Możliwe rozwiązania biznesowe",
+      "Terminy",
+      "Koszty",
+      "Główne ryzyka",
+      "Główne zagadnienia",
+      "Kryteria akceptacji dla jakości produktów projektu"
+    ],
+    "correct": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "question": "SCRUM definiuje w projekcie następujące role:",
+    "options": [
+      "Właściciel produktu",
+      "Właściciel procesu",
+      "Scrum Master",
+      "Członek zespołu",
+      "Wsparcie projektu"
+    ],
+    "correct": [
+      0,
+      2,
+      3
+    ]
+  },
+  {
+    "question": "W metodyce SCRUM kluczowym mechanizmem do rejestracji zadań, który definiuje wysokopoziomowe, biznesowe funkcje aplikacji jest:",
+    "options": [
+      "Rejestr produktu (product backlog)",
+      "Rejestr zadań etapu",
+      "Dziennik zadań projektu"
+    ],
+    "correct": [
+      0
+    ]
+  },
+  {
+    "question": "Struktura metodyki PRINCE2 opiera się na:",
+    "options": [
+      "Procesach",
+      "Tematach",
+      "Pryncypiach",
+      "Dyscyplinach"
+    ],
+    "correct": [
+      0,
+      1,
+      2
+    ]
+  },
+  {
+    "question": "Mechanizmy sterowania zagadnieniami i zarządzanie konfiguracją w metodyce PRINCE2 są definiowane na etapie:",
+    "options": [
+      "Przygotowania Projektu",
+      "Inicjowania Projektu",
+      "Zarządzania Dostarczaniem Produktów"
+    ],
+    "correct": [
+      1
+    ]
+  },
+  {
+    "question": "Opis produktu Końcowego Projektu w metodyce PRINCE2 zawiera:",
+    "options": [
+      "Ogólne przeznaczenie produktu",
+      "Jego zawartość, tj. zestaw produktów, które musi on zawierać",
+      "Oczekiwania jakościowe klienta",
+      "Kryteria, metody i obowiązki dotyczące akceptacji",
+      "Tolerancje jakości"
+    ],
+    "correct": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+]

@@ -3,14 +3,7 @@ import { isQuestionLearned } from "./storage.js";
 
 export function shuffleAndMapQuestions(questions) {
   return questions.map((q) => {
-    const indices = q.options.map((_, i) => i);
-
-    for (let i = indices.length - 1; i > 0; i--) {
-      const randomBuffer = new Uint32Array(1);
-      window.crypto.getRandomValues(randomBuffer);
-      const j = randomBuffer[0] % (i + 1);
-      [indices[i], indices[j]] = [indices[j], indices[i]];
-    }
+    const indices = secureShuffle(q.options.map((_, i) => i));
 
     const newOptions = indices.map((i) => q.options[i]);
     const newCorrect = q.correct.map((oldIndex) => indices.indexOf(oldIndex));
@@ -28,15 +21,13 @@ export function selectRandomQuestions(allQuestions, count, excludeLearned, curre
     ? allQuestions.filter((q) => !isQuestionLearned(currentFilename, q._originalIndex))
     : [...allQuestions];
 
-  let pool = availableQuestions;
-  if (pool.length === 0) {
-    return { questions: [], usedFallback: false, empty: true }; 
+  if (availableQuestions.length === 0) {
+    return { questions: [], empty: true };
   }
 
-  const shuffled = secureShuffle([...pool]);
-  return { 
-      questions: shuffled.slice(0, Math.min(count, pool.length)), 
-      usedFallback: false,
+  const shuffled = secureShuffle([...availableQuestions]);
+  return {
+      questions: shuffled.slice(0, Math.min(count, availableQuestions.length)),
       empty: false
   };
 }
