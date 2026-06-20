@@ -87,6 +87,11 @@
           "name": "Zarządzanie projektami",
           "file": "data/pytania_ZP.json",
           "description": "Pytania z Zarządzania projektami"
+        },
+        {
+          "name": "MISS",
+          "file": "data/pytaniaMISS.json",
+          "description": "Pytania z MISS opracowane do nauki"
         }
       ]
     }
