@@ -92,6 +92,11 @@
           "name": "Modelowanie i symulacja systemow",
           "file": "data/pytaniaMISS.json",
           "description": "Pytania z Modelowania i symulacji systemow opracowane do nauki"
+        },
+        {
+          "name": "Modelowanie i symulacja systemow Baza",
+          "file": "data/pytaniaMISSlatex.json",
+          "description": "Pytania z Modelowania i symulacji systemow baza"
         }
       ]
     }

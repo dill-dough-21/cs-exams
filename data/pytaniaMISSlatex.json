@@ -1,0 +1,1037 @@
+[
+  {
+    "question": "Do jakiej kategorii zaliczysz podane modele $y(x_1, x_2) = ax_1 + bx_2$?",
+    "options": [
+      "dyskretny, niestacjonarny, nieliniowy, stochastyczny, dynamiczny",
+      "ciągły, stacjonarny, liniowy, deterministyczny, statyczny",
+      "ciągły, niestacjonarny, nieliniowy, stochastyczny, statyczny"
+    ],
+    "correct": [ 1 ]
+  },
+  {
+    "question": "Do jakiej kategorii zaliczysz podane modele $\\ddot{x} + \\frac{k}{m} \\cdot \\dot{x} + \\frac{g}{l} \\cdot \\sin(x) = 0$?",
+    "options": [
+      "statyczny, dyskretny, liniowy, stochastyczny, stacjonarny",
+      "dynamiczny, ciągły, liniowy, deterministyczny, niestacjonarny",
+      "ciągły, nieliniowy, deterministyczny, stacjonarny, dynamiczny"
+    ],
+    "correct": [ 2 ]
+  },
+  {
+    "question": "Co to jest model behawioralny?",
+    "options": [
+      "Model, który skupia się wyłącznie na odwzorowaniu wewnętrznej budowy fizycznej i połączeń między elementami układu.",
+      "Model behawioralny traktuje system jak \"czarną skrzynkę\", opisując wyłącznie jego zewnętrzne zachowanie (zależność sygnału wyjściowego od wejściowego), bez wnikania w wewnętrzną budowę fizyczną układu.",
+      "Model probabilistyczny, który opisuje zachowanie losowe obiektów żywych w warunkach laboratoryjnych."
+    ],
+    "correct": [ 1 ]
+  },
+  {
+    "question": "Jak wygląda normalna postać równań dynamicznych dla przedstawionego systemu drugiego rzędu?",
+    "options": [
+      "$\\dot{x}_1 = x_2$ oraz $\\dot{x}_2 = -x_2 + 2u \\cdot x_1$",
+      "$\\dot{x}_1 = -x_1 + u$ oraz $\\dot{x}_2 = x_1 \\cdot x_2$",
+      "$\\dot{x}_1(t) = x_2 + u$ oraz $\\dot{x}_2 = -x_1$"
+    ],
+    "correct": [ 0 ]
+  },
+  {
+    "question": "Jakie dane musisz posiadać, aby rozwiązać dowolne równanie różniczkowe metodami numerycznymi?",
+    "options": [
+      "Tylko i wyłącznie analityczną postać funkcji pierwotnej układu.",
+      "Przybliżenie początkowe lub warunek początkowy, krok oraz przedział.",
+      "Macierz transmitancji operatorowej oraz wektor wymuszeń losowych."
+    ],
+    "correct": [ 1 ]
+  },
+  {
+    "question": "W których metodach rozwiązywania równań różniczkowych do wyznaczenia rozwiązania wykorzystuje się informacje w $1$ punkcie?",
+    "options": [
+      "Metody wielokrokowe",
+      "Metody hybrydowe",
+      "Metody jednokrokowe"
+    ],
+    "correct": [ 2 ]
+  },
+  {
+    "question": "Jak stwierdzić, że mamy do czynienia z modelem nieliniowym znając jego strukturę?",
+    "options": [
+      "Zmienne są mnożone przez siebie, podnoszone do potęgi lub uwięzione w funkcjach matematycznych (np. $\\sin$, logarytm)",
+      "Wszystkie parametry modelu zmieniają się losowo w czasie i nie można ich przewidzieć.",
+      "Wszystkie zmienne niezależne występują wyłącznie w pierwszej potędze i są przemnożone przez stałe współczynniki."
+    ],
+    "correct": [ 0 ]
+  },
+  {
+    "question": "Czy jednemu modelowi zapisanemu w postaci transmitancji może odpowiadać wiele modeli zapisanych w przestrzeni stanów?",
+    "options": [
+      "Tak, ponieważ ten sam układ można opisać za pomocą nieskończenie wielu różnych baz, zachowując te same właściwości wejściowo-wyjściowe.",
+      "Tak, relacja między transmitancją operatorową a równaniami przestrzeni stanów jest zawsze jednoznaczna w obie strony.",
+      "Nie, postać transmitancji istnieje wyłącznie dla układów statycznych, a przestrzeń stanów opisuje układy dynamiczne."
+    ],
+    "correct": [ 0 ]
+  },
+  {
+    "question": "Wymień metody linearyzacji",
+    "options": [
+      "Metoda Rungego-Kutty, całkowanie numeryczne oraz aproksymacja Padé",
+      "Kwantyzacja sygnałów, próbkowanie Shannona oraz transformata Fouriera",
+      "Uproszczenia, rozkład w szereg Taylora, metoda małych odchyleń od ruchu bazowego oraz wykorzystanie metod identyfikacji"
+    ],
+    "correct": [ 2 ]
+  },
+  {
+    "question": "Jakiego typu równaniami opisane są systemy statyczne?",
+    "options": [
+      "Równaniami algebraicznymi",
+      "Równaniami różniczkowymi cząstkowymi",
+      "Równaniami różnicowymi"
+    ],
+    "correct": [ 0 ]
+  },
+  {
+    "question": "Jakiego typu równaniami opisane są systemy dynamiczne?",
+    "options": [
+      "Wyłącznie układami nierówności liniowych",
+      "Równaniami algebraicznymi skończonego stopnia",
+      "Równaniami różniczkowymi lub różnicowymi"
+    ],
+    "correct": [ 2 ]
+  },
+  {
+    "question": "Co wpływa na dokładność modelu dyskretnego uzyskanego w procesie kwantyzacji?",
+    "options": [
+      "Częstotliwość próbkowania",
+      "Ilość poziomów",
+      "Rozmieszczenie poziomów decyzyjnych"
+    ],
+    "correct": [ 0 ]
+  },
+  {
+    "question": "Wymień przynajmniej dwie metody walidacji modelu.",
+    "options": [
+      "Analiza regresji i korelacji oraz subiektywna ocena ekspertów",
+      "Kwantyzacja sygnałów oraz próbkowanie Shannona",
+      "Metoda Rungego-Kutty oraz transformata Laplace'a"
+    ],
+    "correct": [ 0 ]
+  },
+  {
+    "question": "Co to jest płaszczyzna fazowa?",
+    "options": [
+      "Trójwymiarowa przestrzeń parametrów strukturalnych modelu statycznego.",
+      "Dwuwymiarowy wykres obrazujący relację i zależność pomiędzy poszczególnymi zmiennymi stanu danego układu.",
+      "Zbiór wszystkich dopuszczalnych sygnałów wejściowych podawanych na wejście czarnej skrzynki."
+    ],
+    "correct": [ 1 ]
+  },
+  {
+    "question": "Podaj przykład dyskretnej symulacji komputerowej",
+    "options": [
+      "Symulacja przepływu prądu w obwodzie $RLC$ oraz ruch wahadła matematycznego",
+      "Symulacja trajektorii lotu rakiety w atmosferze z uwzględnieniem oporów powietrza",
+      "Symulacja okienka kasowego, stacji CPN oraz działania biblioteki"
+    ],
+    "correct": [ 2 ]
+  },
+  {
+    "question": "Co to jest model stacjonarny?",
+    "options": [
+      "Model, którego parametry nie zmieniają się w czasie.",
+      "Model, w którym stan wyjścia zależy wyłącznie od aktualnego stanu wejść (brak pamięci).",
+      "Model opisany wyłącznie za pomocą stałych algebraicznych równań nieliniowych."
+    ],
+    "correct": [ 0 ]
+  },
+  {
+    "question": "Opisz ogólną koncepcję działania metody predyktor-korektor rozwiązywania równań różniczkowych.",
+    "options": [
+      "To dwuetapowy proces obliczeniowy, w którym najpierw zgadujemy przyszły wynik za pomocą prostego wzoru, a następnie precyzyjnie dostrajamy to przybliżenie do właściwej, dokładnej wartości.",
+      "To metoda polegająca na jednoczesnym całkowaniu w przód i w tył, a następnie uśrednianiu wyników z wagami probabilistycznymi.",
+      "To algorytm, który zamienia równanie różniczkowe na układ równań algebraicznych liniowych za pomocą szeregu Taylora."
+    ],
+    "correct": [ 0 ]
+  },
+  {
+    "question": "W jaki sposób zweryfikować poprawność wyniku uzyskanego daną metodą numeryczną w procesie modelowania systemów dynamicznych?",
+    "options": [
+      "Porównać wyniki z wielkościami wytwarzanymi przez modelowany system rzeczywisty.",
+      "Zwiększać krok całkowania numerycznego aż do uzyskania stabilizacji wyników.",
+      "Przetransformować układ do przestrzeni stanów i sprawdzić, czy macierz stanu jest diagonalna."
+    ],
+    "correct": [ 0 ]
+  },
+  {
+    "question": "Wymień wady symulacji komputerowej:",
+    "options": [
+      "Wysoki koszt obliczeniowy uniemożliwiający symulowanie prostych układów statycznych.",
+      "Brak możliwości uwzględnienia nieliniowości oraz wymuszeń losowych w algorytmach.",
+      "Trudność zidentyfikowania i zinterpretowania wyników symulacji."
+    ],
+    "correct": [ 2 ]
+  },
+  {
+    "question": "Jakiego typu równaniami opisane są modele systemów o parametrach rozproszonych?",
+    "options": [
+      "Równania różniczkowe cząstkowe",
+      "Równania różnicowe zwyczajne",
+      "Równania algebraiczne liniowe"
+    ],
+    "correct": [ 0 ]
+  },
+  {
+    "question": "Całkę Laplace'a zapisujemy w postaci: $\\mathcal{L}[f(t)] = F(s) = \\int_{0}^{\\infty} f(t) \\cdot e^{-st} dt$. Wyjaśnij oznaczenia występujące we wzorze.",
+    "options": [
+      "$F(s)$ to funkcja zmiennej dyskretnej, $f(t)$ to operator różniczkowy, $t$ to krok kwantyzacji, $s$ to transmitancja.",
+      "$F(s)$ to funkcja zmiennej zespolonej lub obraz Laplace'a funkcji $f(t)$; $f(t)$ to funkcja zmiennej rzeczywistej lub oryginał; $t$ to czas; $s$ to zmienna zespolona.",
+      "$F(s)$ to transformata Fouriera układu stacjonarnego, $f(t)$ to wektor stanu, $t$ to stała czasowa, $s$ to zmienna rzeczywista."
+    ],
+    "correct": [ 1 ]
+  },
+  {
+    "question": "Czy ten sam system może być opisany przez różne zbiory zmiennych stanu?",
+    "options": [
+      "Tak",
+      "Nie, wybór zmiennych stanu jest zawsze ściśle zdefiniowany i unikalny dla danej struktury fizycznej układu.",
+      "Tak, ale wyłącznie dla układów statycznych o parametrach rozproszonych."
+    ],
+    "correct": [ 0 ]
+  },
+  {
+    "question": "Proces zmiany model konceptualnego na model komputerowy to:",
+    "options": [
+      "Weryfikacja",
+      "Walidacja",
+      "Kodowanie modelu"
+    ],
+    "correct": [ 2 ]
+  },
+  {
+    "question": "Co umożliwia przekształcenie Laurenta?",
+    "options": [
+      "Pozwala opisać i obliczyć zachowanie funkcji zespolonej w pobliżu jej punktów osobliwych",
+      "Służy wyłącznie do numerycznego całkowania nieliniowych równań różniczkowych zwyczajnych.",
+      "Umożliwia dokładną linearyzację systemów dynamicznych niestacjonarnych metodą małych odchyleń."
+    ],
+    "correct": [ 0 ]
+  },
+  {
+    "question": "Transmitancja operatorowa to stosunek:",
+    "options": [
+      "Wektora stanu do wektora wymuszeń przy dowolnych warunkach początkowych.",
+      "Sygnału wyjściowego $Y(s)$ do wejściowego $U(s)$ w dziedzinie Laplace'a, przy założeniu, że układ startuje od zupełnego zera (zerowe warunki początkowe).",
+      "Pochodnej sygnału wyjściowego do sygnału wejściowego w dziedzinie czasu rzeczywistego $t$."
+    ],
+    "correct": [ 1 ]
+  },
+  {
+    "question": "Własności transmitancji operatorowej",
+    "options": [
+      "Transmitancja pozwala jednoznacznie odtworzyć strukturę fizyczną układu i zależy od rodzaju wymuszenia.",
+      "Transmitancja jest cechą charakterystyczną wyłącznie dla systemów dyskretnych stochastycznych.",
+      "Transmitancja jest własnością samego systemu, niezależnie od wielkości i natury sygnału wejściowego"
+    ],
+    "correct": [ 2 ]
+  },
+  {
+    "question": "Co to jest model?",
+    "options": [
+      "Model to celowo uproszczona reprezentacja rzeczywistości, która pomija zbędne szczegóły i skupia się wyłącznie na cechach kluczowych dla danego badania.",
+      "Model to dokładna, identyczna kopia systemu rzeczywistego, uwzględniająca wszelkie możliwe zjawiska fizyczne i zakłócenia losowe.",
+      "Model to matematyczny algorytm służący wyłącznie do wizualizacji 3D obiektów statycznych."
+    ],
+    "correct": [ 0 ]
+  },
+  {
+    "question": "Kategorie modeli matematycznych",
+    "options": [
+      "Deterministyczne – stochastyczne, statyczne – dynamiczne, ciągłe – dyskretne, stacjonarne – niestacjonarne, liniowe – nieliniowe",
+      "Proste – skomplikowane, fizyczne – chemiczne, jawne – niejawne, stabilne – niestabilne",
+      "Analityczne – numeryczne, algebraiczne – różniczkowe, rzeczywiste – urojone, wejściowe – wyjściowe"
+    ],
+    "correct": [ 0 ]
+  },
+  {
+    "question": "Co to jest kwantowanie (kwantyzacja)?",
+    "options": [
+      "Proces wyznaczania punktu pracy układu nieliniowego za pomocą rozwinięcia w szereg Taylora.",
+      "Proces przekształcenia sygnału ciągłego w dyskretny.",
+      "Zastąpienie pochodnych czasowych ilorazami różnicowymi w metodach jednokrokowych."
+    ],
+    "correct": [ 1 ]
+  },
+  {
+    "question": "Różnicę pomiędzy dwoma systemami należącymi do tej samej kategorii i działającymi w tych samych warunkach określają:",
+    "options": [
+      "Wyłącznie zmienne losowe środowiska zewnętrznego",
+      "Struktura matematyczna równań operatorowych",
+      "Parametry techniczne"
+    ],
+    "correct": [ 2 ]
+  },
+  {
+    "question": "Opisz zalety symulacji komputerowej.",
+    "options": [
+      "Symulacja pozwala na szybkie, tanie i w pełni bezpieczne testowanie układu oraz łatwą zmianę jego parametrów, całkowicie eliminując potrzebę budowania fizycznego prototypu.",
+      "Zapewnia zawsze 100% dokładność analityczną bez generowania jakichkolwiek błędów zaokrągleń.",
+      "Automatycznie rozwiązuje problem trudności interpretacji wyników i nie wymaga identyfikacji parametrów."
+    ],
+    "correct": [ 0 ]
+  },
+  {
+    "question": "Co odpowiada na pytanie, czy model został poprawnie zbudowany?",
+    "options": [
+      "Walidacja",
+      "Weryfikacja",
+      "Kwantyzacja"
+    ],
+    "correct": [ 1 ]
+  },
+  {
+    "question": "Co odpowiada na pytanie „Czy zbudowaliśmy poprawny model?”",
+    "options": [
+      "Walidacja",
+      "Linearyzacja",
+      "Identyfikacja"
+    ],
+    "correct": [ 0 ]
+  },
+  {
+    "question": "Rodzaje metod numerycznych rozwiązywania równań różniczkowych",
+    "options": [
+      "Metoda małych odchyleń, szereg Taylora oraz rozkład Laurenta",
+      "Kwantyzacja poziomów decyzyjnych oraz próbkowanie Shannona",
+      "Metoda Eulera, Rungego-Kutty oraz metoda punktu środkowego"
+    ],
+    "correct": [ 2 ]
+  },
+  {
+    "question": "Podaj wzór przekształcenia Laplace'a:",
+    "options": [
+      "$\\mathcal{L}[f(t)] = F(s) = \\int_{0}^{\\infty} f(t) \\cdot e^{-st} dt$",
+      "$\\mathcal{L}[f(t)] = F(s) = \\int_{-\\infty}^{\\infty} f(t) \\cdot e^{st} dt$",
+      "$\\mathcal{L}[f(t)] = F(s) = \\lim_{t \\to \\infty} \\frac{f(t)}{1 + s}$"
+    ],
+    "correct": [ 0 ]
+  },
+  {
+    "question": "Którego rzędu są rozwiązania w metodzie Eulera?",
+    "options": [
+      "Drugiego",
+      "Pierwszego",
+      "Czwartego"
+    ],
+    "correct": [ 1 ]
+  },
+  {
+    "question": "Co to jest przestrzeń stanów?",
+    "options": [
+      "Zbiór wszystkich dopuszczalnych zakłóceń losowych wpływających na parametry techniczne modelu w stanie ustalonym.",
+      "$N$-wymiarowy układ współrzędnych, w którym każda aktualna sytuacja systemu jest reprezentowana po prostu jako jeden, konkretny punkt.",
+      "Przestrzeń operatorowa Laplace'a, w której wyznacza się transmitancję układów nieliniowych."
+    ],
+    "correct": [ 1 ]
+  },
+  {
+    "question": "Wymień rodzaje symulacji komputerowych:",
+    "options": [
+      "Symulacja analogowa, symulacja dyskretna oraz agentowa",
+      "Symulacja statyczna, algebraiczna oraz Taylora",
+      "Symulacja deterministyczna, ciągła oraz rzędu zerowego"
+    ],
+    "correct": [ 0 ]
+  },
+  {
+    "question": "Wymień metody formułowania modeli systemów dynamicznych opisanych przy pomocy równań wyjścia (równań stanu):",
+    "options": [
+      "Metody próbkowania oraz kwantyzacji",
+      "Metody predyktor-korektor oraz Rungego-Kutty",
+      "Metody bilansowe oraz metody wariacyjne"
+    ],
+    "correct": [ 2 ]
+  },
+  {
+    "question": "Co to jest model deterministyczny?",
+    "options": [
+      "Układ całkowicie pozbawiony losowości, w którym konkretny sygnał wejściowy zawsze gwarantuje dokładnie jeden, w 100% przewidywalny wynik na wyjściu.",
+      "Model, w którym parametry i struktura matematyczna zmieniają się w sposób nieprzewidywalny pod wpływem czasu $t$.",
+      "Model opisany wyłącznie zjawiska stochastyczne za pomocą gęstości prawdopodobieństwa."
+    ],
+    "correct": [ 0 ]
+  },
+  {
+    "question": "Co to jest model dynamiczny?",
+    "options": [
+      "Model, w którym sygnał wyjściowy zależy wyłącznie od wartości sygnałów wejściowych w tej samej chwili czasowej.",
+      "Model dynamiczny to układ uwzględniający upływ czasu, w którym sygnał wyjściowy zależy zarówno od obecnego wejścia, jak i od historii systemu.",
+      "Model opisany wyłącznie prostymi równaniami algebraicznymi bez użycia pochodnych i operatora $s$."
+    ],
+    "correct": [ 1 ]
+  },
+  {
+    "question": "Równania Eulera-Lagrange'a tworzą układ $N$ równań różniczkowych zwyczajnych rzędu:",
+    "options": [
+      "Rzędu pierwszego",
+      "Rzędu drugiego",
+      "Rzędu czwartego"
+    ],
+    "correct": [ 1 ]
+  },
+  {
+    "question": "Od czego zależy dokładność rozwiązania równania różniczkowego?",
+    "options": [
+      "Dokładność rozwiązania zależy od wybranej metody numerycznej oraz wielkości kroku obliczeniowego, przy czym im mniejszy krok, tym wynik jest precyzyjniejszy, ale komputer liczy go znacznie wolniej.",
+      "Zależy wyłącznie od liczby poziomów kwantyzacji sygnału wejściowego i nie ma związku z czasem obliczeń.",
+      "Zależy jedynie od tego, czy modelowany system jest statyczny, czy też stochastyczny."
+    ],
+    "correct": [ 0 ]
+  },
+  {
+    "question": "Co jest rozwiązaniem równania różniczkowego metodami numerycznymi?",
+    "options": [
+      "Funkcja analityczna zmiennej zespolonej $s$",
+      "Zbiór punktów",
+      "Macierz przejścia stanów w postaci ciągłej"
+    ],
+    "correct": [ 1 ]
+  },
+  {
+    "question": "Wypisać etapy tworzenia modelu",
+    "options": [
+      "Ułożenie równań bilansowych, transformata Laurenta, linearyzacja Taylora, testowanie",
+      "Identyfikacja parametrów, kwantyzacja, symulacja agentowa, weryfikacja statyczna",
+      "Sformułowanie problemu, ustalenie celów i planu działania, tworzenie modelu konceptualnego i zbieranie danych, kodowanie modelu, weryfikacja, walidacja, (korekta struktury/parametrów), testowanie, dokumentacja i raporty, wdrożenie"
+    ],
+    "correct": [ 2 ]
+  },
+  {
+    "question": "Czy dwa fizycznie różne systemy mogą mieć takie same (identyczne) transmitancje operatorowe?",
+    "options": [
+      "Nie, ponieważ transmitancja jednoznacznie definiuje strukturę fizyczną i połączenia wewnątrz układu.",
+      "Tak",
+      "Tak, ale wyłącznie w przypadku, gdy oba systemy are nieliniowe i niestacjonarne."
+    ],
+    "correct": [ 1 ]
+  },
+  {
+    "question": "Podaj przykłady analogowej symulacji komputerowej:",
+    "options": [
+      "Symulacja okienka kasowego, stacji CPN oraz kolejki w bibliotece",
+      "Symulator lotu, symulator reaktora jądrowego, układ zbudowany ze wzmacniaczy operacyjnych",
+      "Algorytm genetyczny, symulacja agentowa tłumu oraz sieć neuronowa"
+    ],
+    "correct": [ 1 ]
+  },
+  {
+    "question": "Jak poprawnie definiujemy i opisujemy oznaczenia w przedstawionym równaniu Eulera-Lagrange'a? $\\frac{d}{dt} \\left( \\frac{\\partial T}{\\partial \\dot{q}_k} \\right) - \\frac{\\partial T}{\\partial q_k} = Q_k \\quad (k = 1, \\dots, N)$",
+    "options": [
+      "$N$ to liczba kroków numerycznych, $q_k$ to stałe tłumienia, $\\dot{q}_k$ to przyspieszenia kątowe, $Q_k$ to transmitancja operatorowa.",
+      "$N$ to stopień wielomianu charakterystycznego, $q_k$ to współrzędne kartezjańskie, $T$ to stała czasowa układu, $t$ to przedział całkowania.",
+      "$N$ to liczba stopni swobody systemu, $q_k$ to współrzędne uogólnione, $\\dot{q}_k$ to prędkości uogólnione, $Q_k$ to siła uogólniona, $T$ to energia kinetyczna systemu, $t$ to czas."
+    ],
+    "correct": [ 2 ]
+  },
+  {
+    "question": "Proces tworzenia modeli matematycznych i wykorzystanie aparatu matematycznego do ich analizy nazywamy:",
+    "options": [
+      "symulacją komputerową",
+      "modelowaniem doświadczalnym",
+      "modelowaniem matematycznym"
+    ],
+    "correct": [ 2 ]
+  },
+  {
+    "question": "Jak określić różnicę między systemami dynamicznymi?",
+    "options": [
+      "Należy porównać wyłącznie ich algebraiczne równania stanu w punkcie pracy bez wymuszenia zewnętrznego.",
+      "Aby określić różnicę między systemami dynamicznymi, musisz wytrącić je z równowagi dokładnie takim samym impulsem (siłą), a następnie pomierzyć ich reakcję i sprawdzić, czy zdołały wrócić do stanu początkowego.",
+      "Wystarczy wyznaczyć ich statyczną charakterystykę wzmocnienia dla sygnałów stałych w nieskończonym czasie."
+    ],
+    "correct": [ 1 ]
+  },
+  {
+    "question": "Jakie dane są potrzebne do rozwiązania równania różniczkowego?",
+    "options": [
+      "Warunek początkowy, przedział oraz krok",
+      "Liczba poziomów decyzyjnych oraz gęstość prawdopodobieństwa",
+      "Współrzędne uogólnione oraz liczba stopni swobody $N$"
+    ],
+    "correct": [ 0 ]
+  },
+  {
+    "question": "Właściwości transformaty Laplace’a",
+    "options": [
+      "Przesunięcie w prawo/lewo o $a$, różniczkowanie obrazu, całkowanie oryginału i obrazu, transformata splotu",
+      "Kwantyzacja poziomów decyzyjnych, próbkowanie Shannona oraz rozkład Laurenta wokół punktów osobliwych",
+      "Linearyzacja Taylora, wyznaczanie maksimów lokalnych oraz próbkowanie losowe metodą Monte Carlo"
+    ],
+    "correct": [ 0 ]
+  },
+  {
+    "question": "Własności transmitancji operatorowej",
+    "options": [
+      "Transmitancja to opis struktury fizycznej układu, który zależy od rodzaju i amplitudy wymuszenia wejściowego.",
+      "Transmitancja to matematyczna \"czarna skrzynka\", która w pełni opisuje dynamikę układu i pozwala obliczyć jego reakcję na dowolne wejście, całkowicie ignorując to, z czego i jak jest fizycznie zbudowany.",
+      "Transmitancja pozwala na modelowanie wyłącznie układów stochastycznych o parametrach rozproszonych za pomocą równań algebraicznych."
+    ],
+    "correct": [ 1 ]
+  },
+  {
+    "question": "Rodzaje oceny modelu",
+    "options": [
+      "Techniki bilansowe i wariacyjne",
+      "Techniki jednokrokowe i wielokrokowe",
+      "Techniki formalne i nieformalne, techniki statyczne i dynamiczne"
+    ],
+    "correct": [ 2 ]
+  },
+  {
+    "question": "Podział modeli",
+    "options": [
+      "Lingwistyczne, matematyczne, fizyczne, graficzne",
+      "Jednokrokowe, wielokrokowe, jawne, niejawne",
+      "Eulera, Rungego-Kutty, Taylora, Laurenta"
+    ],
+    "correct": [ 0 ]
+  },
+  {
+    "question": "Sposoby opisu systemów dynamicznych",
+    "options": [
+      "Nieliniowe systemy dynamiczne: Opis zależności wejście-wyjście za pomocą równań różniczkowych, opis za pomocą równań stanu. Liniowe systemy dynamiczne: Opis zależności wejście-wyjście za pomocą równań różniczkowych, opis za pomocą równań stanu, opis zależności „wejście-wyjście” w formie operatorowej",
+      "Oba typy opisuje się wyłącznie równaniami algebraicznymi oraz transformatą Laurenta w pobliżu punktów osobliwych.",
+      "Systemy nieliniowe opisuje się tylko formą operatorową, a liniowe wyłącznie metodami wariacyjnymi."
+    ],
+    "correct": [ 0 ]
+  },
+  {
+    "question": "Standard IEEE 754",
+    "options": [
+      "Liczby stacjonarne oraz niestacjonarne",
+      "Definiuje dwie klasy liczb, pojedynczej precyzji (single) oraz podwójnej precyzji (double)",
+      "Liczby ciągłe o parametrach skupionych oraz rozproszonych"
+    ],
+    "correct": [ 1 ]
+  },
+  {
+    "question": "Przekształcenie Laplace'a opisuje zależność:",
+    "options": [
+      "Jest operatorem przekształcającym funkcję zmiennej dyskretnej na funkcję statyczną o stałych współczynnikach.",
+      "Jest operatorem przekształcającym funkcję zmiennej rzeczywistej $f(t)$ na pewną funkcję $F(s)$ zmiennej zespolonej.",
+      "Jest relacją bilansową energii kinetycznej i potencjalnej w układzie współrzędnych uogólnionych."
+    ],
+    "correct": [ 1 ]
+  },
+  {
+    "question": "Opis zależności \"wejście-wyjście\" w formie operatorowej stosuje się do systemów:",
+    "options": [
+      "statycznych",
+      "dynamicznych – nieliniowych",
+      "dynamicznych – liniowych"
+    ],
+    "correct": [ 2 ]
+  },
+  {
+    "question": "Podaj główny czynnik wpływający na dokładność rozwiązania równań różniczkowych metodami numerycznymi:",
+    "options": [
+      "Ilość próbek, krok oraz dobór metody",
+      "Liczba stopni swobody $N$ w równaniu Eulera-Lagrange'a",
+      "Zastosowanie transformaty Laurenta zamiast Laplace'a"
+    ],
+    "correct": [ 0 ]
+  },
+  {
+    "question": "Czy jednemu modelowi zapisanemu w postaci przestrzeni stanów może odpowiadać wiele transmitancji?",
+    "options": [
+      "Nie",
+      "Nie, dla każdego wyboru zmiennych stanu otrzymujemy zupełnie inną transmitancję operatorową.",
+      "Tak, ale tylko w przypadku systemów nieliniowych niestacjonarnych."
+    ],
+    "correct": [ 0 ]
+  },
+  {
+    "question": "Do jakiej kategorii zaliczysz model: $y(t) = ax_1(t) + bx_2(t) + cx_1(t)x_2(t)$?",
+    "options": [
+      "dynamiczny, dyskretny, liniowy, stochastyczny, niestacjonarny",
+      "statyczny, ciągły, nieliniowy, deterministyczny, stacjonarny",
+      "statyczny, dyskretny, liniowy, deterministyczny, niestacjonarny"
+    ],
+    "correct": [ 1 ]
+  },
+  {
+    "question": "W przestrzeni stanów system opisuje normalna postać równań dynamicznych w postaci układu równań różniczkowych rzędu:",
+    "options": [
+      "dowolnego",
+      "drugiego",
+      "pierwszego"
+    ],
+    "correct": [ 2 ]
+  },
+  {
+    "question": "Wymień etapy budowy modelu w oparciu o metodę bilansową:",
+    "options": [
+      "wybór wielkości bilansowych, ułożenie równań bilansowych, wybór wielkości stanu, ułożenie równań stanu, określenie wartości wyjściowych",
+      "Sformułowanie problemu, transformata Laplace'a, rozkład Laurenta, linearyzacja Taylora",
+      "Kwantyzacja poziomów, wyznaczenie kroku, próbkowanie Shannona, ocena ekspercka"
+    ],
+    "correct": [ 0 ]
+  },
+  {
+    "question": "Na jakie błędy narażasz się wprowadzając okres próbkowania $1/20$ (w systemie dziesiętnym) realizując obliczenia na komputerze?",
+    "options": [
+      "Wyłącznie na błąd nieliniowości strukturalnej uniemożliwiający zastosowanie metod jednokrokowych.",
+      "Narażasz się na błąd zaokrąglenia (bo komputer nie umie idealnie zapisać tego ułamka w systemie binarnym) oraz na zniekształcenie sygnału, jeśli to próbkowanie okaże się zbyt rzadkie.",
+      "Na błąd utraty stacjonarności oraz całkowite wyzerowanie warunków początkowych układu dynamicznego."
+    ],
+    "correct": [ 1 ]
+  },
+  {
+    "question": "Czym jest model niestacjonarny?",
+    "options": [
+      "Model, w którym parametry modelu zmieniają się w czasie.",
+      "Model, który nie posiada pamięci i stan wyjścia zależy tylko od aktualnego wejścia.",
+      "Model opisany wyłącznie za pomocą stochastycznych równań różniczkowych cząstkowych."
+    ],
+    "correct": [ 0 ]
+  },
+  {
+    "question": "W jakim modelu występuje funkcja operatorowa?",
+    "options": [
+      "W modelu statycznym stochastycznym.",
+      "W modelu liniowym (dynamicznym).",
+      "W modelu nieliniowym o parametrach rozproszonych."
+    ],
+    "correct": [ 1 ]
+  },
+  {
+    "question": "Podaj przykłady symulacji opartej o agentów:",
+    "options": [
+      "Symulacja przepływu prądu w obwodzie $RLC$ oraz ruch wahadła",
+      "Numeryczne rozwiązywanie równań różniczkowych metodą Eulera",
+      "Symulacja rozprzestrzeniania choroby oraz symulacja ewakuacji ludzi z budynku"
+    ],
+    "correct": [ 2 ]
+  },
+  {
+    "question": "Co to jest model fenomenologiczny?",
+    "options": [
+      "Model fenomenologiczny (tzw. \"biała skrzynka\") to model, w którym matematyczne równania i parametry bezpośrednio odzwierciedlają prawdziwą, fizyczną budowę oraz mierzalne właściwości rzeczywistego układu.",
+      "Model traktujący system jak \"czarną skrzynkę\", skupiający się wyłącznie na relacji wejście-wyjście bez wglądu w fizykę obiektu.",
+      "Model opisany zachowanie systemu wyłącznie na podstawie statycznych reguł lingwistycznych i oceny ekspertów."
+    ],
+    "correct": [ 0 ]
+  },
+  {
+    "question": "Kiedy możemy powiedzieć, że model jest poprawny?",
+    "options": [
+      "Model poprawny to model kompletny, logiczny i jednoznaczny.",
+      "Gdy został zlinearyzowany metodą małych odchyleń w nieskończenie wielu punktach pracy.",
+      "Gdy jego rząd jest równy zeru i nie zawiera żadnych pochodnych czasowych."
+    ],
+    "correct": [ 0 ]
+  },
+  {
+    "question": "Co mówi nam wskaźnik uwarunkowania macierzy $\\text{cond}(A) = \\|A\\| \\cdot \\|A^{-1}\\|$?",
+    "options": [
+      "Mówi, że macierz jest dobrze uwarunkowana, jeśli jej wyznacznik dąży do nieskończoności.",
+      "Macierz $A$ nazywamy źle uwarunkowaną, jeśli jej wyznacznik jest bliski zeru. Macierz jest źle uwarunkowana, jeśli wskaźnik uwarunkowania jest duży.",
+      "Wskaźnik ten określa liczbę wymiarów przestrzeni stanów układu dynamicznego."
+    ],
+    "correct": [ 1 ]
+  },
+  {
+    "question": "Co to jest stan systemu?",
+    "options": [
+      "To zbiór wszystkich dopuszczalnych sygnałów wyjściowych, które system wygenerował od momentu jego uruchomienia.",
+      "Stan systemu to minimalny pakiet informacji o układzie w danej chwili, który po dodaniu sygnałów wejściowych wystarcza w 100% do bezbłędnego przewidzenia jego przyszłości.",
+      "To punkt pracy układu nieliniowego wyznaczany za pomocą rozwinięcia funkcji w szereg Taylora."
+    ],
+    "correct": [ 1 ]
+  },
+  {
+    "question": "Czym charakteryzują się zmienne stanu?",
+    "options": [
+      "Są to wyłącznie parametry losowe (stochastyczne), które opisują zakłócenia pochodzące z otoczenia systemu.",
+      "To parametry techniczne określające błędy kwantyzacji oraz częstotliwość próbkowania sygnału.",
+      "Zmienne stanu to najmniejszy, niezbędny zestaw konkretnych parametrów (np. prędkość, położenie), które wspólnie fizycznie lub matematycznie ten aktualny stan opisują."
+    ],
+    "correct": [ 2 ]
+  },
+  {
+    "question": "Jak definiuje się przestrzeń stanów?",
+    "options": [
+      "Przestrzeń stanów to wielowymiarowy układ współrzędnych (taka matematyczna \"mapa\"), w którym cała obecna sytuacja systemu jest pokazana jako jeden, konkretny punkt.",
+      "To dziedzina zespolona transformaty Laplace'a, w której wyznacza się transmitancję operatorową.",
+      "To zbiór wszystkich fizycznych elementów wchodzących w skład struktury modelu fenomenologicznego."
+    ],
+    "correct": [ 0 ]
+  },
+  {
+    "question": "Co to jest płaszczyzna (fazowa)?",
+    "options": [
+      "Płaszczyzna (fazowa) to po prostu płaski, dwuwymiarowy przypadek przestrzeni stanów – wykres służący do obrazowania układów opisanych tylko dwiema zmiennymi.",
+      "To wykres przedstawiający wyłącznie zależność przesunięcia fazowego sygnału od częstotliwości próbkowania.",
+      "To reprezentacja graficzna modelu lingwistycznego o parametrach rozproszonych."
+    ],
+    "correct": [ 0 ]
+  },
+  {
+    "question": "Co oznaczają macierze $ABCD$ w przedstawionym układzie równań stanu?",
+    "options": [
+      "$A$ – macierz transmitancji, $B$ – macierz kroku, $C$ – macierz błędu, $D$ – macierz wariacyjna",
+      "$A$ – macierz stanu, $B$ – macierz wejścia, $C$ – macierz wyjścia, $D$ – bezpośrednia macierz transmisji",
+      "$A$ – macierz pierwotna, $B$ – macierz wymuszeń losowych, $C$ – macierz odpowiedzi, $D$ – macierz bilansowa"
+    ],
+    "correct": [ 1 ]
+  },
+  {
+    "question": "Co to znaczy, że algorytm jest niestabilny?",
+    "options": [
+      "Algorytm jest niestabilny, jeśli małe błędy popełnione na jakimś etapie obliczeń rosną w następnych etapach, powodując poważne zniekształcenia ostatecznego wyniku.",
+      "Algorytm jest niestabilny, jeśli wymaga zmiany kroku całkowania na każdym kroku numerycznym.",
+      "Algorytm jest niestabilny, gdy wyznacznik macierzy stanu układu jest dokładnie równy zero."
+    ],
+    "correct": [ 0 ]
+  },
+  {
+    "question": "Co to znaczy, że algorytm jest źle uwarunkowany?",
+    "options": [
+      "Algorytm numeryczny jest źle uwarunkowany, jeśli małe zmiany danych początkowych wywołują duże zmiany wyników.",
+      "Algorytm jest źle uwarunkowany, gdy nie pozwala na modelowanie systemów o parametrach rozproszonych.",
+      "Algorytm jest źle uwarunkowany, jeśli jego rząd dokładności wynosi zero."
+    ],
+    "correct": [ 0 ]
+  },
+  {
+    "question": "Jakie wielkości charakteryzują stan systemu?",
+    "options": [
+      "Wyłącznie wektor zakłóceń zewnętrznych oraz stała czasowa układu.",
+      "Liczba poziomów decyzyjnych oraz błąd kwantyzacji sygnału wyjściowego.",
+      "Stan systemu określają zmienne stanu zebrane w jeden wektor, przy czym ten sam układ można poprawnie opisać przy użyciu zupełnie różnych zestawów tych parametrów."
+    ],
+    "correct": [ 2 ]
+  },
+  {
+    "question": "Różnice pomiędzy metodami jednokrokowymi a wielokrokowymi",
+    "options": [
+      "W metodach jednokrokowych nowy wynik wyliczasz na podstawie danych tylko z jednego, bezpośrednio poprzedzającego kroku, natomiast w wielokrokowych korzystasz z historii kilku wcześniejszych obliczeń.",
+      "Metody jednokrokowe służą tylko do układów statycznych, a wielokrokowe do układów dynamicznych nieliniowych.",
+      "Metody wielokrokowe zawsze wymagają transformacji całego modelu do dziedziny operatorowej Laplace'a."
+    ],
+    "correct": [ 0 ]
+  },
+  {
+    "question": "Metody wariacyjne",
+    "options": [
+      "Opierają się na założeniu, że natura jest \"leniwa\" – układ dynamiczny zawsze porusza się po takiej ścieżce, która pozwala mu zminimalizować swój całkowity wysiłek.",
+      "Polegają na przybliżaniu pochodnych czasowych za pomocą ilorazów różnicowych wyznaczanych w jednym punkcie.",
+      "Metody te zakładają stałą wariancję zakłóceń stochastycznych dla modeli fenomenologicznych typu czarna skrzynka."
+    ],
+    "correct": [ 0 ]
+  },
+  {
+    "question": "Co to jest nadmiar i niedomiar",
+    "options": [
+      "Niedomiar – działanie którego wynik jest różny od zera ale ma zbyt małą cechę, reprezentowany jako $0$; Nadmiar – działanie którego wynik ma zbyt dużą cechę, reprezentowany przez $+\\infty$ lub $-\\infty$.",
+      "Niedomiar oznacza zbyt małą częstotliwość próbkowania Shannona, a nadmiar oznacza zbyt mały krok całkowania numerycznego.",
+      "Są to błędy strukturalne wynikające ze złego wyboru współrzędnych uogólnionych w równaniach Eulera-Lagrange'a."
+    ],
+    "correct": [ 0 ]
+  },
+  {
+    "question": "Co składa się na błąd całkowity?",
+    "options": [
+      "Błąd wejścia, zaokrąglenia i metody",
+      "Błąd kwantyzacji, błąd nieliniowości oraz błąd stochastyczny",
+      "Błąd kroku, błąd przedziału oraz błąd warunku początkowego"
+    ],
+    "correct": [ 0 ]
+  },
+  {
+    "question": "Różnicę pomiędzy dwoma systemami należącymi do tej samej kategorii i działającymi w różnych warunkach określają:",
+    "options": [
+      "zmienne stanu",
+      "parametry środowiska",
+      "zmienne uogólnione"
+    ],
+    "correct": [ 1 ]
+  },
+  {
+    "question": "Podaj przykład modelu parametrycznego oraz nieparametrycznego:",
+    "options": [
+      "Model parametryczny to macierz przejścia układu stochastycznego, a nieparametryczny to model lingwistyczny oparty na wiedzy ekspertów.",
+      "Model parametryczny to konkretne równanie matematyczne (np. wzór na transmitancję albo funkcja $y = ax + b$), a nieparametryczny to zwykły wykres (np. odpowiedź skokowa z oscyloskopu) lub tabela z zebranymi pomiarami.",
+      "Model parametryczny to wyłącznie symulacja agentowa, a nieparametryczny to układ opisany równaniami Eulera-Lagrange'a."
+    ],
+    "correct": [ 1 ]
+  },
+  {
+    "question": "Jak stwierdzić czy rozwiązanie równania różniczkowego uzyskane numerycznie jest dobre?",
+    "options": [
+      "Rozwiązanie uznaje się za poprawne, jeśli przy stopniowym zmniejszaniu kroku obliczeniowego wyniki uzyskane z kilku różnych metod zbiegają się do tej samej, wspólnej wartości.",
+      "Gdy błąd całkowity jest dokładnie równy zeru dla dowolnie wybranego, maksymalnego kroku integracji.",
+      "Jeśli wykres fazowy układu transformuje się jednoznacznie w prostą algebraiczną o współczynniku $\\text{cond}(A)$ bliskim zeru."
+    ],
+    "correct": [ 0 ]
+  },
+  {
+    "question": "Co to jest model matematyczny?",
+    "options": [
+      "Zapisanie działania fizycznego systemu wyłącznie za pomocą wzorów, równań i liczb.",
+      "Fizyczna miniatura obiektu rzeczywistego zbudowana w skali laboratoryjnej.",
+      "Algorytm służący tylko do wizualizacji graficznej zachowania obiektów ruchomych."
+    ],
+    "correct": [ 0 ]
+  },
+  {
+    "question": "Co to jest symulacja komputerowa?",
+    "options": [
+      "Proces identyfikacji parametrów technicznych metodą najmniejszych kwadratów w dziedzinie operatorowej.",
+      "Przeprowadzanie wirtualnych eksperymentów na modelu matematycznym za pomocą programu, żeby sprawdzić, jak układ zachowa się w określonych warunkach i czasie.",
+      "Czysto teoretyczna linearyzacja struktury równań bilansowych za pomocą szeregu Taylora."
+    ],
+    "correct": [ 1 ]
+  },
+  {
+    "question": "Cele budowy modeli",
+    "options": [
+      "Zastąpienie metod jednokrokowych metodami wielokrokowymi w celu redukcji błędów zaokrągleń komputera.",
+      "Przekształcenie każdego sygnału ciągłego w dyskretny za pomocą nieskończonej liczby poziomów kwantyzacji.",
+      "Do przewidywania przyszłości układu (predykcji), lepszego zrozumienia jego działania oraz optymalizacji i sterowania bez psucia prawdziwego obiektu."
+    ],
+    "correct": [ 2 ]
+  },
+  {
+    "question": "Czym się różnią modele oparte o wiedzę (biała skrzynka) a modele oparte o pomiary (czarna skrzynka)?",
+    "options": [
+      "\"Biała\" bazuje na prawach fizyki i odwzorowuje realną budowę układu, a \"czarna\" dobiera wzory matematyczne tylko na podstawie zebranych danych z wejścia i wyjścia, całkowicie ignorując to, co jest w środku.",
+      "\"Biała skrzynka\" stosuje wyłącznie zmienne dyskretne, a \"czarna skrzynka\" opisuje układy ciągłe deterministyczne.",
+      "Nie różnią się niczym – są to dwie alternatywne nazwy dla opisu układu za pomocą transmitancji operatorowej."
+    ],
+    "correct": [ 0 ]
+  },
+  {
+    "question": "Równania różniczkowe vs różnicowe – jaka jest różnica?",
+    "options": [
+      "Równania różniczkowe wymagają metod wariacyjnych, a różnicowe stosuje się tylko w metodzie bilansowej.",
+      "Równania różniczkowe opisują systemy w czasie ciągłym (płynnym), a różnicowe w czasie dyskretnym (skokowym, w wyznaczonych próbkach, np. dla komputera).",
+      "Równania różniczkowe opisują wyłącznie systemy statyczne, a różnicowe systemy dynamiczne stochastyczne."
+    ],
+    "correct": [ 1 ]
+  },
+  {
+    "question": "Co to jest model statyczny?",
+    "options": [
+      "Model, którego parametry techniczne i strukturalne nieustannie ulegają zmianom pod wpływem czasu $t$.",
+      "Model opisany układem nieliniowych równań różniczkowych cząstkowych o parametrach rozproszonych.",
+      "Model bez pamięci i bez upływu czasu, jego wynik na wyjściu zależy natychmiast i wyłącznie od aktualnego wejścia."
+    ],
+    "correct": [ 2 ]
+  },
+  {
+    "question": "Od czego zależy dokładność modelu statycznego?",
+    "options": [
+      "Wyłącznie od wyboru metody integracji numerycznej i wielkości kroku obliczeniowego.",
+      "Od precyzji zebranych pomiarów, trafności doboru równania (np. czy użyliśmy prostej, czy krzywej) oraz poprawności wyliczonych parametrów.",
+      "Od rzędu równania różniczkowego opisującego stan początkowy oraz liczby stopni swobody."
+    ],
+    "correct": [ 1 ]
+  },
+  {
+    "question": "Co to jest trajektoria fazowa?",
+    "options": [
+      "Zbiór punktów osobliwych wyznaczonych w dziedzinie operatorowej transformaty Laurenta.",
+      "Ścieżka, jaką rysuje punkt w przestrzeni stanów, która graficznie pokazuje, jak system zmienia się w czasie.",
+      "Linia prosta reprezentująca statyczną charakterystykę wzmocnienia układu liniowego."
+    ],
+    "correct": [ 1 ]
+  },
+  {
+    "question": "Co to są parametry techniczne układu?",
+    "options": [
+      "Fizyczne cechy wnętrza samego systemu, niezależne od otoczenia (np. masa wagonu, pojemność zbiornika, opór rezystora).",
+      "Zmienne wejściowe podawane na układ w celach weryfikacji i walidacji modelu.",
+      "Wymuszenia losowe generowane przez środowisko zewnętrzne w procesie symulacji."
+    ],
+    "correct": [ 0 ]
+  },
+  {
+    "question": "Co to są parametry środowiska?",
+    "options": [
+      "Współczynniki równań różniczkowych wyznaczane za pomocą metody wariacyjnej.",
+      "Stałe strukturalne określające liczbę poziomów decyzyjnych podczas kwantyzacji.",
+      "Zewnętrzne warunki, w jakich pracuje system, a które wpływają na jego zachowanie (np. temperatura powietrza, opór wiatru, ciśnienie atmosferyczne)."
+    ],
+    "correct": [ 2 ]
+  },
+  {
+    "question": "Na czym polega metoda najmniejszych kwadratów (MNK) w identyfikacji modelu?",
+    "options": [
+      "Na szukaniu takich parametrów równania, żeby suma kwadratów błędów (czyli różnic między tym, co wypluwa nasz model, a prawdziwymi pomiarami) była możliwie najmniejsza.",
+      "Na podnoszeniu do kwadratu wszystkich zmiennych stanu w celu eliminacji nieliniowości typu sinus.",
+      "Na minimalizacji liczby stopni swobody w układzie równań Eulera-Lagrange'a poprzez całkowanie obrazu."
+    ],
+    "correct": [ 0 ]
+  },
+  {
+    "question": "Jak rozwiązać równanie różniczkowe $4$ rzędu metodami numerycznymi",
+    "options": [
+      "Wyłącznie metodą rozkładu Taylora i transformatą Laplace'a dla układów statycznych.",
+      "Metodą małych odchyleń, linearyzacją uwarunkowania oraz transformatą Laurenta.",
+      "Metodą Eulera, metodą Rungego-Kutty lub metodą Adamsa-Bashfortha (po uprzednim sprowadzeniu do układu równań $1$ rzędu)."
+    ],
+    "correct": [ 2 ]
+  },
+  {
+    "question": "W modelu niestacjonarnym:",
+    "options": [
+      "parametry zmieniają się w czasie",
+      "stan wyjścia zależy wyłącznie od obecnego stanu wejścia",
+      "występuje wyłącznie szum stochastyczny o stałej wariancji"
+    ],
+    "correct": [ 0 ]
+  },
+  {
+    "question": "Wymień 5 modeli decyzyjnych/optymalizacyjnych:",
+    "options": [
+      "Modele CAD, Modele symulacyjne, Model wodospadowy, Modele BIM, Six Sigma",
+      "Model przetwarzania informacji, Modele uczenia maszynowego, Modele sieci neuronowych, Systemy ekspertowe, Model rozpoznawania wzorców",
+      "Modele teorii gier, Procesy Markowa, Drzewa decyzyjne, Analiza wielokryterialna, Algorytmy genetyczne"
+    ],
+    "correct": [ 2 ]
+  },
+  {
+    "question": "Wymień 5 modeli projektowych:",
+    "options": [
+      "Modele CAD, Modele symulacyjne, Model wodospadowy, Modele BIM, Six Sigma",
+      "Model ekonometryczny, Modele klimatyczne i pogodowe, Model wzrostu gospodarczego, Modele transportowe, Modele biomedyczne",
+      "Modele teorii gier, Procesy Markowa, Drzewa decyzyjne, Analiza wielokryterialna, Algorytmy genetyczne"
+    ],
+    "correct": [ 0 ]
+  },
+  {
+    "question": "Wymień 5 modeli poznawczych:",
+    "options": [
+      "Modele teorii gier, Procesy Markowa, Drzewa decyzyjne, Analiza wielokryterialna, Algorytmy genetyczne",
+      "Model przetwarzania informacji, Modele uczenia maszynowego, Modele sieci neuronowych, Systemy ekspertowe, Model rozpoznawania wzorców",
+      "Model ekonometryczny, Modele klimatyczne i pogodowe, Model wzrostu gospodarczego, Modele transportowe, Modele biomedyczne"
+    ],
+    "correct": [ 1 ]
+  },
+  {
+    "question": "Wymień 5 modeli prognostycznych:",
+    "options": [
+      "Model ekonometryczny, Modele klimatyczne i pogodowe, Model wzrostu gospodarczego, Modele transportowe, Modele biomedyczne",
+      "Modele CAD, Modele symulacyjne, Model wodospadowy, Modele BIM, Six Sigma",
+      "Modele teorii gier, Procesy Markowa, Drzewa decyzyjne, Analiza wielokryterialna, Algorytmy genetyczne"
+    ],
+    "correct": [ 0 ]
+  },
+  {
+    "question": "Od czego zależy wartość rozwiązywania układu dziesiętnego metodami binarnymi?",
+    "options": [
+      "Tylko i wyłącznie od błędu zaokrąglenia komputera w systemie binarnym.",
+      "Wartości kroku obliczeniowego/całkowania, Liczby pomiarów / próbek danych, Rzędu zastosowanej metody numerycznej",
+      "Od liczby integratorów oraz warunków początkowych w Simulinku."
+    ],
+    "correct": [ 1 ]
+  },
+  {
+    "question": "Opisz jakiś model poznawczy:",
+    "options": [
+      "Modele uczenia maszynowego – np. sieci neuronowe uczące się rozpoznawania obrazów i języka.",
+      "Modele symulacyjne – np. odwzorowanie okienka kasowego w środowisku komputerowym.",
+      "Model ekonometryczny – np. badanie wzrostu gospodarczego państwa."
+    ],
+    "correct": [ 0 ]
+  },
+  {
+    "question": "Wyjaśnij pojęcie modelu dynamicznego/statycznego:",
+    "options": [
+      "Model dynamiczny zależy od częstotliwości próbkowania, a model statyczny od liczby poziomów kwantyzacji.",
+      "Model dynamiczny opisuje się za pomocą równań różniczkowych, natomiast statyczny opisuje się za pomocą równań algebraicznych.",
+      "Model dynamiczny odnosi się do sygnałów operatorowych $s$, a statyczny do transformaty Laurenta."
+    ],
+    "correct": [ 1 ]
+  },
+  {
+    "question": "Co to jest SYSTEM?",
+    "options": [
+      "System to grupa różnych elementów połączonych ze sobą tak, że razem współpracują i tworzą jedną całość",
+      "System to po prostu uproszczony schemat czegoś prawdziwego używany do predykcji.",
+      "System to zbiór punktów uzyskanych w wyniku numerycznego rozwiązywania równań różniczkowych."
+    ],
+    "correct": [ 0 ]
+  },
+  {
+    "question": "Wymień właściwości systemu:",
+    "options": [
+      "System charakteryzuje się wyłącznie transmitancją operatorową oraz zerowymi warunkami początkowymi.",
+      "System musi mieć swoje granice, wejścia i wyjścia na świat zewnętrzny, określoną strukturę, a połączony w całość daje lepszy efekt niż każda część z osobna.",
+      "System musi być deterministyczny, stacjonarny, ciągły oraz opisany liniowymi równaniami stanu."
+    ],
+    "correct": [ 1 ]
+  },
+  {
+    "question": "Rodzaje i cechy symulacji komputerowej:",
+    "options": [
+      "Może dziać się płynnie albo skokowo, a jej główną zaletą jest to, że można bezpiecznie i tanio testować najgorsze awarie bez niszczenia prawdziwego sprzętu.",
+      "Gwarantuje zawsze stuprocentową dokładność analityczną oraz eliminuje błędy zaokrągleń.",
+      "Polega na sprowadzaniu równań różniczkowych wyższego rzędu do postaci macierzowej."
+    ],
+    "correct": [ 0 ]
+  },
+  {
+    "question": "Definicja równań stanu (Czym są równania stanu?)",
+    "options": [
+      "Równania stanu to układ równań różniczkowych wyższego rzędu z wymuszeniem.",
+      "Równania stanu to relacja bilansowa energii kinetycznej i potencjalnej w układzie współrzędnych.",
+      "Równania stanu to ZAWSZE układ równań różniczkowych pierwszego rzędu."
+    ],
+    "correct": [ 2 ]
+  },
+  {
+    "question": "Czy metodami numerycznymi można znaleźć rozwiązanie ogólne równania różniczkowego?",
+    "options": [
+      "Nie (metody numeryczne służą wyłącznie do znajdowania rozwiązań szczególnych, punkt po punkcie)",
+      "Tak, każda podstawowa metoda numeryczna pozwala na znalezienie postaci analitycznej funkcji pierwotnej.",
+      "Tak, ale tylko przy sprowadzeniu równania wyższego rzędu do układu równań pierwszego rzędu."
+    ],
+    "correct": [ 0 ]
+  },
+  {
+    "question": "Jakie dane są potrzebne, aby znaleźć rozwiązanie (szczególne) równania różniczkowego metodami numerycznymi?",
+    "options": [
+      "Potrzebna jest wyłącznie macierz transmitancji operatorowej oraz wektor stanu systemu.",
+      "Potrzebne jest równanie zapisane w postaci normalnej, warunki początkowe dla wszystkich pochodnych do rzędu $n-1$ włącznie, określona metoda numeryczna oraz krok całkowania.",
+      "Wymagany jest wskaźnik uwarunkowania macierzy oraz transformata Laplace'a przy niezerowych warunkach początkowych."
+    ],
+    "correct": [ 1 ]
+  },
+  {
+    "question": "Sprowadź podane równanie wyższego rzędu (np. trzeciego) do układu równań różniczkowych rzędu pierwszego (równań stanu):",
+    "options": [
+      "Należy dokonać transformaty splotu oraz wyznaczyć macierze $ABCD$ w dziedzinie operatorowej.",
+      "Należy rozwinąć funkcję nieliniową w szereg Taylora wokół wybranego punktu pracy.",
+      "Należy wyprowadzić postać normalną równania, zapisać odpowiednie podstawienia zmiennych (np. $x_1=x, x_2=\\dot{x}$) i na ich podstawie zapisać nowy układ równań."
+    ],
+    "correct": [ 2 ]
+  },
+  {
+    "question": "Znając podane równanie (np. $n$-tego rzędu), określ ile integratorów musisz użyć w środowisku Simulink oraz jakie warunki początkowe musisz wpisać w każdym z nich:",
+    "options": [
+      "Liczba integratorów musi być równa rzędowi równania. W pierwszym integratorze należy umieścić warunek $x(0)$, w kolejnym $\\dot{x}(0)$ potem $\\ddot{x}(0)$ i tak dalej.",
+      "Używa się zawsze $n+1$ integratorów, przy czym wszystkie poza pierwszym muszą mieć warunki zerowe.",
+      "Liczba integratorów zależy wyłącznie od liczby wejść w macierzy $ABCD$ i nie jest powiązana z rzędem równania."
+    ],
+    "correct": [ 0 ]
+  },
+  {
+    "question": "Czy równania Eulera-Lagrange'a są równaniami stanu?",
+    "options": [
+      "Tak, ponieważ bezpośrednio definiują wektor stanu układu mechanicznego w dziedzinie czasu.",
+      "Nie, ponieważ równania stanu to układ równań pierwszego rzędu, a równania Eulera-Lagrange'a tworzą układ równań drugiego rzędu.",
+      "Nie, ponieważ równania Eulera-Lagrange'a opisują wyłącznie układy statyczne bez wglądu w energię układu."
+    ],
+    "correct": [ 1 ]
+  }
+]
