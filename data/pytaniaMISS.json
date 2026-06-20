@@ -1,6 +1,6 @@
 [
   {
-    "question": "Do jakiej kategorii zaliczysz model: y(t) = ax1(t) + bx2(t) + cx1(t)x2(t)?",
+    "question": "Do jakiej kategorii zaliczysz model: $y(t)=a x_1(t)+b x_2(t)+c x_1(t)x_2(t)$?",
     "options": [
       "dynamiczny, ciągły, liniowy, deterministyczny, niestacjonarny",
       "statyczny, ciągły, nieliniowy, deterministyczny, stacjonarny",
@@ -9,11 +9,11 @@
     "correct": [ 1 ]
   },
   {
-    "question": "Dlaczego model y(t) = ax1(t) + bx2(t) + cx1(t)x2(t) jest modelem nieliniowym?",
+    "question": "Dlaczego model $y(t)=a x_1(t)+b x_2(t)+c x_1(t)x_2(t)$ jest modelem nieliniowym?",
     "options": [
       "Ponieważ zmienne zależą od czasu t.",
       "Ponieważ parametry a, b, c są stałe w czasie.",
-      "Ponieważ występuje w nim iloczyn zmiennych (x1 pomnożone przez x2)."
+      "Ponieważ występuje w nim iloczyn zmiennych ($x_1$ pomnożone przez $x_2$)."
     ],
     "correct": [ 2 ]
   },
@@ -27,7 +27,7 @@
     "correct": [ 0 ]
   },
   {
-    "question": "Do jakiej kategorii zaliczysz model: dX/dt = A(t)*X + B(t)*U?",
+    "question": "Do jakiej kategorii zaliczysz model: $\\frac{dX}{dt}=A(t)X+B(t)U$?",
     "options": [
       "statyczny, ciągły, liniowy, deterministyczny, stacjonarny",
       "dynamiczny, dyskretny, liniowy, stochastyczny, niestacjonarny",
@@ -72,16 +72,16 @@
     "correct": [ 1 ]
   },
   {
-    "question": "Wyjaśnij oznaczenie F(s) występujące we wzorze transformaty Laplace'a L[f(t)] = F(s):",
+    "question": "Wyjaśnij oznaczenie $F(s)$ występujące we wzorze transformaty Laplace'a $\\mathcal{L}\\{f(t)\\}=F(s)$:",
     "options": [
       "funkcja czasu (oryginał)",
-      "obraz Laplace'a funkcji f(t)",
+      "obraz Laplace'a funkcji $f(t)$",
       "zmienna zespolona operatorowa"
     ],
     "correct": [ 1 ]
   },
   {
-    "question": "Wyjaśnij oznaczenie f(t) występujące we wzorze transformaty Laplace'a L[f(t)] = F(s):",
+    "question": "Wyjaśnij oznaczenie $f(t)$ występujące we wzorze transformaty Laplace'a $\\mathcal{L}\\{f(t)\\}=F(s)$:",
     "options": [
       "obraz Laplace'a w dziedzinie częstotliwości",
       "operator różniczkowy",
@@ -90,11 +90,11 @@
     "correct": [ 2 ]
   },
   {
-    "question": "Który z poniższych warunków uczestniczy w poprawnym zdefiniowaniu oryginału f(t) w transformacji Laplace'a?",
+    "question": "Który z poniższych warunków uczestniczy w poprawnym zdefiniowaniu oryginału $f(t)$ w transformacji Laplace'a?",
     "options": [
-      "Funkcja f(t) musi spełniać warunek f(t) = 0 dla każdego t < 0.",
-      "Funkcja f(t) musi dążyć do nieskończoności dla t zmierzającego do nieskończoności.",
-      "Funkcja f(t) musi przyjmować wyłącznie wartości całkowite."
+      "Funkcja $f(t)$ musi spełniać warunek $f(t)=0$ dla każdego $t<0$.",
+      "Funkcja $f(t)$ musi dążyć do nieskończoności dla $t$ zmierzającego do nieskończoności.",
+      "Funkcja $f(t)$ musi przyjmować wyłącznie wartości całkowite."
     ],
     "correct": [ 0 ]
   },
@@ -117,7 +117,7 @@
     "correct": [ 1 ]
   },
   {
-    "question": "Do jakiej kategorii zaliczysz model: y(x1, x2) = ax1 + bx2?",
+    "question": "Do jakiej kategorii zaliczysz model: $y(x_1,x_2)=a x_1+b x_2$?",
     "options": [
       "nieliniowy, dynamiczny, niestacjonarny, ciągły, stochastyczny",
       "liniowy, dynamiczny, stacjonarny, dyskretny, deterministyczny",
@@ -126,7 +126,7 @@
     "correct": [ 2 ]
   },
   {
-    "question": "Do jakiej kategorii zaliczysz model: x_dotdot + (k/m)*x_dot*(g/l)*sin(x) = 0?",
+    "question": "Do jakiej kategorii zaliczysz model: $\\ddot{x}+\\frac{k}{m}\\dot{x}\\frac{g}{l}\\sin(x)=0$?",
     "options": [
       "nieliniowy, dynamiczny, ciągły, deterministyczny",
       "liniowy, statyczny, stacjonarny, dyskretny, deterministyczny",
@@ -138,7 +138,7 @@
     "question": "Jakie wielkości charakteryzują stan systemu?",
     "options": [
       "Wyłącznie sygnały wymuszeń zewnętrznych (wejścia systemu).",
-      "Zmienne stanu przedstawiane w postaci wektora stanu X = [x1, x2, ... xn]^T.",
+      "Zmienne stanu przedstawiane w postaci wektora stanu $X=[x_1,x_2,\\ldots,x_n]^T$.",
       "Współczynniki wzmocnienia statycznego obiektu."
     ],
     "correct": [ 1 ]
@@ -183,7 +183,7 @@
   {
     "question": "Która z poniższych relacji poprawnie definiuje zależność między zmiennymi stanu a ich pochodnymi przy przejściu do postaci normalnej?",
     "options": [
-      "Pochodna danej zmiennej stanu jest równa kolejnej zmiennej stanu (np. x1_dot = x2, x2_dot = x3).",
+      "Pochodna danej zmiennej stanu jest równa kolejnej zmiennej stanu (np. $\\dot{x}_1=x_2$, $\\dot{x}_2=x_3$).",
       "Wszystkie zmienne stanu muszą mieć pochodne równe zero.",
       "Pochodne wyznaczane są losowo w zależności od wymuszenia zewnętrznego."
     ],
@@ -239,7 +239,7 @@
   {
     "question": "Przekształcenie (transformata) Laplace'a opisuje zależność:",
     "options": [
-      "Jest operatorem przekształcającym funkcję zmiennej rzeczywistej f(t) na pewną funkcję F(s) zmiennej zespolonej.",
+      "Jest operatorem przekształcającym funkcję zmiennej rzeczywistej $f(t)$ na pewną funkcję $F(s)$ zmiennej zespolonej.",
       "Jest funkcją opisującą wyłącznie przejście sygnałów cyfrowych w próbkowane dyskretnie wartości.",
       "Jest operacją algebraicznego mnożenia zmiennych stanu przez parametry środowiska."
     ],
@@ -257,7 +257,7 @@
   {
     "question": "Czym w równaniu transformaty Laplace'a jest zmienna 's'?",
     "options": [
-      "Zmienną zespoloną o strukturze s = c + jw.",
+      "Zmienną zespoloną o strukturze $s=c+j\\omega$.",
       "Rzeczywistym współczynnikiem tłumienia środowiskowego.",
       "Wektorem stanów dyskretnych w czasie."
     ],
@@ -347,11 +347,11 @@
     "correct": [ 2 ]
   },
   {
-    "question": "Dla równania wahadła nieliniowego x_dotdot + (k/m)*x_dot + (g/l)*sin(x) = 0, jakie przyjmuje się założenie i uproszczenie, aby doprowadzić model do postaci liniowej?",
+    "question": "Dla równania wahadła nieliniowego $\\ddot{x}+\\frac{k}{m}\\dot{x}+\\frac{g}{l}\\sin(x)=0$, jakie przyjmuje się założenie i uproszczenie, aby doprowadzić model do postaci liniowej?",
     "options": [
-      "Założenie: x <= 7 stopni, Uproszczenie: sin(x) = x, Model liniowy: x_dotdot + (k/m)*x_dot + (g/l)*x = 0",
-      "Założenie: x > 90 stopni, Uproszczenie: sin(x) = 1, Model liniowy: x_dotdot + (k/m)*x_dot = 0",
-      "Założenie: x = 0 stopni, Uproszczenie: sin(x) = 0, Model liniowy: x_dotdot + (g/l) = 0"
+      "Założenie: $x\\le 7^\\circ$, Uproszczenie: $\\sin(x)=x$, Model liniowy: $\\ddot{x}+\\frac{k}{m}\\dot{x}+\\frac{g}{l}x=0$",
+      "Założenie: $x>90^\\circ$, Uproszczenie: $\\sin(x)=1$, Model liniowy: $\\ddot{x}+\\frac{k}{m}\\dot{x}=0$",
+      "Założenie: $x=0^\\circ$, Uproszczenie: $\\sin(x)=0$, Model liniowy: $\\ddot{x}+\\frac{g}{l}=0$"
     ],
     "correct": [ 0 ]
   },
@@ -365,7 +365,7 @@
     "correct": [ 0 ]
   },
   {
-    "question": "Dla jakiej wartości kąta wychylenia wahadła uproszczenie sin(x) około równe x przestaje być akceptowalnie dokładne w praktyce inżynierskiej?",
+    "question": "Dla jakiej wartości kąta wychylenia wahadła uproszczenie $\\sin(x)\\approx x$ przestaje być akceptowalnie dokładne w praktyce inżynierskiej?",
     "options": [
       "Dla dużych kątów, wyraźnie przekraczających granicę około 7 - 10 stopni.",
       "Dla kątów bardzo bliskich zero (np. poniżej 1 stopnia).",
@@ -529,16 +529,16 @@
     "correct": [ 0 ]
   },
   {
-    "question": "Co to jest transmitancja operatorowa G(s)?",
+    "question": "Co to jest transmitancja operatorowa $G(s)$?",
     "options": [
-      "Jest to stosunek transformaty Laplace’a sygnału wyjściowego Y(s) do transformaty Laplace’a sygnału wejściowego U(s), przy założeniu, że wszystkie warunki początkowe są zerowe.",
+      "Jest to stosunek transformaty Laplace’a sygnału wyjściowego $Y(s)$ do transformaty Laplace’a sygnału wejściowego $U(s)$, przy założeniu, że wszystkie warunki początkowe są zerowe.",
       "Jest to iloczyn sygnału wejściowego i wyjściowego wyrażony w dziedzinie czasu dyskretnego.",
       "Jest to operator różniczkowy opisujący wektor stanu systemu w przestrzeni trójwymiarowej."
     ],
     "correct": [ 0 ]
   },
   {
-    "question": "Jakie kluczowe założenie musi być spełnione, aby móc bezpośrednio wyznaczyć lub stosować transmitancję operatorową G(s) systemu dynamicznego?",
+    "question": "Jakie kluczowe założenie musi być spełnione, aby móc bezpośrednio wyznaczyć lub stosować transmitancję operatorową $G(s)$ systemu dynamicznego?",
     "options": [
       "Wszystkie warunki początkowe układu muszą być zerowe.",
       "Krok integracji numerycznej musi dążyć do nieskończoności.",
@@ -549,16 +549,16 @@
   {
     "question": "Zapisz transmitancję przedstawionego na schemacie układu blokowego (równoległe gałęzie G2 i G1 z ujemnym sumowaniem, połączone szeregowo z G3 i objęte ujemnym sprzężeniem zwrotnym):",
     "options": [
-      "G_uk = ((G2 - G1) * G3) / (1 + (G2 - G1) * G3)",
-      "G_uk = ((G2 + G1) * G3) / (1 - (G2 + G1) * G3)",
-      "G_uk = (G2 - G1) + G3"
+      "$G_{uk}=\\frac{(G_2-G_1)G_3}{1+(G_2-G_1)G_3}$",
+      "$G_{uk}=\\frac{(G_2+G_1)G_3}{1-(G_2+G_1)G_3}$",
+      "$G_{uk}=G_2-G_1+G_3$"
     ],
     "correct": [ 0 ]
   },
   {
     "question": "Jak zmieni się znak w mianowniku wzoru na transmitancję zastępczą układu ze sprzężeniem zwrotnym, jeśli sprzężenie zwrotne będzie dodatnie (+ na węźle sumacyjnym dla sygnału powracającego)?",
     "options": [
-      "Znak w mianowniku zmieni się na minus (zamiast 1 + G_otwartego otrzymamy 1 - G_otwartego).",
+      "Znak w mianowniku zmieni się na minus (zamiast $1+G_{otwartego}$ otrzymamy $1-G_{otwartego}$).",
       "Znak w mianowniku pozostanie bez zmian, zmieni się jedynie znak w liczniku.",
       "Cały mianownik zostanie zredukowany do jedności."
     ],
@@ -592,7 +592,7 @@
     "correct": [ 1 ]
   },
   {
-    "question": "Dlaczego w równaniach opisujących systemy statyczne nie występują pochodne po czasie (np. dx/dt)?",
+    "question": "Dlaczego w równaniach opisujących systemy statyczne nie występują pochodne po czasie (np. $\\frac{dx}{dt}$)?",
     "options": [
       "Ponieważ systemy statyczne nie posiadają pamięci (zdolności do akumulacji energii lub masy) i ich stan wyjściowy zależy wyłącznie od aktualnego stanu wejść.",
       "Ponieważ w systemach statycznych czas płynie w sposób dyskretny, co wymusza stosowanie wyłącznie operatorów różnicowych.",
@@ -655,11 +655,11 @@
     "correct": [ 2 ]
   },
   {
-    "question": "Jak definiuje się impuls Diraca delta(t) w ujęciu matematycznym?",
+    "question": "Jak definiuje się impuls Diraca $\\delta(t)$ w ujęciu matematycznym?",
     "options": [
-      "delta(t) = 0 dla t != 0 oraz delta(t) = nieskończoność dla t = 0",
-      "delta(t) = 1 dla t >= 0 oraz delta(t) = 0 dla t < 0",
-      "delta(t) = t dla wszystkich t dodatnich"
+      "$\\delta(t)=0$ dla $t\\ne 0$ oraz $\\delta(t)=\\infty$ dla $t=0$",
+      "$\\delta(t)=1$ dla $t\\ge 0$ oraz $\\delta(t)=0$ dla $t<0$",
+      "$\\delta(t)=t$ dla wszystkich $t$ dodatnich"
     ],
     "correct": [ 0 ]
   },
@@ -729,11 +729,11 @@
     "correct": [ 0 ]
   },
   {
-    "question": "Jak zdefiniować sygnał skoku jednostkowego 1(t) za pomocą zapisu matematycznego?",
+    "question": "Jak zdefiniować sygnał skoku jednostkowego $1(t)$ za pomocą zapisu matematycznego?",
     "options": [
-      "1(t) = 0 dla t < 0; 1(t) = 1 dla t >= 0",
-      "1(t) = 1 dla t < 0; 1(t) = 0 dla t >= 0",
-      "1(t) = t dla t >= 0; 1(t) = 0 dla t < 0"
+      "$1(t)=0$ dla $t<0$; $1(t)=1$ dla $t\\ge 0$",
+      "$1(t)=1$ dla $t<0$; $1(t)=0$ dla $t\\ge 0$",
+      "$1(t)=t$ dla $t\\ge 0$; $1(t)=0$ dla $t<0$"
     ],
     "correct": [ 0 ]
   },
@@ -801,16 +801,16 @@
     "correct": [ 0 ]
   },
   {
-    "question": "Opisz znaczenie elementów we wzorze Eulera-Lagrange'a: d/dt(dT/dq_k_dot) - dT/dq_k = Q_k",
+    "question": "Opisz znaczenie elementów we wzorze Eulera-Lagrange'a: $\\frac{d}{dt}\\left(\\frac{\\partial T}{\\partial \\dot{q}_k}\\right)-\\frac{\\partial T}{\\partial q_k}=Q_k$",
     "options": [
-      "q_k – współrzędne uogólnione, q_k_dot – prędkości uogólnione, N – liczba stopni swobody systemu, Q_k – siła uogólniona, T – energia kinetyczna systemu mechanicznego",
-      "q_k – zmienne stanu dyskretnego, q_k_dot – pochodna wymuszenia, N – rząd transmitancji operatorowej, Q_k – błąd kwantowania, T – okres próbkowania",
-      "q_k – współczynniki Taylora, q_k_dot – krok integracji numerycznej, N – wymiar macierzy wyjść, Q_k – funkcja kryterialna, T – wektor stałych bilansowych"
+      "$q_k$ – współrzędne uogólnione, $\\dot{q}_k$ – prędkości uogólnione, $N$ – liczba stopni swobody systemu, $Q_k$ – siła uogólniona, $T$ – energia kinetyczna systemu mechanicznego",
+      "$q_k$ – zmienne stanu dyskretnego, $\\dot{q}_k$ – pochodna wymuszenia, $N$ – rząd transmitancji operatorowej, $Q_k$ – błąd kwantowania, $T$ – okres próbkowania",
+      "$q_k$ – współczynniki Taylora, $\\dot{q}_k$ – krok integracji numerycznej, $N$ – wymiar macierzy wyjść, $Q_k$ – funkcja kryterialna, $T$ – wektor stałych bilansowych"
     ],
     "correct": [ 0 ]
   },
   {
-    "question": "Czym w równaniach mechaniki analitycznej są 'współrzędne uogólnione' q_k?",
+    "question": "Czym w równaniach mechaniki analitycznej są 'współrzędne uogólnione' $q_k$?",
     "options": [
       "Są to niezależne parametry geometryczne, które jednoznacznie opisują położenie i konfigurację systemu w przestrzeni.",
       "Są to wyłącznie składowe siły oporu powietrza działające na model dynamiczny.",
@@ -938,9 +938,9 @@
   {
     "question": "Co mówi nam wskaźnik uwarunkowania macierzy i kiedy macierz A nazywamy źle uwarunkowaną?",
     "options": [
-      "Macierz A nazywamy źle uwarunkowaną jeśli jej wyznacznik jest bliski zeru. Macierz jest źle uwarunkowana jeśli wskaźnik uwarunkowania jest duży. cond(A) = ||A||*||A^-1||",
+      "Macierz $A$ nazywamy źle uwarunkowaną jeśli jej wyznacznik jest bliski zeru. Macierz jest źle uwarunkowana jeśli wskaźnik uwarunkowania jest duży. $\\operatorname{cond}(A)=\\lVert A\\rVert\\lVert A^{-1}\\rVert$",
       "Mówi o liczbie wierszy macierzy stanu; macierz jest źle uwarunkowana, gdy nie jest macierzą kwadratową.",
-      "Określa stabilność ujemnego sprzężenia zwrotnego; jest źle uwarunkowana, gdy cond(A) wynosi dokładnie zero."
+      "Określa stabilność ujemnego sprzężenia zwrotnego; jest źle uwarunkowana, gdy $\\operatorname{cond}(A)$ wynosi dokładnie zero."
     ],
     "correct": [ 0 ]
   },
@@ -972,16 +972,16 @@
     "correct": [ 0 ]
   },
   {
-    "question": "Co to są macierze ABCD w układzie równań stanu i wyjścia systemu dynamicznego?",
+    "question": "Co to są macierze $A$, $B$, $C$, $D$ w układzie równań stanu i wyjścia systemu dynamicznego?",
     "options": [
       "Są to losowe macierze stochastyczne opisujące błędy kwantowania sygnałów dyskretnych.",
-      "A – macierz stanu, B – macierz wejścia, C – macierz wyjścia, D – bezpośrednia macierz transmisji (w układzie: X_dot(t) = A*X(t) + B*U(t); Y(t) = C*X(t) + D*U(t))",
+      "$A$ – macierz stanu, $B$ – macierz wejścia, $C$ – macierz wyjścia, $D$ – bezpośrednia macierz transmisji (w układzie: $\\dot{X}(t)=AX(t)+BU(t)$; $Y(t)=CX(t)+DU(t)$)",
       "Są to współczynniki wielomianu mianownika transmitancji operatorowej wyznaczone metodą najmniejszych kwadratów."
     ],
     "correct": [ 1 ]
   },
   {
-    "question": "Która z macierzy w układzie równań stanu (ABCD) odpowiada bezpośrednio za powiązanie sygnału wejściowego U(t) z pochodną wektora stanu X_dot(t)?",
+    "question": "Która z macierzy w układzie równań stanu ($A$, $B$, $C$, $D$) odpowiada bezpośrednio za powiązanie sygnału wejściowego $U(t)$ z pochodną wektora stanu $\\dot{X}(t)$?",
     "options": [
       "Macierz B (macierz wejścia)",
       "Macierz A (macierz stanu)",
@@ -1031,7 +1031,7 @@
     "options": [
       "Wyłącznie macierz stanów dyskretnych oraz funkcja kryterialna optymalizacji.",
       "Warunek początkowy, Przedział, Krok",
-      "Transmitancja operatorowa G(s) oraz współczynniki rozkładu w szereg Taylora."
+      "Transmitancja operatorowa $G(s)$ oraz współczynniki rozkładu w szereg Taylora."
     ],
     "correct": [ 1 ]
   },
@@ -1065,8 +1065,8 @@
   {
     "question": "Co mówi twierdzenie o różniczkowaniu oryginału w transformacji Laplace'a przy zerowych warunkach początkowych?",
     "options": [
-      "Operacji różniczkowania w dziedzinie czasu odpowiada pomnożenie obrazu F(s) przez zmienną zespoloną s.",
-      "Operacji różniczkowania odpowiada podzielenie obrazu F(s) przez zmienną zespoloną s.",
+      "Operacji różniczkowania w dziedzinie czasu odpowiada pomnożenie obrazu $F(s)$ przez zmienną zespoloną $s$.",
+      "Operacji różniczkowania odpowiada podzielenie obrazu $F(s)$ przez zmienną zespoloną $s$.",
       "Różniczkowanie oryginału powoduje całkowite wyeliminowanie zmiennej s z mianownika transmitancji."
     ],
     "correct": [ 0 ]
@@ -1084,7 +1084,7 @@
     "question": "Wymień kluczowe właściwości transmitancji operatorowej:",
     "options": [
       "Transmitancja jest własnością samego systemu, niezależnie od wielkości i natury sygnału wejściowego; Przedstawia związki pomiędzy sygnałami wyjściowymi i wejściowymi, nie dostarcza natomiast informacji o fizycznej strukturze systemu; Transmitancje wielu fizycznie różnych systemów mogą być identyczne; Łatwość stosowania do tworzenia modeli o skomplikowanej strukturze; Jeśli transmitancja układu jest znana, to możemy określić sygnał wyjściowy dla różnych sygnałów wejściowych; Raz określona transmitancja daje pełny opis charakterystyk dynamicznych układu, w odróżnieniu od jego opisu fizycznego",
-      "Transmitancja opisuje wyłącznie nieliniowe układy stochastyczne; zależy wprost od warunków początkowych obiektu; pozwala na pominięcie macierzy ABCD w przestrzeni stanów; wymaga stałego kroku próbkowania w standardzie IEEE 754",
+      "Transmitancja opisuje wyłącznie nieliniowe układy stochastyczne; zależy wprost od warunków początkowych obiektu; pozwala na pominięcie macierzy $A$, $B$, $C$, $D$ w przestrzeni stanów; wymaga stałego kroku próbkowania w standardzie IEEE 754",
       "Dostarcza pełnej informacji o fizycznej budowie układu; zależy od wielkości sygnału wejściowego; nie pozwala na łączenie bloków szeregowo i równolegle"
     ],
     "correct": [ 0 ]
@@ -1111,7 +1111,7 @@
     "question": "Jakie są sposoby opisu nieliniowych systemów dynamicznych?",
     "options": [
       "Opis zależności wejście-wyjście za pomocą równań różniczkowych, Opis za pomocą równań stanu",
-      "Opis za pomocą transmitancji operatorowej G(s) oraz macierzy bezpośredniej transmisji D.",
+      "Opis za pomocą transmitancji operatorowej $G(s)$ oraz macierzy bezpośredniej transmisji $D$.",
       "Opis wyłącznie za pomocą algebraicznych równań statycznych oraz metod wariacyjnych Hamiltona."
     ],
     "correct": [ 0 ]
@@ -1225,7 +1225,7 @@
     "correct": [ 0 ]
   },
   {
-    "question": "Do jakiej klasy zaliczysz model zapisany w postaci układu równań stanu z konkretnymi, stałymi współczynnikami liczbowymi (np. macierze ABCD)?",
+    "question": "Do jakiej klasy zaliczysz model zapisany w postaci układu równań stanu z konkretnymi, stałymi współczynnikami liczbowymi (np. macierze $A$, $B$, $C$, $D$)?",
     "options": [
       "Do modeli parametrycznych.",
       "Do modeli nieparametrycznych.",
@@ -1237,7 +1237,7 @@
     "question": "Jak stwierdzić czy rozwiązanie równania różniczkowego uzyskane metodami numerycznymi jest dobre (porównywanie metod)?",
     "options": [
       "Trzeba wygenerować dane wyjściowe dla jakiegoś kroku kilkoma metodami, porównać które są do siebie podobne a które odstają. Potem zmniejszamy krok – im mniejszy krok tym bardziej metody powinny zbliżać się do siebie. Poprawne rozwiązanie jest tym, które osiąga najwięcej metod.",
-      "Należy obliczyć wyznacznik macierzy stanu i sprawdzić, czy cond(A) wynosi dokładnie zero.",
+      "Należy obliczyć wyznacznik macierzy stanu i sprawdzić, czy $\\operatorname{cond}(A)$ wynosi dokładnie zero.",
       "Należy przeprowadzić walidację za pomocą transformaty splotu i sprawdzić, czy błąd wejścia dąży do nieskończoności."
     ],
     "correct": [ 0 ]
@@ -1252,16 +1252,16 @@
     "correct": [ 0 ]
   },
   {
-    "question": "Zapisz w postaci ogólnej transmitancję dla podanego systemu z dwoma wejściami (u1, u2) i jednym wyjściem (y):",
+    "question": "Zapisz w postaci ogólnej transmitancję dla podanego systemu z dwoma wejściami ($u_1$, $u_2$) i jednym wyjściem ($y$):",
     "options": [
-      "G(s) = (u1(s) + u2(s)) / y(s)",
-      "G(s) = y(s) / (u1(s) * u2(s))",
-      "G(s) = y(s) / (u1(s) + u2(s))"
+      "$G(s)=\\frac{u_1(s)+u_2(s)}{y(s)}$",
+      "$G(s)=\\frac{y(s)}{u_1(s)u_2(s)}$",
+      "$G(s)=\\frac{y(s)}{u_1(s)+u_2(s)}$"
     ],
     "correct": [ 2 ]
   },
   {
-    "question": "Dlaczego przy wyznaczaniu ogólnej transmitancji systemu o strukturze MISO (wiele wejść, jedno wyjście) sumujemy sygnały wejściowe u1 i u2?",
+    "question": "Dlaczego przy wyznaczaniu ogólnej transmitancji systemu o strukturze MISO (wiele wejść, jedno wyjście) sumujemy sygnały wejściowe $u_1$ i $u_2$?",
     "options": [
       "Ponieważ transmitancja jest definiowana dla układów liniowych, w których obowiązuje zasada superpozycji (odpowiedź na sumę wymuszeń jest sumą odpowiedzi).",
       "Ponieważ w dziedzinie operatorowej Laplace'a nie wolno wykonywać operacji dzielenia zmiennych.",
@@ -1270,11 +1270,11 @@
     "correct": [ 0 ]
   },
   {
-    "question": "Zapisz transmitancję przedstawionego układu z jednym wejściem (u) i dwoma wyjściami (y1, y2):",
+    "question": "Zapisz transmitancję przedstawionego układu z jednym wejściem ($u$) i dwoma wyjściami ($y_1$, $y_2$):",
     "options": [
-      "G1(s) = y1(s)/u(s) oraz G2(s) = y2(s)/u(s)",
-      "G1(s) = u(s)/y1(s) oraz G2(s) = u(s)/y2(s)",
-      "G_zastępcza(s) = (y1(s) + y2(s)) / u(s)"
+      "$G_1(s)=\\frac{y_1(s)}{u(s)}$ oraz $G_2(s)=\\frac{y_2(s)}{u(s)}$",
+      "$G_1(s)=\\frac{u(s)}{y_1(s)}$ oraz $G_2(s)=\\frac{u(s)}{y_2(s)}$",
+      "$G_{\\text{zastępcza}}(s)=\\frac{y_1(s)+y_2(s)}{u(s)}$"
     ],
     "correct": [ 0 ]
   },
@@ -1299,7 +1299,7 @@
   {
     "question": "Wskaż prawidłowy opis etapów i właściwości modelowania z Zasadą Najmniejszego Działania (ZND):",
     "options": [
-      "CEL: znalezienie równań ruchu układów mechanicznych złożonych z 1 lub wielu cząstek; Poprzez zastosowanie analogii => możemy ZND zastosować do modeli innych systemów (np. elektrycznych); Dla każdego układu mechanicznego – możemy sformułować funkcję stanu (funkcję Lagrange’a), która minimalizuje pewien funkcjał; Wszystko sprowadza się do obliczenia równań Eulera-Lagrange’a, które jednoznacznie wyznaczają równania ruchu.",
+      "CEL: znalezienie równań ruchu układów mechanicznych złożonych z 1 lub wielu cząstek; Poprzez zastosowanie analogii możemy ZND zastosować do modeli innych systemów (np. elektrycznych); Dla każdego układu mechanicznego – możemy sformułować funkcję stanu (funkcję Lagrange’a), która minimalizuje pewien funkcjonał; Wszystko sprowadza się do obliczenia równań Eulera-Lagrange’a, które jednoznacznie wyznaczają równania ruchu.",
       "CEL: Wyznaczenie transmitancji operatorowej układów wyłącznie statycznych; Wykorzystuje się do tego technikę kwantowania sygnałów ciągłych w standardzie IEEE 754, co pozwala na pominięcie energii kinetycznej.",
       "CEL: Linearyzacja równań różniczkowych rzędu pierwszego poprzez rozkład funkcji w otoczeniu punktu pracy przy założeniu, że błąd wejścia dąży do zera."
     ],
@@ -1308,18 +1308,18 @@
   {
     "question": "Jak za pomocą równania różniczkowego opisuje się Zasadę Najmniejszego Działania uwzględniającą energię kinetyczną (T), potencjalną (U) lub funkcję Lagrange'a (L)?",
     "options": [
-      "d/dt(dT/dq_k_dot) - dT/dq_k + dU/dq_k = d/dt(dL/dq_k_dot) - dL/dq_k = Q_k",
-      "d/dt(dL/dq_k) + dL/dq_k_dot = Q_k",
-      "cond(A) = ||A|| * ||A^-1|| = L"
+      "$\\frac{d}{dt}\\left(\\frac{\\partial T}{\\partial \\dot{q}_k}\\right)-\\frac{\\partial T}{\\partial q_k}+\\frac{\\partial U}{\\partial q_k}=\\frac{d}{dt}\\left(\\frac{\\partial L}{\\partial \\dot{q}_k}\\right)-\\frac{\\partial L}{\\partial q_k}=Q_k$",
+      "$\\frac{d}{dt}\\left(\\frac{\\partial L}{\\partial q_k}\\right)+\\frac{\\partial L}{\\partial \\dot{q}_k}=Q_k$",
+      "$\\operatorname{cond}(A)=\\lVert A\\rVert\\lVert A^{-1}\\rVert=L$"
     ],
     "correct": [ 0 ]
   },
   {
     "question": "Wymień po kolei kroki (etapy) postępowania przy modelowaniu z wykorzystaniem Zasady Najmniejszego Działania (ZND):",
     "options": [
-      "1. Określamy jaki parametr układu opisuje położenie systemu (współrzędne uogólnione qk); 2. Obliczamy energię kinetyczną (T) układu; 3. Obliczamy energię potencjalną (U) układu; 4. Obliczamy niepotencjalne części sił uogólnionych Qk (jeśli brak, to Qk=0); 5. Obliczamy równania Eulera-Lagrange'a.",
-      "1. Wyznaczamy transmitancję G(s); 2. Linearyzujemy układ metodą Taylora w punkcie zero; 3. Przeprowadzamy kwantowanie sygnału wejściowego; 4. Realizujemy kodowanie w standardzie IEEE 754.",
-      "1. Szukamy macierzy eksperymentalnej X; 2. Obliczamy wyznacznik det X = 0; 3. Sprowadzamy równanie do postaci normalnej pierwszego rzędu."
+      "1. Określamy jaki parametr układu opisuje położenie systemu (współrzędne uogólnione $q_k$); 2. Obliczamy energię kinetyczną ($T$) układu; 3. Obliczamy energię potencjalną ($U$) układu; 4. Obliczamy niepotencjalne części sił uogólnionych $Q_k$ (jeśli brak, to $Q_k=0$); 5. Obliczamy równania Eulera-Lagrange'a.",
+      "1. Wyznaczamy transmitancję $G(s)$; 2. Linearyzujemy układ metodą Taylora w punkcie zero; 3. Przeprowadzamy kwantowanie sygnału wejściowego; 4. Realizujemy kodowanie w standardzie IEEE 754.",
+      "1. Szukamy macierzy eksperymentalnej $X$; 2. Obliczamy wyznacznik $\\det X=0$; 3. Sprowadzamy równanie do postaci normalnej pierwszego rzędu."
     ],
     "correct": [ 0 ]
   },
@@ -1335,27 +1335,27 @@
   {
     "question": "Na czym polega prosty algorytm identyfikacji parametrów modelu statycznego typu MISO (wiele wejść, jedno wyjście) przedstawiony w postaci macierzowej?",
     "options": [
-      "Zapisujemy relację wejście-wyjście jako y = A * X. Wykonujemy s-pomiarów tworząc macierze Y_* oraz X_*. Przy założeniu, że liczba pomiarów s jest równa liczbie parametrów m (macierz X_* jest kwadratowa) oraz nieosobliwa (det X_* != 0), wyznaczamy szukane parametry ze wzoru: A = Y_* * X_*^-1",
-      "Wyznaczamy transformatę Laplace'a sygnału wyjściowego y(s), a następnie dzielimy ją przez sumę sygnałów wejściowych u1(s) + u2(s), ignorując wymiary macierzy parametrów.",
+      "Zapisujemy relację wejście-wyjście jako $y=AX$. Wykonujemy $s$-pomiarów tworząc macierze $Y_*$ oraz $X_*$. Przy założeniu, że liczba pomiarów $s$ jest równa liczbie parametrów $m$ (macierz $X_*$ jest kwadratowa) oraz nieosobliwa ($\\det X_*\\ne 0$), wyznaczamy szukane parametry ze wzoru: $A=Y_*X_*^{-1}$",
+      "Wyznaczamy transformatę Laplace'a sygnału wyjściowego $y(s)$, a następnie dzielimy ją przez sumę sygnałów wejściowych $u_1(s)+u_2(s)$, ignorując wymiary macierzy parametrów.",
       "Stosujemy zasady wariacyjne Hamiltona, aby zminimalizować funkcjonał energii potencjalnej U układu w otoczeniu punktu pracy."
     ],
     "correct": [ 0 ]
   },
   {
-    "question": "W algorytmie identyfikacji macierzowej, jaki warunek musi spełniać macierz pomiarów wejściowych X_*, aby możliwe było bezpośrednie zastosowanie macierzy odwrotnej X_*^-1?",
+    "question": "W algorytmie identyfikacji macierzowej, jaki warunek musi spełniać macierz pomiarów wejściowych $X_*$, aby możliwe było bezpośrednie zastosowanie macierzy odwrotnej $X_*^{-1}$?",
     "options": [
-      "Musi być macierzą kwadratową (liczba pomiarów s równa liczbie szukanych parametrów m) oraz nieosobliwą, czyli jej wyznacznik musi być różny od zera (det X_* != 0).",
-      "Musi być macierzą źle uwarunkowaną, w której wskaźnik cond(A) dąży do nieskończoności.",
+      "Musi być macierzą kwadratową (liczba pomiarów $s$ równa liczbie szukanych parametrów $m$) oraz nieosobliwą, czyli jej wyznacznik musi być różny od zera ($\\det X_*\\ne 0$).",
+      "Musi być macierzą źle uwarunkowaną, w której wskaźnik $\\operatorname{cond}(A)$ dąży do nieskończoności.",
       "Musi składać się wyłącznie z wartości ułamkowych niebędących liczbami maszynowymi w standardzie IEEE 754."
     ],
     "correct": [ 0 ]
   },
   {
-    "question": "Jaki jest wymiar (dim X_*) macierzy pomiarów wejściowych X_* w opisanym algorytmie identyfikacji, jeśli szukamy m parametrów na podstawie s eksperymentów?",
+    "question": "Jaki jest wymiar ($\\dim X_*$) macierzy pomiarów wejściowych $X_*$ w opisanym algorytmie identyfikacji, jeśli szukamy $m$ parametrów na podstawie $s$ eksperymentów?",
     "options": [
-      "m x s (macierz składa się z m wierszy, czyli tylu, ile jest parametrów, oraz s kolumn odpowiadających liczbie pomiarów)",
-      "s x s (macierz kwadratowa zależna wyłącznie od liczby próbek próbkowania sygnału)",
-      "1 x m (wektor wierszowy opisujący wyłącznie sygnał wyjściowy y)"
+      "$m\\times s$ (macierz składa się z $m$ wierszy, czyli tylu, ile jest parametrów, oraz $s$ kolumn odpowiadających liczbie pomiarów)",
+      "$s\\times s$ (macierz kwadratowa zależna wyłącznie od liczby próbek próbkowania sygnału)",
+      "$1\\times m$ (wektor wierszowy opisujący wyłącznie sygnał wyjściowy $y$)"
     ],
     "correct": [ 0 ]
   },
@@ -1623,7 +1623,7 @@
   {
     "question": "Jak sprowadza się podane równanie różniczkowe wyższego rzędu (np. trzeciego) do układu równań różniczkowych rzędu pierwszego (równań stanu)?",
     "options": [
-      "Należy wyprowadzić postać normalną równania, zapisać odpowiednie podstawienia zmiennych (np. x1=q, x2=q_dot, x3=q_dotdot) i na ich podstawie zapisać nowy układ równań.",
+      "Należy wyprowadzić postać normalną równania, zapisać odpowiednie podstawienia zmiennych (np. $x_1=q$, $x_2=\\dot{q}$, $x_3=\\ddot{q}$) i na ich podstawie zapisać nowy układ równań.",
       "Należy zastosować transformację Laplace'a i pomnożyć mianownik przez stałe bilansowe.",
       "Należy zróżniczkować równanie trzykrotnie po czasie, sprowadzając je do postaci algebraicznej."
     ],
@@ -1632,7 +1632,7 @@
   {
     "question": "Znając podane równanie różniczkowe (np. n-tego rzędu), określ ile integratorów musisz użyć w środowisku Simulink oraz jakie warunki początkowe należy wpisać w każdym z nich:",
     "options": [
-      "Liczba integratorów musi być równa rzędowi równania. W pierwszym integratorze należy umieścić warunek q(0), w kolejnym potem q_dot(0), q_dotdot(0) i tak dalej.",
+      "Liczba integratorów musi być równa rzędowi równania. W pierwszym integratorze należy umieścić warunek $q(0)$, w kolejnym potem $\\dot{q}(0)$, $\\ddot{q}(0)$ i tak dalej.",
       "Wystarczy użyć zawsze jednego integratora, wpisując w nim sumę wszystkich warunków początkowych układu.",
       "Liczba integratorów jest równa liczbie sygnałów wejściowych, a warunki początkowe muszą wynosić zero."
     ],
@@ -1641,7 +1641,7 @@
   {
     "question": "Co jest bezpośrednim rozwiązaniem równania różniczkowego uzyskanym metodą numeryczną?",
     "options": [
-      "Analityczny wzór funkcji zawierający stałe całkowania C1, C2...",
+      "Analityczny wzór funkcji zawierający stałe całkowania $C_1$, $C_2$, ...",
       "Zbiór punktów (a nie ciągła funkcja, jak ma to miejsce w metodach analitycznych).",
       "Macierz współczynników wielomianu charakterystycznego transmitancji."
     ],
@@ -1657,7 +1657,7 @@
     "correct": [ 1 ]
   },
   {
-    "question": "Podaj poprawną definicję transmitancji operatorowej G(s):",
+    "question": "Podaj poprawną definicję transmitancji operatorowej $G(s)$:",
     "options": [
       "Jest to stosunek transformaty Laplace'a sygnału wyjściowego do transformaty Laplace'a sygnału wejściowego, przy bezwzględnym założeniu zerowych warunków początkowych. Odwrotna kolejność wejścia i wyjścia to błąd kardynalny.",
       "Jest to stosunek transformaty Laplace'a sygnału wejściowego do transformaty sygnału wyjściowego, obliczany przy dowolnych warunkach początkowych.",
@@ -1669,7 +1669,7 @@
     "question": "Ile modeli (reprezentacji) w przestrzeni stanów może odpowiadać jednej transmitancji operatorowej?",
     "options": [
       "Jednej transmitancji może odpowiadać nieskończenie wiele modeli zapisanych w przestrzeni stanów.",
-      "Dokładnie jeden, unikalny model przestrzeni stanów z unikalnymi macierzami ABCD.",
+      "Dokładnie jeden, unikalny model przestrzeni stanów z unikalnymi macierzami $A$, $B$, $C$, $D$.",
       "Maksymalnie dwa modele: jeden stacjonarny i jeden niestacjonarny."
     ],
     "correct": [ 0 ]
@@ -1768,9 +1768,9 @@
   {
     "question": "Wyjaśnij oznaczenia występujące we wzorze Eulera-Lagrange'a przedstawionym na grafice:",
     "options": [
-      "T - energia kinetyczna, Qk - siła uogólniona, t - czas, qk - współrzędne uogólnione, N - liczba stopni swobody",
-      "T - okres próbkowania, Qk - błąd kwantowania, t - krok całkowania, qk - zmienne stanu dyskretnego, N - rząd modelu",
-      "T - energia potencjalna, Qk - wektor wyjść, t - stała bilansowa, qk - parametry techniczne, N - wymiar macierzy B"
+      "$T$ - energia kinetyczna, $Q_k$ - siła uogólniona, $t$ - czas, $q_k$ - współrzędne uogólnione, $N$ - liczba stopni swobody",
+      "$T$ - okres próbkowania, $Q_k$ - błąd kwantowania, $t$ - krok całkowania, $q_k$ - zmienne stanu dyskretnego, $N$ - rząd modelu",
+      "$T$ - energia potencjalna, $Q_k$ - wektor wyjść, $t$ - stała bilansowa, $q_k$ - parametry techniczne, $N$ - wymiar macierzy $B$"
     ],
     "correct": [ 0 ]
   },
@@ -1876,7 +1876,7 @@
   {
     "question": "Jaka jest główna zaleta jawnych metod Rungego-Kutty (np. RK4) w porównaniu do prostej metody Eulera?",
     "options": [
-      "Posiadają wyższy rząd dokładności (błąd lokalny zależy od h do potęgi 5), co pozwala na uzyskanie znacznie większej dokładności przy tym samym kroku całowania h.",
+      "Posiadają wyższy rząd dokładności (błąd lokalny zależy od $h^5$), co pozwala na uzyskanie znacznie większej dokładności przy tym samym kroku całowania $h$.",
       "Pozwalają na idealne obliczenia analityczne i wyznaczenie ogólnego wzoru funkcji bez podawania warunków początkowych.",
       "Całkowicie eliminują potrzebę stosowania standardu IEEE 754 w reprezentacji liczb zmiennoprzecinkowych."
     ],
@@ -1930,7 +1930,7 @@
   {
     "question": "Co oznacza pojęcie 'wielomianu charakterystycznego' układu dynamicznego opisanego w przestrzeni stanów?",
     "options": [
-      "To wielomian zdefiniowany jako $det(sI - A)$, gdzie A to macierz stanu, a jego pierwiastki (wartości własne macierzy A) decydują o stabilności i charakterze drgań systemu.",
+      "To wielomian zdefiniowany jako $\\det(sI-A)$, gdzie $A$ to macierz stanu, a jego pierwiastki (wartości własne macierzy $A$) decydują o stabilności i charakterze drgań systemu.",
       "To iloczyn macierzy wejścia B i macierzy wyjścia C podzielony przez krok całkowania h.",
       "To lingwistyczny opis zachowania agentów w stanie krytycznym symulacji komputerowej."
     ],
@@ -1948,8 +1948,8 @@
   {
     "question": "W metodach wariacyjnych formułowania modeli (np. powiązanych z mechaniką), czym różni się funkcja Lagrange'a (lagranżjan L) od całkowitej energii układu?",
     "options": [
-      "Funkcja Lagrange'a to różnica pomiędzy energią kinetyczną a potencjalną ($L = T - U$), podczas gdy całkowita energia mechaniczna to ich suma ($E = T + U$).",
-      "Lagranżjan to iloczyn energii kinetycznej i siły uogólnionej Qk.",
+      "Funkcja Lagrange'a to różnica pomiędzy energią kinetyczną a potencjalną ($L=T-U$), podczas gdy całkowita energia mechaniczna to ich suma ($E=T+U$).",
+      "Lagranżjan to iloczyn energii kinetycznej i siły uogólnionej $Q_k$.",
       "Funkcja Lagrange'a nie ma powiązania z energią i opisuje wyłącznie błędy obcięcia procedury iteracyjnej."
     ],
     "correct": [ 0 ]
@@ -1984,14 +1984,14 @@
   {
     "question": "Co to jest macierz przejścia stanu (state transition matrix) i do czego służy w układach liniowych?",
     "options": [
-      "To macierz (często oznaczana jako Phi), która opisuje ewolucję wektora stanu w czasie od warunku początkowego przy braku wymuszeń zewnętrznych.",
+      "To macierz (często oznaczana jako $\\Phi$), która opisuje ewolucję wektora stanu w czasie od warunku początkowego przy braku wymuszeń zewnętrznych.",
       "To macierz zawierająca wyłącznie błędy obcięcia i zaokrąglenia maszynowego pojedynczej precyzji.",
       "To graficzny schemat blokowy określający kolejność faz w kaskadowym modelu wodospadowym."
     ],
     "correct": [ 0 ]
   },
   {
-    "question": "W analizie uwarunkowania matematycznego, czym jest norma macierzy (np. ||A||) używana we wzorze na wskaźnik cond(A)?",
+    "question": "W analizie uwarunkowania matematycznego, czym jest norma macierzy (np. $\\lVert A\\rVert$) używana we wzorze na wskaźnik $\\operatorname{cond}(A)$?",
     "options": [
       "To miara rozmiaru lub 'wielkości' macierzy, przypisująca jej pojedynczą liczbę rzeczywistą nieujemną, charakteryzującą jej właściwości transformacyjne.",
       "To liczba określająca maksymalny dopuszczalny krok integracji numerycznej dla metod niejawnych.",
@@ -2027,10 +2027,10 @@
     "correct": [ 0 ]
   },
   {
-    "question": "Jak w opisie przestrzeni stanów definiuje się wymiary poszczególnych macierzy ABCD, jeżeli wektor stanu ma wymiar n, wektor wejść m, a wektor wyjść p?",
+    "question": "Jak w opisie przestrzeni stanów definiuje się wymiary poszczególnych macierzy $A$, $B$, $C$, $D$, jeżeli wektor stanu ma wymiar $n$, wektor wejść $m$, a wektor wyjść $p$?",
     "options": [
-      "Macierz A ma wymiar (n x n), macierz B ma wymiar (n x m), macierz C ma wymiar (p x n), a macierz D ma wymiar (p x m).",
-      "Wszystkie macierze ABCD muszą być kwadratowe i mieć identyczny wymiar (n x n), niezależnie od liczby wejść i wyjść.",
+      "Macierz $A$ ma wymiar $n\\times n$, macierz $B$ ma wymiar $n\\times m$, macierz $C$ ma wymiar $p\\times n$, a macierz $D$ ma wymiar $p\\times m$.",
+      "Wszystkie macierze $A$, $B$, $C$, $D$ muszą być kwadratowe i mieć identyczny wymiar $n\\times n$, niezależnie od liczby wejść i wyjść.",
       "Wymiary macierzy zależą wyłącznie od wybranego kroku całkowania h w standardzie IEEE 754."
     ],
     "correct": [ 0 ]
@@ -2054,7 +2054,7 @@
     "correct": [ 0 ]
   },
   {
-    "question": "W kontekście dokładności obliczeń, co to jest błąd maszynowy (eps - epsilon maszynowy)?",
+    "question": "W kontekście dokładności obliczeń, co to jest błąd maszynowy ($\\varepsilon$ - epsilon maszynowy)?",
     "options": [
       "To najmniejsza dodatnia liczba zmiennoprzecinkowa, która po dodaniu do jedności w danym formacie zapisu (np. IEEE 754) daje wynik różny od jedności; określa rozdzielczość arytmetyki komputera.",
       "To błąd wynikający ze złego doboru metody numerycznej (np. zastosowania metody Eulera zamiast Rungego-Kutty).",

@@ -89,9 +89,9 @@
           "description": "Pytania z Zarządzania projektami"
         },
         {
-          "name": "MISS",
+          "name": "Modelowanie i symulacja systemow",
           "file": "data/pytaniaMISS.json",
-          "description": "Pytania z MISS opracowane do nauki"
+          "description": "Pytania z Modelowania i symulacji systemow opracowane do nauki"
         }
       ]
     }
