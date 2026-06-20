@@ -49,14 +49,14 @@ function normalizeId(value, maxLength = 80) {
 }
 
 function sanitizeNickname(value) {
-  if (typeof value !== "string") return "Student";
+  if (typeof value !== "string") return "";
   const cleaned = value
     .trim()
     .replace(/\s+/g, " ")
     .replace(/[^\p{L}\p{N} _.-]/gu, "")
     .slice(0, 24);
 
-  return cleaned || "Student";
+  return cleaned.toLowerCase() === "student" ? "" : cleaned;
 }
 
 function clampLimit(value, fallback = 10, max = 50) {

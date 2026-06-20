@@ -30,6 +30,16 @@ module.exports = async function handler(request, response) {
     return;
   }
 
+  if (typeof body.nickname === "string" && body.nickname.trim().toLowerCase() === "student") {
+    sendJson(response, 422, { error: "nickname_required" });
+    return;
+  }
+
+  if (!nickname) {
+    sendJson(response, 422, { error: "nickname_required" });
+    return;
+  }
+
   if (!playerId || !sessionId || !quizId) {
     sendJson(response, 400, { error: "invalid_submission" });
     return;

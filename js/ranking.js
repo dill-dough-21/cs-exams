@@ -120,7 +120,7 @@ function renderOverallLeaderboard(entries) {
     <ol class="leaderboard-list leaderboard-list-large">
       ${entries.map((entry) => `
         <li>
-          <span class="leaderboard-name">${escapeHtml(entry.nickname || "Student")}</span>
+          <span class="leaderboard-name">${escapeHtml(entry.nickname || "Nieznany")}</span>
           <span class="leaderboard-meta">${escapeHtml(`${entry.quizzes_count} quizów`)}</span>
           <strong>${entry.total_score} pkt</strong>
         </li>
@@ -141,7 +141,7 @@ function renderQuizLeaderboard(entries) {
     <ol class="leaderboard-list leaderboard-list-large">
       ${entries.map((entry) => `
         <li>
-          <span class="leaderboard-name">${escapeHtml(entry.nickname || "Student")}</span>
+          <span class="leaderboard-name">${escapeHtml(entry.nickname || "Nieznany")}</span>
           <span class="leaderboard-meta">${escapeHtml(`${entry.correct_count}/${entry.total_questions}, ${entry.duration_seconds}s`)}</span>
           <strong>${entry.score} pkt</strong>
         </li>

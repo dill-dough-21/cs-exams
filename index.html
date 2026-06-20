@@ -64,14 +64,13 @@
             <div class="profile-modal-panel">
                 <button id="profileModalClose" class="profile-modal-close" type="button" aria-label="Zamknij">×</button>
                 <h2 id="profileModalTitle">Ustaw swój nick</h2>
-                <p id="profileModalDescription">Będzie widoczny przy Twoich wynikach.</p>
+                <p id="profileModalDescription">Nick będzie widoczny przy Twoich wynikach i w rankingach.</p>
                 <label for="playerNick">Nick</label>
-                <input type="text" id="playerNick" maxlength="24" autocomplete="nickname" placeholder="Student">
+                <input type="text" id="playerNick" maxlength="24" autocomplete="nickname" placeholder="Twój nick" required>
                 <p id="playerNickError" class="profile-error hidden" role="alert"></p>
                 <div id="turnstile-container" class="turnstile-container hidden"></div>
                 <div class="profile-modal-actions">
                     <button id="saveNickButton" class="primary-action" type="button">Zapisz nick</button>
-                    <button id="anonymousNickButton" class="secondary-action" type="button">Kontynuuj bez nicku</button>
                 </div>
             </div>
         </div>

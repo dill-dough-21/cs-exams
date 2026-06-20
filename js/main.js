@@ -18,8 +18,6 @@ let heartbeatIntervalId = null;
 let turnstileWidgetId = null;
 let pendingScoreSubmission = false;
 const PLAYER_NICK_KEY = "bazasiada-player-nick";
-const PLAYER_NICK_CHOICE_KEY = "bazasiada-player-nick-choice";
-const PLAYER_NICK_SKIP_SESSION_KEY = "bazasiada-player-nick-skip-session";
 
 document.addEventListener("DOMContentLoaded", () => {
   loadConfig();
@@ -37,10 +35,9 @@ function setupEventListeners() {
   document.getElementById("profileSettingsButton")?.addEventListener("click", () => openProfileModal(true));
   document.getElementById("profileModalClose")?.addEventListener("click", closeProfileModal);
   document.getElementById("saveNickButton")?.addEventListener("click", savePlayerNick);
-  document.getElementById("anonymousNickButton")?.addEventListener("click", useAnonymousNick);
   document.getElementById("playerNick")?.addEventListener("input", clearPlayerNickError);
   document.getElementById("profileModal")?.addEventListener("click", (event) => {
-    if (event.target.id === "profileModal" && localStorage.getItem(PLAYER_NICK_CHOICE_KEY)) {
+    if (event.target.id === "profileModal" && localStorage.getItem(PLAYER_NICK_KEY)) {
       closeProfileModal();
     }
   });
@@ -71,7 +68,7 @@ function initPlayerProfile() {
 
   nickInput.value = localStorage.getItem(PLAYER_NICK_KEY) || "";
 
-  if (!localStorage.getItem(PLAYER_NICK_KEY) && !sessionStorage.getItem(PLAYER_NICK_SKIP_SESSION_KEY)) {
+  if (!getPlayerNick()) {
     openProfileModal(false);
   }
 }
@@ -103,34 +100,25 @@ function savePlayerNick() {
   const nickInput = document.getElementById("playerNick");
   const nick = nickInput?.value?.trim().slice(0, 24) || "";
 
+  if (!nick) {
+    showPlayerNickError("Podaj nick, aby rozpocząć quiz.");
+    nickInput?.focus();
+    return;
+  }
+
+  if (nick.toLowerCase() === "student") {
+    showPlayerNickError("Wpisz swój własny nick zamiast domyślnej wartości.");
+    nickInput?.focus();
+    return;
+  }
+
   if (containsProfanity(nick)) {
     showPlayerNickError("Ten nick zawiera niedozwolone słowo. Wybierz inny nick.");
     nickInput?.focus();
     return;
   }
 
-  if (nick) {
-    localStorage.setItem(PLAYER_NICK_KEY, nick);
-    localStorage.setItem(PLAYER_NICK_CHOICE_KEY, "named");
-  } else {
-    localStorage.removeItem(PLAYER_NICK_KEY);
-    localStorage.setItem(PLAYER_NICK_CHOICE_KEY, "anonymous");
-    sessionStorage.setItem(PLAYER_NICK_SKIP_SESSION_KEY, "true");
-  }
-
-  const modal = document.getElementById("profileModal");
-  if (modal) modal.dataset.canClose = "true";
-  modal?.classList.add("hidden");
-  retryPendingScoreSubmission();
-}
-
-function useAnonymousNick() {
-  localStorage.removeItem(PLAYER_NICK_KEY);
-  localStorage.setItem(PLAYER_NICK_CHOICE_KEY, "anonymous");
-  sessionStorage.setItem(PLAYER_NICK_SKIP_SESSION_KEY, "true");
-  clearPlayerNickError();
-  const nickInput = document.getElementById("playerNick");
-  if (nickInput) nickInput.value = "";
+  localStorage.setItem(PLAYER_NICK_KEY, nick);
 
   const modal = document.getElementById("profileModal");
   if (modal) modal.dataset.canClose = "true";
@@ -139,9 +127,10 @@ function useAnonymousNick() {
 }
 
 function getPlayerNick() {
-  if (localStorage.getItem(PLAYER_NICK_CHOICE_KEY) === "anonymous") return "Student";
   const rawNick = localStorage.getItem(PLAYER_NICK_KEY) || "";
-  return containsProfanity(rawNick) ? "Student" : rawNick.slice(0, 24) || "Student";
+  const nick = rawNick.trim().slice(0, 24);
+  if (!nick || nick.toLowerCase() === "student") return "";
+  return containsProfanity(nick) ? "" : nick;
 }
 
 function containsProfanity(value) {
@@ -584,6 +573,8 @@ function getScoreSubmitErrorMessage(data) {
     case "unknown_question":
     case "answer_index_out_of_range":
       return "Nie zapisano wyniku: odpowiedzi nie pasują do rozpoczętej sesji testu.";
+    case "nickname_required":
+      return "Nie zapisano wyniku: podaj imię lub nick.";
     case "unknown_quiz":
       return "Nie zapisano wyniku: ten quiz nie jest dostępny w rankingu.";
     case "invalid_duration":
@@ -624,12 +615,19 @@ async function submitScoreToBackend() {
   showScoreSubmitStatus("Zapisywanie wyniku w rankingu...", "info");
 
   try {
+    const playerNick = getPlayerNick();
+    if (!playerNick) {
+      showScoreSubmitStatus("Dodaj nick przed zapisaniem wyniku.", "warning");
+      openProfileModal(false);
+      return;
+    }
+
     const response = await fetch("/api/submit-score", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         player_id: getPlayerId(),
-        nickname: getPlayerNick(),
+        nickname: playerNick,
         quiz_id: currentFile.file,
         session_id: currentSessionId,
         duration_seconds: Math.max(0, Math.round((Date.now() - quizStartedAt) / 1000)),
