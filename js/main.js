@@ -18,6 +18,8 @@ let heartbeatIntervalId = null;
 let turnstileWidgetId = null;
 let pendingScoreSubmission = false;
 const PLAYER_NICK_KEY = "bazasiada-player-nick";
+const RANKING_VERIFICATION_KEY = "bazasiada-ranking-verification-until";
+const RANKING_VERIFICATION_TTL_MS = 3 * 60 * 60 * 1000;
 
 document.addEventListener("DOMContentLoaded", () => {
   loadConfig();
@@ -199,6 +201,19 @@ function resetTurnstile() {
   if (turnstileWidgetId !== null && window.turnstile) {
     window.turnstile.reset(turnstileWidgetId);
   }
+}
+
+function hasRecentRankingVerification() {
+  const verifiedUntil = Number(localStorage.getItem(RANKING_VERIFICATION_KEY));
+  return Number.isFinite(verifiedUntil) && verifiedUntil > Date.now();
+}
+
+function rememberRankingVerification() {
+  localStorage.setItem(RANKING_VERIFICATION_KEY, String(Date.now() + RANKING_VERIFICATION_TTL_MS));
+}
+
+function clearRankingVerification() {
+  localStorage.removeItem(RANKING_VERIFICATION_KEY);
 }
 
 function requestRankingVerification(message) {
@@ -605,8 +620,9 @@ async function submitScoreToBackend() {
     return;
   }
 
+  const hasCachedVerification = hasRecentRankingVerification();
   const turnstileToken = getTurnstileToken();
-  if (turnstileWidgetId !== null && !turnstileToken) {
+  if (turnstileWidgetId !== null && !turnstileToken && !hasCachedVerification) {
     requestRankingVerification("Potwierdź weryfikację, żeby zapisać wynik w rankingu.");
     return;
   }
@@ -632,12 +648,11 @@ async function submitScoreToBackend() {
         session_id: currentSessionId,
         duration_seconds: Math.max(0, Math.round((Date.now() - quizStartedAt) / 1000)),
         answers: getSubmissionAnswers(),
-        turnstile_token: turnstileToken,
+        turnstile_token: turnstileToken || null,
       }),
     });
 
     const data = await response.json();
-    resetTurnstile();
 
     if (!data.enabled) {
       showScoreSubmitStatus("Ranking nie jest skonfigurowany w tym środowisku.", "warning");
@@ -646,6 +661,7 @@ async function submitScoreToBackend() {
 
     if (!response.ok) {
       if (data.error === "missing_turnstile_token" || data.error === "turnstile_failed") {
+        clearRankingVerification();
         resetTurnstile();
         requestRankingVerification("Potwierdź weryfikację, żeby zapisać wynik w rankingu.");
         return;
@@ -659,6 +675,15 @@ async function submitScoreToBackend() {
 
       showScoreSubmitStatus(getScoreSubmitErrorMessage(data), "error");
       return;
+    }
+
+    if (turnstileToken) {
+      rememberRankingVerification();
+    }
+
+    if (turnstileToken || hasCachedVerification) {
+      resetTurnstile();
+      closeProfileModal();
     }
 
     if (data.saved) {

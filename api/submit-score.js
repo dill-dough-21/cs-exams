@@ -4,6 +4,10 @@ const { loadQuiz } = require("./_lib/quizzes");
 const { normalizeId, parseBody, sanitizeNickname, sendJson } = require("./_lib/http");
 const { isSupabaseConfigured, supabaseRequest } = require("./_lib/supabase");
 const { verifyTurnstile } = require("./_lib/turnstile");
+const {
+  hasRecentTurnstileVerification,
+  setRecentTurnstileVerification,
+} = require("./_lib/turnstile-session");
 const { containsProfanity } = require("../js/profanity-filter");
 
 module.exports = async function handler(request, response) {
@@ -54,10 +58,16 @@ module.exports = async function handler(request, response) {
 
     await enforceRateLimit(request, "submit-score", playerId, { limit: 12, windowSeconds: 3600 });
 
-    const turnstile = await verifyTurnstile(body.turnstile_token, request);
-    if (!turnstile.ok) {
-      sendJson(response, 403, { error: turnstile.error });
-      return;
+    if (!hasRecentTurnstileVerification(request, playerId)) {
+      const turnstile = await verifyTurnstile(body.turnstile_token, request);
+      if (!turnstile.ok) {
+        sendJson(response, 403, { error: turnstile.error });
+        return;
+      }
+
+      if (turnstile.enabled) {
+        setRecentTurnstileVerification(response, request, playerId);
+      }
     }
 
     const sessions = await supabaseRequest("/rest/v1/quiz_sessions", {
